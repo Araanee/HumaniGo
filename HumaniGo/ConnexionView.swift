@@ -31,18 +31,22 @@ struct ConnexionView: View {
                     {
                         Error = "Email pas valide"
                     } //en attendant
+                    else {
+                        Error = ""
+                    }
                 },
                 label :
                     {
-                        ZStack (alignment: .center)
+                        NavigationLink("Connecte-toi")
                         {
-                            Text("Connecte-toi !")
-                                .foregroundColor(.black)
-                                .font(.headline)
-                                .frame(width: 150, height: 50)
-                                .background(Yellow)
-                                .clipShape(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/))
+                            //VERIFIER DANS LA BASE DE DONNEE
+                            HelloWorldView()
                         }
+                            .foregroundColor(.black)
+                            .font(.headline)
+                            .frame(width: 150, height: 50)
+                            .background(Yellow)
+                            .clipShape(RoundedRectangle(cornerRadius: 25.0))
             })
         }
     }
