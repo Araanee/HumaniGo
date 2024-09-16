@@ -7,6 +7,6 @@
 
 import SwiftUI
 
-struct Feedback{
+struct Feedback {
     var association: String
 }

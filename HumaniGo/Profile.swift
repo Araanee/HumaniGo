@@ -13,5 +13,5 @@ struct Profile {
     var nbMissions: Int
     var nbFeedbacks: Int
     var points: Int
-    var feedbacks = [Feedback]
+    var feedbacks = [Feedback].self
 }
