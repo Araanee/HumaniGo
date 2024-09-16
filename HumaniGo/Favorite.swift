@@ -16,7 +16,6 @@ struct Favorite: View {
       
             
             Text("Mes Missions")
-               
                 .font(.title)
                 .bold()
                 
@@ -27,7 +26,7 @@ struct Favorite: View {
              Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
                  Text("Favoris") .padding()
                         .foregroundColor(.white)
-                        .background(Color.myblue) 
+                        .background(Color.myblue)
                         .clipShape(RoundedRectangle(cornerRadius: 25))
               })
                 Spacer() //b1
