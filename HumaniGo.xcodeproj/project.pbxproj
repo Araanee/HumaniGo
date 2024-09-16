@@ -28,6 +28,8 @@
 		71A7035B2C94355A0012CEFE /* SegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A7035A2C94355A0012CEFE /* SegmentedControlView.swift */; };
 		71A7035D2C94363B0012CEFE /* CardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A7035C2C94363B0012CEFE /* CardsView.swift */; };
 		ED14EE082C98340900D58FAA /* DelayNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED14EE072C98340900D58FAA /* DelayNav.swift */; };
+		ED14EE0A2C983F4D00D58FAA /* MesMission.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED14EE092C983F4D00D58FAA /* MesMission.swift */; };
+		ED55FABF2C985AAF00036B7C /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED55FABE2C985AAF00036B7C /* Feedback.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,8 @@
 		71A7035A2C94355A0012CEFE /* SegmentedControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlView.swift; sourceTree = "<group>"; };
 		71A7035C2C94363B0012CEFE /* CardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsView.swift; sourceTree = "<group>"; };
 		ED14EE072C98340900D58FAA /* DelayNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayNav.swift; sourceTree = "<group>"; };
+		ED14EE092C983F4D00D58FAA /* MesMission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MesMission.swift; path = ../../../../Downloads/MesMission.swift; sourceTree = "<group>"; };
+		ED55FABE2C985AAF00036B7C /* Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +112,9 @@
 				718187772C91DBDD003F6855 /* MainView.swift */,
 				7155A91C2C981E6D00A563B2 /* MiniComposants.swift */,
 				7155A9182C981E5B00A563B2 /* ProfileView.swift */,
+				ED55FABE2C985AAF00036B7C /* Feedback.swift */,
 				71A703582C9433FF0012CEFE /* SearchBarView.swift */,
+				ED14EE092C983F4D00D58FAA /* MesMission.swift */,
 				71A7035A2C94355A0012CEFE /* SegmentedControlView.swift */,
 				7155A90F2C9487C100A563B2 /* utils_connection.swift */,
 				7155A9072C943F0300A563B2 /* challenge.swift */,
@@ -197,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7155A9192C981E5B00A563B2 /* ProfileView.swift in Sources */,
+				ED55FABF2C985AAF00036B7C /* Feedback.swift in Sources */,
 				7155A90E2C9487B800A563B2 /* Mdp.swift in Sources */,
 				7155A9122C9487C100A563B2 /* NameFirstName.swift in Sources */,
 				7155A90D2C9487B800A563B2 /* PhoneMail.swift in Sources */,
@@ -214,6 +221,7 @@
 				7155A9112C9487C100A563B2 /* utils_connection.swift in Sources */,
 				7155A91B2C981E6200A563B2 /* FeedbackView.swift in Sources */,
 				718187682C91A185003F6855 /* HumaniGoApp.swift in Sources */,
+				ED14EE0A2C983F4D00D58FAA /* MesMission.swift in Sources */,
 				71A703532C9311CD0012CEFE /* DetailsMissionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,7 +16,7 @@ struct MainView: View {
                 .tabItem {
                     Label("Recherche", systemImage: "magnifyingglass")
                 }
-            HomeView()
+            MesMission()
                 .tabItem {
                     Label("Mes Missions", systemImage: "list.clipboard")
                 }
