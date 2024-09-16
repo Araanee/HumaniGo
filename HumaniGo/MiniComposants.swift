@@ -11,8 +11,7 @@ import SwiftUI
 func affCoeurs(count: Int) -> some View {
     ForEach(0..<6, id: \.self) { _ in
         Image(systemName: "heart.fill")
-            .foregroundColor(Color("Rose"))
+            .foregroundColor(Color.mypink)
             .font(.system(size: 12))
-        
     }
 }

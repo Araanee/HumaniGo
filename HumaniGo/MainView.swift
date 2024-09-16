@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-private var pink : Color = Color(red: 255/255, green: 0, blue: 110/255)
-
 struct MainView: View {
     var body: some View {
         TabView {
@@ -29,7 +27,7 @@ struct MainView: View {
                     Label("Profil", systemImage: "person.crop.circle")
                 }
         }
-        .accentColor(pink)
+        .accentColor(Color.mypink)
     }
 }
 

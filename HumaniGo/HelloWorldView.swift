@@ -29,9 +29,11 @@ struct HelloWorldView: View {
                     
                     ZStack (alignment: .center)
                     {
+                        /*
                         DelayedNavigationLink(delay: .seconds(3)) {
                                     CardsView(showDetails: $showDetails)
                                 }
+                         */
                     }
                 }
                 

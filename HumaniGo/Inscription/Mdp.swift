@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-private var Pink : Color = Color(red: 255/255, green: 0, blue: 110/255)
-private var Blue : Color = Color(red: 51/255, green: 129/255, blue: 255/255)
-private var Yellow : Color = Color(red: 255/255, green: 195/255, blue: 31/255)
-
-
 struct Mdp: View {
    
         @StateObject var loginVM = utilsPswd()
@@ -53,7 +48,7 @@ struct Mdp: View {
                         
                     }, label:{})
                     .frame(width: 150, height: 50)
-                    .background(Yellow)
+                    .background(Color.myyellow)
                     .clipShape(RoundedRectangle(cornerRadius: 25.0))
                 
                 NavigationLink("Inscris-toi !")
@@ -92,7 +87,7 @@ struct Mdp: View {
                     {
                         //-----------------BORD ROSE------------------------
                         
-                        RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/).strokeBorder(Pink,lineWidth: 5).frame(width: 410,height: 100)
+                        RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/).strokeBorder(Color.mypink,lineWidth: 5).frame(width: 410,height: 100)
                             .padding(-7)
                         Rectangle().foregroundColor(.white)
                             .frame(width: 400,height: 90).padding()
@@ -145,7 +140,6 @@ struct Mdp: View {
 
                     
                 }.padding()
-                
             }
     }
 }

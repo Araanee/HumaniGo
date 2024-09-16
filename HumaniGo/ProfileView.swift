@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-
-private var Rose : Color = Color(red: 255/255, green: 0, blue: 110/255)
-private var Bleu : Color = Color(red: 51/255, green: 129/255, blue: 255/255)
-private var Jaune : Color = Color(red: 255/255, green: 195/255, blue: 31/255)
-
 var prenom: String = "Emma"
 // comment on fait pour que ça prenne le texte tapé par l'utilisateur ?
 var hey: String = "Hey \(prenom)"
@@ -49,7 +44,7 @@ struct ProfileView: View {
                             ZStack {
                                 Circle()
                                     .frame(width: 80)
-                                    .foregroundColor(Jaune)
+                                    .foregroundColor(Color.myyellow)
                                 Text("8")
                                     .font(.title2)
                                     .fontWeight(.bold)
@@ -68,7 +63,7 @@ struct ProfileView: View {
                             ZStack {
                                 Circle()
                                     .frame(width: 80)
-                                    .foregroundColor(Rose)
+                                    .foregroundColor(Color.mypink)
                                 Text("4,5/5")
                                     .font(.title2)
                                     .fontWeight(.bold)
@@ -88,7 +83,7 @@ struct ProfileView: View {
                             ZStack {
                                 Circle()
                                     .frame(width: 80)
-                                    .foregroundColor(Bleu)
+                                    .foregroundColor(Color.myblue)
                                 Text("680")
                                     .font(.title2)
                                     .fontWeight(.bold)
@@ -126,7 +121,7 @@ struct ProfileView: View {
                             }
                             Spacer(minLength: -15)
                             Text("________________________________________")
-                                .foregroundStyle(.pink)
+                                .foregroundStyle(Color.mypink)
                             
                             Text("Emma s'est rapidement adaptée à nos besoins. Son sourire a mis du soleil à tous les bénéficiaires qu'elle a rencontré. Merci !")
                             
@@ -163,10 +158,10 @@ struct ProfileView: View {
                                 .padding(20)
                             ZStack {
                                 RoundedRectangle(cornerRadius: 15)
-                                    .foregroundStyle(Jaune)
+                                    .foregroundStyle(Color.myyellow)
                                     .frame(width: 150, height: 50, alignment: .center)
                                 Button(action: {
-                                    btn = Rose
+                                    btn = Color.mypink
                                     
                                 }, label: {
                                     Text("Boutique")

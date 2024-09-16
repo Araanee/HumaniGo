@@ -7,21 +7,10 @@
 
 import SwiftUI
 
-extension Color {
-    static var mypink : Color = Color(red: 255/255, green: 0, blue: 110/255)
-    static var myblue : Color = Color(red: 51/255, green: 129/255, blue: 255/255)
-    static var myyellow : Color = Color(red: 255/255, green: 195/255, blue: 31/255)
-    static var myyellow2 : Color = Color(red: 255/255, green: 227/255, blue: 150/255)
-    static var myyellow3 : Color = Color(red: 255/255, green: 239/255, blue: 197/255)
-}
-
 struct CardsView: View {
     
     @Binding var showDetails: Bool
-    
-    // handles the fav icon
-    @State var isClicked : Bool = false
-    @State var iconHeart : String = "heart"
+    @Binding var mission: Mission
     
     var body: some View {
         cards()
@@ -61,6 +50,25 @@ struct CardsView: View {
                         .frame(width: 320, height: 375)
                         .clipped()
                         .clipShape(RoundedRectangle(cornerRadius: 20.0))
+                        .overlay(
+                            ZStack {
+                                RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                                    .fill(
+                                        LinearGradient(gradient: Gradient(colors: [.black, .clear]), startPoint: .bottom, endPoint: .top)
+                                    )
+                                    .frame(width: 320, height: 100)
+                                    .offset(y: 140)
+                                VStack(alignment: .leading) {
+                                    Text(mission.name).font(.title2)
+                                        .bold()
+                                        .foregroundStyle(.white)
+                                    Text(mission.association)
+                                        .foregroundStyle(.white)
+                                }
+                                .padding(.leading, -50)
+                                .offset(y: 150)
+                            }
+                        )
                 )
                 .rotationEffect(.degrees(-2))
             Spacer()
@@ -83,10 +91,9 @@ struct CardsView: View {
                 
                 Spacer()
                 Button(action: {
-                    isClicked = !isClicked
-                    iconHeart = isClicked ? "heart.fill" : "heart"
+                    mission.addFavorite.toggle()
                 }, label: {
-                    Image(systemName: iconHeart)
+                    Image(systemName: mission.addToFavorite())
                         .foregroundStyle(Color.mypink)
                         .font(.system(size: 30))
                 })
@@ -99,7 +106,7 @@ struct CardsView: View {
     }
 }
 
-/*
+
 #Preview {
-    CardsView(showDetails: startValue)
-}*/
+    CardsView(showDetails: .constant(false), mission: .constant(missionTest))
+}

@@ -9,8 +9,6 @@ import SwiftUI
 
 struct SegmentedControlView: View {
     
-    private var pink : Color = Color(red: 255/255, green: 0, blue: 110/255)
-    
     // handles the choice for the display of the missions
     @State private var selectedOption = 0
     let options = ["Match", "Catalogue"]
@@ -33,7 +31,7 @@ struct SegmentedControlView: View {
                             Text(options[index])
                                 .frame(maxWidth: .infinity)
                                 .padding()
-                                .background(selectedOption == index ? pink : Color.clear)
+                                .background(selectedOption == index ? Color.mypink : Color.clear)
                                 .foregroundColor(selectedOption == index ? Color.white : Color.black)
                         }
                     }
