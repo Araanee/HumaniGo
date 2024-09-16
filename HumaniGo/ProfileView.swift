@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-
-private var Rose : Color = Color(red: 255/255, green: 0, blue: 110/255)
-private var Bleu : Color = Color(red: 51/255, green: 129/255, blue: 255/255)
-private var Jaune : Color = Color(red: 255/255, green: 195/255, blue: 31/255)
-
 var prenom: String = "Emma"
 // comment on fait pour que ça prenne le texte tapé par l'utilisateur ?
 var pouce = "👍"

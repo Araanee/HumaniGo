@@ -101,10 +101,13 @@
 			isa = PBXGroup;
 			children = (
 				718187672C91A185003F6855 /* HumaniGoApp.swift */,
-				718187692C91A185003F6855 /* HomeView.swift */,
-				71A7035C2C94363B0012CEFE /* CardsView.swift */,
+				716DB0CA2C9860F400AEF827 /* Home */,
+				7155A9242C984D4300A563B2 /* MyColors.swift */,
 				7155A9132C9487C700A563B2 /* ConnexionView.swift */,
 				71A703522C9311CD0012CEFE /* DetailsMissionView.swift */,
+				7155A9282C985A8500A563B2 /* Profile.swift */,
+				716DB0CB2C98637E00AEF827 /* Favorite.swift */,
+				7155A92A2C985BE100A563B2 /* Feedback.swift */,
 				7155A91A2C981E6200A563B2 /* FeedbackView.swift */,
 				7155A9142C9487C700A563B2 /* HelloWorldView.swift */,
 				ED14EE072C98340900D58FAA /* DelayNav.swift */,

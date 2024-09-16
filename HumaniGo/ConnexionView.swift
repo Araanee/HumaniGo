@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-private var Pink : Color = Color(red: 255/255, green: 0, blue: 110/255)
-private var Blue : Color = Color(red: 51/255, green: 129/255, blue: 255/255)
-private var Yellow : Color = Color(red: 255/255, green: 195/255, blue: 31/255)
-
 struct ConnexionView: View {
     
     @StateObject var loginVM = utilsPswd()
@@ -45,7 +41,7 @@ struct ConnexionView: View {
                             .foregroundColor(.black)
                             .font(.headline)
                             .frame(width: 150, height: 50)
-                            .background(Yellow)
+                            .background(Color.myyellow)
                             .clipShape(RoundedRectangle(cornerRadius: 25.0))
             })
         }
@@ -59,7 +55,7 @@ struct ConnexionView: View {
                     Image("accueil").resizable().ignoresSafeArea().frame(width: 400, height:200)
                     //-----------------BORD ROSE------------------------
                     
-                    RoundedRectangle(cornerRadius: 25.0).strokeBorder(Pink,lineWidth: 5).foregroundColor(.white)
+                    RoundedRectangle(cornerRadius: 25.0).strokeBorder(Color.pink,lineWidth: 5).foregroundColor(.white)
                         .frame(width: 410,height: 380).offset(x:0, y: 180)
                     
                     RoundedRectangle(cornerRadius: 25.0)

@@ -7,35 +7,23 @@
 
 import SwiftUI
 
-private var pink : Color = Color(red: 255/255, green: 0, blue: 110/255)
-private var blue : Color = Color(red: 51/255, green: 129/255, blue: 255/255)
-private var yellow : Color = Color(red: 255/255, green: 195/255, blue: 31/255)
-
 struct DetailsMissionView: View {
     
-    var mission : String = "Ramassage de déchets"
-    var asso : String = "Ecolo Asso"
-    var description : String = """
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis diam a vehicula egestas. Maecenas tristique, justo vel hendrerit euismod, justo ex hendrerit diam, sit amet placerat leo enim quis lorem.
-"""
-    var time : Int = 2
-    var date : String = "20 septembre 2024"
-    var address :  String = "4 rue Saint Martin, Paris 75015"
-    var members : Int = 2
+    @Binding var mission: Mission
     
     var body: some View {
         NavigationStack {
             
             RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-                .fill(pink)
+                .fill(Color.mypink)
                 .frame(height: 5)
             VStack {
                 ScrollView {
                     
                     VStack(alignment: .leading) {
-                        Text(mission)
+                        Text(mission.name)
                             .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                        Text(asso)
+                        Text(mission.association)
                             .font(.title3)
                             .foregroundStyle(Color(.gray))
                         
@@ -43,27 +31,27 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis diam a
                             .frame(height: 1, alignment: .center)
                             .foregroundStyle(Color(.systemGray4))
                         
-                        Text("Description")
+                        Text(mission.description)
                             .foregroundStyle(Color(.systemGray))
                             .padding(.top)
-                        Text(description)
+                        Text(mission.description)
                         HStack {
-                            Text("\(time) h")
+                            Text("\(mission.time) h")
                                 .font(.largeTitle)
                                 .bold()
                                 .foregroundStyle(.white)
                                 .frame(height: 80)
                                 .frame(minWidth: 140)
-                                .background(blue)
+                                .background(Color.myblue)
                                 .clipShape(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/))
                                 .padding()
-                            Text("💰 50")
+                            Text("💰 \(mission.reward)")
                                 .font(.largeTitle)
                                 .bold()
                                 .foregroundStyle(.white)
                                 .frame(height: 80)
                                 .frame(minWidth: 140)
-                                .background(yellow)
+                                .background(Color.myyellow)
                                 .clipShape(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/))
                                 .padding()
                         }
@@ -74,11 +62,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis diam a
                                 Image(systemName: "mappin.and.ellipse")
                                 Image(systemName: "person.3.fill")
                             }
-                            .foregroundStyle(pink)
+                            .foregroundStyle(Color.mypink)
                             VStack(alignment: .leading, spacing: 40) {
-                                Text(date)
-                                Text(address)
-                                Text("\(members) places")
+                                Text(mission.date)
+                                Text(mission.address)
+                                Text("\(mission.members) places")
                             }
                         }
                         .padding()
@@ -96,7 +84,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis diam a
                             .bold()
                             .padding()
                             .foregroundStyle(.white)
-                            .background(pink)
+                            .background(Color.mypink)
                             .clipShape(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/))
                         }
                         .padding(.top, 30)
@@ -109,6 +97,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis diam a
     }
 }
 
+
 #Preview {
-    DetailsMissionView()
+    CardsView(showDetails: .constant(false), mission: .constant(missionTest))
 }

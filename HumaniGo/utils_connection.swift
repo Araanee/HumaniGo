@@ -59,9 +59,6 @@ class utilsPswd: ObservableObject {
         }
         .frame(height: 60)
     }
-    
-    
-    
 }
 
 func ApiConnect(name:String, logo:String) -> some View {

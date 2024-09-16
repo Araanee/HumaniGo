@@ -9,13 +9,7 @@ import SwiftUI
 
 struct FeedbackView: View {
     
-    
-    private var Rose : Color = Color(red: 255/255, green: 0, blue: 110/255)
-    private var Bleu : Color = Color(red: 51/255, green: 129/255, blue: 255/255)
-    private var yellow : Color = Color(red: 255/255, green: 195/255, blue: 31/255)
-    
-    
-    @State private var btn: Color = Color.yellow
+    @State private var btn: Color = Color.myyellow
     
     // Variables pour les couleurs des 5 coeurs
     @State private var couleur1: Color = .gray
@@ -47,7 +41,7 @@ struct FeedbackView: View {
                                 rating = index
                             }) {
                                 Image(systemName: "heart.fill")
-                                    .foregroundColor(index <= rating ? Rose : couleur1) // Change la couleur en fonction de l'index et du rating
+                                    .foregroundColor(index <= rating ? Color.mypink : couleur1) // Change la couleur en fonction de l'index et du rating
                                     .font(.title)
                                     .padding(7)
                             }
@@ -62,7 +56,7 @@ struct FeedbackView: View {
                         .foregroundStyle(.white)
                         .frame(width: 350, height:450)
                         .border(Color.gray, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
-                        .shadow(color: yellow, radius: 0.4, x: 4, y: 5)
+                        .shadow(color: Color.myyellow, radius: 0.4, x: 4, y: 5)
                         .padding(1)
                     TextField("Partage ton expérience",text: $feedback)
                         .padding()
@@ -90,11 +84,11 @@ struct FeedbackView: View {
             ZStack {
                 
                 RoundedRectangle(cornerRadius: 25)
-                    .foregroundStyle(yellow)
+                    .foregroundStyle(Color.myyellow)
                     .frame(width: 150, height: 50, alignment: .center)
                 
                 Button(action: {
-                    btn = Rose
+                    btn = Color.mypink
                     
                 }, label: {
                     Text("Publier")
@@ -102,7 +96,6 @@ struct FeedbackView: View {
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                         .padding(2)
                         .foregroundColor(.black)
-                
                 })
             }
         }
