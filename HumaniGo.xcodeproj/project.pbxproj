@@ -1,0 +1,421 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7155A9082C943F0300A563B2 /* challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7155A9072C943F0300A563B2 /* challenge.swift */; };
+		7155A90C2C9487B800A563B2 /* Sexe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7155A9092C9487B800A563B2 /* Sexe.swift */; };
+		7155A90D2C9487B800A563B2 /* PhoneMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7155A90A2C9487B800A563B2 /* PhoneMail.swift */; };
+		7155A90E2C9487B800A563B2 /* Mdp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7155A90B2C9487B800A563B2 /* Mdp.swift */; };
+		7155A9112C9487C100A563B2 /* utils_connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7155A90F2C9487C100A563B2 /* utils_connection.swift */; };
+		7155A9122C9487C100A563B2 /* NameFirstName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7155A9102C9487C100A563B2 /* NameFirstName.swift */; };
+		7155A9152C9487C700A563B2 /* ConnexionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7155A9132C9487C700A563B2 /* ConnexionView.swift */; };
+		7155A9162C9487C700A563B2 /* HelloWorldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7155A9142C9487C700A563B2 /* HelloWorldView.swift */; };
+		7155A9192C981E5B00A563B2 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7155A9182C981E5B00A563B2 /* ProfileView.swift */; };
+		7155A91B2C981E6200A563B2 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7155A91A2C981E6200A563B2 /* FeedbackView.swift */; };
+		7155A91D2C981E6D00A563B2 /* MiniComposants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7155A91C2C981E6D00A563B2 /* MiniComposants.swift */; };
+		718187682C91A185003F6855 /* HumaniGoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718187672C91A185003F6855 /* HumaniGoApp.swift */; };
+		7181876A2C91A185003F6855 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718187692C91A185003F6855 /* HomeView.swift */; };
+		7181876C2C91A186003F6855 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7181876B2C91A186003F6855 /* Assets.xcassets */; };
+		7181876F2C91A186003F6855 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7181876E2C91A186003F6855 /* Preview Assets.xcassets */; };
+		718187782C91DBDD003F6855 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718187772C91DBDD003F6855 /* MainView.swift */; };
+		71A703532C9311CD0012CEFE /* DetailsMissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A703522C9311CD0012CEFE /* DetailsMissionView.swift */; };
+		71A703592C9433FF0012CEFE /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A703582C9433FF0012CEFE /* SearchBarView.swift */; };
+		71A7035B2C94355A0012CEFE /* SegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A7035A2C94355A0012CEFE /* SegmentedControlView.swift */; };
+		71A7035D2C94363B0012CEFE /* CardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A7035C2C94363B0012CEFE /* CardsView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7155A9072C943F0300A563B2 /* challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = challenge.swift; sourceTree = "<group>"; };
+		7155A9092C9487B800A563B2 /* Sexe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sexe.swift; sourceTree = "<group>"; };
+		7155A90A2C9487B800A563B2 /* PhoneMail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneMail.swift; sourceTree = "<group>"; };
+		7155A90B2C9487B800A563B2 /* Mdp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mdp.swift; sourceTree = "<group>"; };
+		7155A90F2C9487C100A563B2 /* utils_connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = utils_connection.swift; sourceTree = "<group>"; };
+		7155A9102C9487C100A563B2 /* NameFirstName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameFirstName.swift; sourceTree = "<group>"; };
+		7155A9132C9487C700A563B2 /* ConnexionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnexionView.swift; sourceTree = "<group>"; };
+		7155A9142C9487C700A563B2 /* HelloWorldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelloWorldView.swift; sourceTree = "<group>"; };
+		7155A9182C981E5B00A563B2 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		7155A91A2C981E6200A563B2 /* FeedbackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
+		7155A91C2C981E6D00A563B2 /* MiniComposants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniComposants.swift; sourceTree = "<group>"; };
+		718187642C91A185003F6855 /* HumaniGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HumaniGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		718187672C91A185003F6855 /* HumaniGoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumaniGoApp.swift; sourceTree = "<group>"; };
+		718187692C91A185003F6855 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		7181876B2C91A186003F6855 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7181876E2C91A186003F6855 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		718187772C91DBDD003F6855 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		71A703522C9311CD0012CEFE /* DetailsMissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsMissionView.swift; sourceTree = "<group>"; };
+		71A703582C9433FF0012CEFE /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		71A7035A2C94355A0012CEFE /* SegmentedControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlView.swift; sourceTree = "<group>"; };
+		71A7035C2C94363B0012CEFE /* CardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		718187612C91A185003F6855 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7155A9172C98180300A563B2 /* Inscription */ = {
+			isa = PBXGroup;
+			children = (
+				7155A9102C9487C100A563B2 /* NameFirstName.swift */,
+				7155A90A2C9487B800A563B2 /* PhoneMail.swift */,
+				7155A9092C9487B800A563B2 /* Sexe.swift */,
+				7155A90B2C9487B800A563B2 /* Mdp.swift */,
+			);
+			path = Inscription;
+			sourceTree = "<group>";
+		};
+		7181875B2C91A185003F6855 = {
+			isa = PBXGroup;
+			children = (
+				718187662C91A185003F6855 /* HumaniGo */,
+				718187652C91A185003F6855 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		718187652C91A185003F6855 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				718187642C91A185003F6855 /* HumaniGo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		718187662C91A185003F6855 /* HumaniGo */ = {
+			isa = PBXGroup;
+			children = (
+				718187672C91A185003F6855 /* HumaniGoApp.swift */,
+				718187692C91A185003F6855 /* HomeView.swift */,
+				71A7035C2C94363B0012CEFE /* CardsView.swift */,
+				7155A9132C9487C700A563B2 /* ConnexionView.swift */,
+				71A703522C9311CD0012CEFE /* DetailsMissionView.swift */,
+				7155A91A2C981E6200A563B2 /* FeedbackView.swift */,
+				7155A9142C9487C700A563B2 /* HelloWorldView.swift */,
+				7155A9172C98180300A563B2 /* Inscription */,
+				718187772C91DBDD003F6855 /* MainView.swift */,
+				7155A91C2C981E6D00A563B2 /* MiniComposants.swift */,
+				7155A9182C981E5B00A563B2 /* ProfileView.swift */,
+				71A703582C9433FF0012CEFE /* SearchBarView.swift */,
+				71A7035A2C94355A0012CEFE /* SegmentedControlView.swift */,
+				7155A90F2C9487C100A563B2 /* utils_connection.swift */,
+				7155A9072C943F0300A563B2 /* challenge.swift */,
+				7181876B2C91A186003F6855 /* Assets.xcassets */,
+				7181876D2C91A186003F6855 /* Preview Content */,
+			);
+			path = HumaniGo;
+			sourceTree = "<group>";
+		};
+		7181876D2C91A186003F6855 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				7181876E2C91A186003F6855 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		718187632C91A185003F6855 /* HumaniGo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 718187722C91A186003F6855 /* Build configuration list for PBXNativeTarget "HumaniGo" */;
+			buildPhases = (
+				718187602C91A185003F6855 /* Sources */,
+				718187612C91A185003F6855 /* Frameworks */,
+				718187622C91A185003F6855 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HumaniGo;
+			productName = HumaniGo;
+			productReference = 718187642C91A185003F6855 /* HumaniGo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7181875C2C91A185003F6855 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					718187632C91A185003F6855 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = 7181875F2C91A185003F6855 /* Build configuration list for PBXProject "HumaniGo" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7181875B2C91A185003F6855;
+			productRefGroup = 718187652C91A185003F6855 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				718187632C91A185003F6855 /* HumaniGo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		718187622C91A185003F6855 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7181876F2C91A186003F6855 /* Preview Assets.xcassets in Resources */,
+				7181876C2C91A186003F6855 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		718187602C91A185003F6855 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7155A9192C981E5B00A563B2 /* ProfileView.swift in Sources */,
+				7155A90E2C9487B800A563B2 /* Mdp.swift in Sources */,
+				7155A9122C9487C100A563B2 /* NameFirstName.swift in Sources */,
+				7155A90D2C9487B800A563B2 /* PhoneMail.swift in Sources */,
+				71A7035D2C94363B0012CEFE /* CardsView.swift in Sources */,
+				7155A9162C9487C700A563B2 /* HelloWorldView.swift in Sources */,
+				71A703592C9433FF0012CEFE /* SearchBarView.swift in Sources */,
+				7155A9152C9487C700A563B2 /* ConnexionView.swift in Sources */,
+				71A7035B2C94355A0012CEFE /* SegmentedControlView.swift in Sources */,
+				7155A90C2C9487B800A563B2 /* Sexe.swift in Sources */,
+				7181876A2C91A185003F6855 /* HomeView.swift in Sources */,
+				7155A91D2C981E6D00A563B2 /* MiniComposants.swift in Sources */,
+				718187782C91DBDD003F6855 /* MainView.swift in Sources */,
+				7155A9082C943F0300A563B2 /* challenge.swift in Sources */,
+				7155A9112C9487C100A563B2 /* utils_connection.swift in Sources */,
+				7155A91B2C981E6200A563B2 /* FeedbackView.swift in Sources */,
+				718187682C91A185003F6855 /* HumaniGoApp.swift in Sources */,
+				71A703532C9311CD0012CEFE /* DetailsMissionView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		718187702C91A186003F6855 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		718187712C91A186003F6855 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		718187732C91A186003F6855 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HumaniGo/Preview Content\"";
+				DEVELOPMENT_TEAM = VYBWP87S3J;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = humaniGo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		718187742C91A186003F6855 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HumaniGo/Preview Content\"";
+				DEVELOPMENT_TEAM = VYBWP87S3J;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = humaniGo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7181875F2C91A185003F6855 /* Build configuration list for PBXProject "HumaniGo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				718187702C91A186003F6855 /* Debug */,
+				718187712C91A186003F6855 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		718187722C91A186003F6855 /* Build configuration list for PBXNativeTarget "HumaniGo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				718187732C91A186003F6855 /* Debug */,
+				718187742C91A186003F6855 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7181875C2C91A185003F6855 /* Project object */;
+}
