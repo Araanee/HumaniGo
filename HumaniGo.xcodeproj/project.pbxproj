@@ -31,9 +31,9 @@
 		71A7035B2C94355A0012CEFE /* SegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A7035A2C94355A0012CEFE /* SegmentedControlView.swift */; };
 		71A7035D2C94363B0012CEFE /* CardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A7035C2C94363B0012CEFE /* CardsView.swift */; };
 		ED14EE082C98340900D58FAA /* DelayNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED14EE072C98340900D58FAA /* DelayNav.swift */; };
-		EDF8A2F22C996B810041E657 /* HelloWorldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF8A2F12C996B810041E657 /* HelloWorldView.swift */; };
 		EDF8A2F92C996E730041E657 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF8A2F82C996E730041E657 /* ProfileView.swift */; };
-		EDF8A2FB2C996E890041E657 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF8A2FA2C996E890041E657 /* Feedback.swift */; };
+		EDF8A2FE2C998D560041E657 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF8A2FD2C998D560041E657 /* Feedback.swift */; };
+		EDF8A3002C998D9E0041E657 /* HelloWorldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF8A2FF2C998D9E0041E657 /* HelloWorldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,9 +62,9 @@
 		71A7035A2C94355A0012CEFE /* SegmentedControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlView.swift; sourceTree = "<group>"; };
 		71A7035C2C94363B0012CEFE /* CardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsView.swift; sourceTree = "<group>"; };
 		ED14EE072C98340900D58FAA /* DelayNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayNav.swift; sourceTree = "<group>"; };
-		EDF8A2F12C996B810041E657 /* HelloWorldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HelloWorldView.swift; path = ../../../../Desktop/HelloWorldView.swift; sourceTree = "<group>"; };
 		EDF8A2F82C996E730041E657 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = ../../../../Downloads/ProfileView.swift; sourceTree = "<group>"; };
-		EDF8A2FA2C996E890041E657 /* Feedback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Feedback.swift; path = ../../../../Desktop/Feedback.swift; sourceTree = "<group>"; };
+		EDF8A2FD2C998D560041E657 /* Feedback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
+		EDF8A2FF2C998D9E0041E657 /* HelloWorldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelloWorldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,13 +127,13 @@
 				7155A9282C985A8500A563B2 /* Profile.swift */,
 				716DB0CB2C98637E00AEF827 /* Favorite.swift */,
 				7155A91A2C981E6200A563B2 /* FeedbackView.swift */,
-				EDF8A2F12C996B810041E657 /* HelloWorldView.swift */,
 				ED14EE072C98340900D58FAA /* DelayNav.swift */,
+				EDF8A2FF2C998D9E0041E657 /* HelloWorldView.swift */,
 				7155A9172C98180300A563B2 /* Inscription */,
 				718187772C91DBDD003F6855 /* MainView.swift */,
 				7155A91C2C981E6D00A563B2 /* MiniComposants.swift */,
+				EDF8A2FD2C998D560041E657 /* Feedback.swift */,
 				7155A9262C984FE800A563B2 /* Mission.swift */,
-				EDF8A2FA2C996E890041E657 /* Feedback.swift */,
 				EDF8A2F82C996E730041E657 /* ProfileView.swift */,
 				716DB0C82C9860BB00AEF827 /* NotificationsView.swift */,
 				7155A90F2C9487C100A563B2 /* utils_connection.swift */,
@@ -232,14 +232,14 @@
 				7155A9152C9487C700A563B2 /* ConnexionView.swift in Sources */,
 				71A7035B2C94355A0012CEFE /* SegmentedControlView.swift in Sources */,
 				7155A90C2C9487B800A563B2 /* Sexe.swift in Sources */,
-				EDF8A2FB2C996E890041E657 /* Feedback.swift in Sources */,
 				7181876A2C91A185003F6855 /* HomeView.swift in Sources */,
 				7155A9272C984FE800A563B2 /* Mission.swift in Sources */,
+				EDF8A2FE2C998D560041E657 /* Feedback.swift in Sources */,
 				7155A91D2C981E6D00A563B2 /* MiniComposants.swift in Sources */,
 				EDF8A2F92C996E730041E657 /* ProfileView.swift in Sources */,
 				ED14EE082C98340900D58FAA /* DelayNav.swift in Sources */,
+				EDF8A3002C998D9E0041E657 /* HelloWorldView.swift in Sources */,
 				718187782C91DBDD003F6855 /* MainView.swift in Sources */,
-				EDF8A2F22C996B810041E657 /* HelloWorldView.swift in Sources */,
 				7155A9082C943F0300A563B2 /* challenge.swift in Sources */,
 				7155A9112C9487C100A563B2 /* utils_connection.swift in Sources */,
 				7155A91B2C981E6200A563B2 /* FeedbackView.swift in Sources */,
