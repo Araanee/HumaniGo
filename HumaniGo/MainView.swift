@@ -14,11 +14,11 @@ struct MainView: View {
                 .tabItem {
                     Label("Recherche", systemImage: "magnifyingglass")
                 }
-            HomeView()
+            Favorite()
                 .tabItem {
                     Label("Mes Missions", systemImage: "list.clipboard")
                 }
-            HomeView()
+            NotificationsView()
                 .tabItem {
                     Label("Notifications", systemImage: "bell.badge")
                 }

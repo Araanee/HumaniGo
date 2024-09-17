@@ -14,11 +14,9 @@ struct Profil
     
 }
 
-
 enum Gender {
     case female, male, other
 }
-
 
 struct InfoProfil
 {
