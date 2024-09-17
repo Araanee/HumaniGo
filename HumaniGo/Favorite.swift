@@ -63,8 +63,8 @@ struct Favorite: View {
                             .overlay(
                                 ZStack {
                                     
-                                    Image("photo1")
-                                        . resizable()
+                                    Image("image1")
+                                        .resizable()
                                         .scaledToFill()
                                         .frame(width: 160, height: 200)
                                         .clipped()
@@ -72,9 +72,6 @@ struct Favorite: View {
                                      
                                     Color.white
                                         .opacity(0.6)
-                                    
-                                
-                                
                                     VStack{
                                         HStack {
                                             Spacer()
@@ -102,6 +99,133 @@ struct Favorite: View {
                                             .offset(x: -10, y: -20.0)
                                             
                                                 
+                                        }
+                                        
+                                    }// fin v stack
+                                }//fin  zstack
+                            ) // fin overlay
+                  
+                        Spacer()
+                        
+                        
+                        RoundedRectangle(cornerSize: CGSize(width: 30, height: 30))
+                            .frame(width: 160, height: 220, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .overlay(
+                                ZStack{
+                                    Image("image2")
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 160, height: 220)
+                                        .clipped()
+                                        .clipShape(RoundedRectangle(cornerRadius: 20.0))
+                                    Color.white
+                                        .opacity(0.6)
+                                    
+                                    HStack{
+                                        Spacer()
+                                        
+                                        VStack{
+                                            
+                                            Text("CaPAss")
+                                                .font(.title)
+                                                .bold()
+                                                .foregroundColor(.black)
+                                           
+                                            Text("Aide à la personne ")
+                                                .bold()
+                                                . font(.title2)
+                                                .padding(.all, 0.2)
+                                        }
+                                       
+                                        Button {} label: {
+                                            Image(systemName: "heart.fill").foregroundColor(Color.mypink)
+                                                .font(.title)
+                                                  .padding(.bottom, 100)
+                                        }
+                                        .offset(x: -10, y: -30.0)
+                                        // z ecriture
+                                        
+                                    } // Fin h stack
+                                } // fin z stack
+                            ) // fin overlay
+                        
+                        Spacer()
+                        
+                    } // fin 2
+                    
+                    HStack{
+                        Spacer()
+                        RoundedRectangle(cornerSize: CGSize(width: 30, height: 30))
+                            .frame(width: 160, height: 220, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .overlay(
+                                ZStack{
+                                    
+                                    Image("image3")
+                                    
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 160, height: 220)
+                                        .clipped()
+                                        .clipShape(RoundedRectangle(cornerRadius: 20.0))
+                                        .foregroundColor(.white)
+                                         Color.white
+                                        .opacity(0.6)
+                                    
+                                    HStack{
+                                        Spacer()
+                                        VStack{
+                                            Text("Onela")
+                                                .bold()
+                                                .font(.title)
+                                                .foregroundColor(.black)
+                                            Text("Aide à la personne ")
+                                                .bold().font(.title2)
+                                                .padding(.all, 0.2)
+                                        
+                                        }
+                                        .padding(.all,0.9)
+                                        
+                                        Button {
+                                            
+                                        } label: {
+                                            Image(systemName: "heart.fill")
+                                                .font(.title)
+                                                .foregroundColor(Color.mypink)
+                                                  .padding (.bottom, 100)
+                                        }
+                                        .offset(x: -10, y: -20.0)
+                                    }
+                                }
+                            ) //fin 3
+                        
+                        Spacer()
+                    
+                        RoundedRectangle(cornerSize: CGSize(width: 30, height: 30))
+                            .frame(width: 170, height: 170, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .overlay(
+                                ZStack{
+                                    Image("image4")
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 170, height: 170)
+                                        .clipped()
+                                        .clipShape(RoundedRectangle(cornerRadius: 20.0))
+                                        .foregroundColor(.gray)
+                                          Color.white
+                                        .opacity(0.6)
+                                
+                                    HStack{
+                                        Spacer()
+                                        VStack{
+                                            Text("Onela")
+                                                .bold()
+                                                .font(.title)
+                                                .foregroundColor(.black)
+                                            Text("Aide à la personne ")
+                                                .bold()
+                                                . font(.title2)
+                                                .padding(.all, 0.2)
+
                                         }
                                         
                                     }// fin z texte
@@ -150,18 +274,105 @@ struct Favorite: View {
                                         Button {
                                             
                                         } label: {
-                                            Image(systemName: "heart.fill").foregroundColor(Color.mypink)
+                                            Image(systemName: "heart.fill")
                                                 .font(.title)
+                                                .foregroundColor(Color.mypink)
                                                   .padding (.bottom, 100)
                                         }
-                                        .offset(x: -10, y: -30.0)
-                                        // z ecriture
-                                        
-                                    } // Fin z image
+                                        .offset(x: -10, y: -10.0)
+                                    }
                                 }
-                                )
+                            )
+                        
                         Spacer()
-                    } // fin 2
+                        
+                    }//fin 4
+                    
+                    HStack{
+                        Spacer()
+                        
+                        RoundedRectangle(cornerSize: CGSize(width: 30, height: 30))
+                            .frame(width: 170, height: 170, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .overlay(
+                       
+                                ZStack{
+                                    Image("image5")
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 170, height: 170)
+                                    .clipped()
+                                    .clipShape(RoundedRectangle(cornerRadius: 20.0))                  .foregroundColor(.gray)
+                                       Color.white
+                                      .opacity(0.6)
+                            
+                                    HStack{
+                                        Spacer()
+                                        VStack{
+                                            Text("ApaDom")
+                                                .bold()
+                                                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                                                .foregroundColor(.black)
+                                            Text("Aide à la personne ")
+                                                .bold()
+                                                .font(.title2)
+                                                .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/, 0.3)
+                                        }
+                                        
+                                        Button {} label: {
+                                            Image(systemName: "heart.fill")
+                                                .font(.title)
+                                                .foregroundColor(Color.mypink)
+                                                  .padding (.bottom, 100)
+                                        }
+                                        .offset(x: -10, y: -10.0)
+                                    }
+                                    
+                                    Spacer()
+                                }
+                            ) // fin5
+                        
+                        Spacer()
+                        
+                        RoundedRectangle(cornerSize: CGSize(width: 30, height: 30))
+                            .frame(width: 160, height: 220, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .overlay(
+                                ZStack{
+                                  Image("image6")
+                                  .resizable()
+                                  .scaledToFill()
+                                  .frame(width: 160, height: 220)
+                                  .clipped()
+                                  .clipShape(RoundedRectangle(cornerRadius: 20.0))
+                                  .foregroundColor(.gray)
+                                        Color.white
+                                        .opacity(0.6)
+                                        HStack{
+                                            Spacer()
+                                            VStack{
+                                                Text(" Afev ")
+                                                    .bold()
+                                                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                                                    .foregroundColor(.black)
+                                                
+                                                Text("Aide aux Devoirs ")
+                                                    .bold()
+                                                    . font(.title2)
+                                                    .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/, 0.3)
+                                            }
+                                            Button {} label: {
+                                                Image(systemName: "heart.fill")
+                                                    .font(.title)
+                                                    .foregroundColor(Color.mypink)
+                                                      .padding (.bottom, 100)
+                                            }
+                                            .offset(x: -10, y: -30.0)
+                                    }
+                                }
+                            ) //fin overlay
+                            
+                       Spacer()
+                        
+                    } // hFIN 6
                     
                     HStack{
                         Spacer()
@@ -170,8 +381,7 @@ struct Favorite: View {
                             .overlay(
                                 ZStack{
                                     
-                                    Image("image 5")
-                                    
+                                    Image("image2")
                                         .resizable()
                                         .scaledToFill()
                                         .frame(width: 160, height: 220)
@@ -205,7 +415,8 @@ struct Favorite: View {
                                         }
                                         .offset(x: -10, y: -20.0)
                                     }
-                                }) //fin 3
+                                }
+                            ) //fin 7
                         
                         Spacer()
                     
@@ -213,7 +424,7 @@ struct Favorite: View {
                             .frame(width: 170, height: 170, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             .overlay(
                                 ZStack{
-                                    Image("image2")
+                                    Image("image1")
                                         .resizable()
                                         .scaledToFill()
                                         .frame(width: 170, height: 170)
@@ -246,114 +457,20 @@ struct Favorite: View {
                                         }
                                         .offset(x: -10, y: -10.0)
                                     }
-                                    
-                            })
+                                }
+                            )
+                        
                         Spacer()
                         
-                        }//fin 4
-                    
-                    HStack{Spacer()
-                        RoundedRectangle(cornerSize: CGSize(width: 30, height: 30))
-                            .frame(width: 170, height: 170, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                            .overlay(
-                       
-                        ZStack{
-                            Image("image3")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 170, height: 170)
-                            .clipped()
-                            .clipShape(RoundedRectangle(cornerRadius: 20.0))                  .foregroundColor(.gray)
-                               Color.white
-                              .opacity(0.6)
-                    
-                            HStack{
-                                Spacer()
-                                VStack{
-                                    Text("ApaDom")
-                                        .bold()
-                                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                                        .foregroundColor(.black)
-                                    Text("Aide à la personne ")
-                                        .bold()
-                                        .font(.title2)
-                                        .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/, 0.3)
-                                }
-                            
-                            
-                                Button {
-                                    
-                                } label: {
-                                    Image(systemName: "heart.fill")
-                                        .font(.title)
-                                        .foregroundColor(Color.mypink)
-                                          .padding (.bottom, 100)
-                                }
-                                .offset(x: -10, y: -20.0)
-                                
-                                    
-                            }
-                            Spacer()
-                        })
-                        Spacer()
-                        // fin5
-                        
-                        
-                        RoundedRectangle(cornerSize: CGSize(width: 30, height: 30))
-                            .frame(width: 160, height: 220, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                            .overlay(
-                       
-                        ZStack{
-                        
-                      Image("image6")
-                      .resizable()
-                      .scaledToFill()
-                      .frame(width: 160, height: 220)
-                      .clipped()
-                      .clipShape(RoundedRectangle(cornerRadius: 20.0))
-                      .foregroundColor(.gray)
-                            Color.white
-                            .opacity(0.6)
-                            HStack{
-                                Spacer()
-                                VStack{
-                                    Text(" Afev ")
-                                        .bold()
-                                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                                        .foregroundColor(.black)
-                                    
-                                    Text("Aide aux Devoirs ")
-                                        .bold()
-                                        . font(.title2)
-                                        .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/, 0.3)
-                                }
-                                Button {
-                                    
-                                } label: {
-                                    Image(systemName: "heart.fill")
-                                        .font(.title)
-                                        .foregroundColor(Color.mypink)
-                                          .padding (.bottom, 100)
-                                }
-                                .offset(x: -10, y: -30.0)
-                            }
-                      
-                            
-                        })//fin h
-                            
-                       Spacer()
-                        
-                        
-                        } // hFIN 6
+                    }//fin 8
                 
-             
                 
                 } //fin grand  H
             }//fin de scrollview
         } //fin grand  v
     }
 }
-// pas
+
 #Preview {
     Favorite()
 }
