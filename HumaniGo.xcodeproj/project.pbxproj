@@ -65,7 +65,6 @@
 		EDF8A2F12C996B810041E657 /* HelloWorldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HelloWorldView.swift; path = ../../../../Desktop/HelloWorldView.swift; sourceTree = "<group>"; };
 		EDF8A2F82C996E730041E657 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = ../../../../Downloads/ProfileView.swift; sourceTree = "<group>"; };
 		EDF8A2FA2C996E890041E657 /* Feedback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Feedback.swift; path = ../../../../Desktop/Feedback.swift; sourceTree = "<group>"; };
-		EDF8A2FC2C996F3E0041E657 /* Empty.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Empty.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +103,6 @@
 		7181875B2C91A185003F6855 = {
 			isa = PBXGroup;
 			children = (
-				EDF8A2FC2C996F3E0041E657 /* Empty.md */,
 				718187662C91A185003F6855 /* HumaniGo */,
 				718187652C91A185003F6855 /* Products */,
 			);

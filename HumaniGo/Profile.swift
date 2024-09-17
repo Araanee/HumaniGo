@@ -1,17 +1,33 @@
 //
-//  Profile.swift
-//  HumaniGo
-//
-//  Created by Apprenant157 on 16/09/2024.
-//
 
 import SwiftUI
 
-struct Profile {
-    var name: String
-    var firstName: String
-    var nbMissions: Int
-    var nbFeedbacks: Int
-    var points: Int
-    var feedbacks = [Feedback].self
+struct Profil
+{
+    var id: Int
+    var nbmissions: Int
+    var nbfeedbacks: Double    //la note
+    var points: Int             //score
+    var feedbacks: [Feedback]
+    
+    var info : InfoProfil
+    
 }
+
+
+enum Gender {
+    case female, male, other
+}
+
+
+struct InfoProfil
+{
+    var gender: Gender
+    var firstname:String
+    var lastname: String
+    var email:String
+    var phone:String
+    var pswd:String
+}
+
+

@@ -43,10 +43,10 @@ struct FeedbackView: View {
                                 Image(systemName: "heart.fill")
                                     .foregroundColor(index <= rating ? Color.mypink : couleur1) // Change la couleur en fonction de l'index et du rating
                                     .font(.title)
-                                    .padding(7)
+                                   
                             }
                         }
-                    }
+                    } .padding(7)
                 }
                 //
                 
