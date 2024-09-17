@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct HelloWorldView: View {
-    //    @State var showDetails2 = false
     
     var body: some View {
         VStack
@@ -30,12 +29,11 @@ struct HelloWorldView: View {
                     
                     ZStack (alignment: .center)
                     {
-                        
-                        DelayedNavigationLink(delay: .seconds(1)) {
-                            MesMission()
-                            //CardsView(showDetails: $showDetails2)
-                            
-                        }
+                        /*
+                        DelayedNavigationLink(delay: .seconds(3)) {
+                                    CardsView(showDetails: $showDetails)
+                                }
+                         */
                     }
                 }
                 
@@ -43,7 +41,7 @@ struct HelloWorldView: View {
             
             
             
-        }.navigationBarBackButtonHidden(true)
+        }
     }
 }
 
