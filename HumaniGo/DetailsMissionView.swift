@@ -31,7 +31,7 @@ struct DetailsMissionView: View {
                             .frame(height: 1, alignment: .center)
                             .foregroundStyle(Color(.systemGray4))
                         
-                        Text(mission.description)
+                        Text("Description")
                             .foregroundStyle(Color(.systemGray))
                             .padding(.top)
                         Text(mission.description)
@@ -99,5 +99,5 @@ struct DetailsMissionView: View {
 
 
 #Preview {
-    CardsView(showDetails: .constant(false), mission: .constant(missionTest))
+    DetailsMissionView(mission: .constant(missionTest))
 }
