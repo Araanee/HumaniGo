@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CardsView: View {
     
-    @Binding var showDetails: Bool
+    @EnvironmentObject var navControl: NavigationControl
     @Binding var mission: Mission
     
     var body: some View {
@@ -82,13 +82,13 @@ struct CardsView: View {
                 .rotationEffect(.degrees(-2))
                 Spacer()
                 Button(action: {
-                    showDetails.toggle()
+                    navControl.dismissModal = true
                 }, label: {
                     Image(systemName: "info.circle")
                         .foregroundStyle(.white)
                         .font(.system(size: 30))
                 })
-                
+
                 Spacer()
                 Button(action: {
                     mission.addFavorite.toggle()
@@ -108,5 +108,5 @@ struct CardsView: View {
 
 
 #Preview {
-    CardsView(showDetails: .constant(false), mission: .constant(missionTest))
+    CardsView(mission: .constant(missionTest))
 }

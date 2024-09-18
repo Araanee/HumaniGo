@@ -12,7 +12,6 @@ struct Feedback
     var association: String
     var hearts : Int
     var comment : String
-    
 }
 
 func displayfeedback(_ list:[Feedback]) -> some View
@@ -22,18 +21,16 @@ func displayfeedback(_ list:[Feedback]) -> some View
         ForEach(0..<list.count, id: \.self) { i in
             VStack (alignment: .center)
             {
-                HStack (spacing: 0)
+                HStack
                 {
                     affCoeurs(count: list[i].hearts)
                     Spacer()
                     Text(list[i].association)
                 }
-                .frame(width: 300)
-                Rectangle().frame(width: 300, height: 1).foregroundStyle(Color.mypink)
-                Text(list[i].comment).padding(.bottom, 40).frame(width: 300)
+                Rectangle().frame(height: 1).foregroundStyle(Color.mypink)
+                Text(list[i].comment)
             }
             .padding()
-            //.frame(width: 330)
         }
         
     }.frame(height: 200)

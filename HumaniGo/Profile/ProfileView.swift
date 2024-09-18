@@ -23,7 +23,7 @@ var listFeedback = [avis1, avis2, avis3]
 
 var infoEmma = InfoProfil(gender: Gender.female, firstname: "Celine", lastname: "TOTO", email: "emma@gmail.com", phone: "0600000001", pswd: "azerty123")
 
-var profil1 = Profil(id:0, nbmissions: 10, nbfeedbacks: 3.5, points: 530, feedbacks: listFeedback,info: infoEmma )
+var profil1 = Profil(nbmissions: 10, nbfeedbacks: 3.5, points: 530, feedbacks: listFeedback, info: infoEmma )
 // Comment on fait pour que le nom rentré par l'asso apparaisse dans le code
 
 struct ProfileView: View {

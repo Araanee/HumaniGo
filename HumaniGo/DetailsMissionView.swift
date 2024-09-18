@@ -9,7 +9,9 @@ import SwiftUI
 
 struct DetailsMissionView: View {
     
+    
     @Binding var mission: Mission
+//    @EnvironmentObject var navControl: NavigationControl
     
     var body: some View {
         NavigationStack {

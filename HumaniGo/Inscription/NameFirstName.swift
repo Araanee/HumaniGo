@@ -140,7 +140,7 @@ struct InscriptionNP: View {
                     Text("Tu as déjà un compte ? ")
                     NavigationLink("Connecte-toi")
                     {
-                        ConnexionView()
+//                        ConnexionView(, bool: <#Binding<Bool>#>)
                     }
                     
                 }.padding()

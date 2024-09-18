@@ -14,7 +14,6 @@ struct ConnexionView: View {
     @State  var mdp = ""
     @State var Error = ""
     
-    
     @State var btn : Bool = false
     func connexion() -> some View
     {
@@ -36,7 +35,7 @@ struct ConnexionView: View {
                         NavigationLink("Connecte-toi")
                         {
                             //VERIFIER DANS LA BASE DE DONNEE
-                            HelloWorldView()
+                            ConfirmationEngagement()
                         }
                             .foregroundColor(.black)
                             .font(.headline)

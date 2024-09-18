@@ -53,8 +53,9 @@ struct Mdp: View {
                 
                 NavigationLink("Inscris-toi !")
                 {
-                    HelloWorldView()
+                    ConfirmationEngagement()
                 }.foregroundColor(.black).font(.headline)
+                
                 if (btn)
                 {
                     if (Error.isEmpty)
@@ -135,7 +136,7 @@ struct Mdp: View {
                     Text("Tu as déjà un compte ? ")
                     NavigationLink("Connecte-toi")
                     {
-                        ConnexionView()
+//                        ConnexionView()
                     }
 
                     

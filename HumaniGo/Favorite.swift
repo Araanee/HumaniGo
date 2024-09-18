@@ -72,6 +72,7 @@ struct Favorite: View {
                                      
                                     Color.white
                                         .opacity(0.6)
+                                    
                                     VStack{
                                         HStack {
                                             Spacer()
@@ -97,8 +98,6 @@ struct Favorite: View {
                                                      
                                             }
                                             .offset(x: -10, y: -20.0)
-                                            
-                                                
                                         }
                                         
                                     }// fin v stack
@@ -118,8 +117,10 @@ struct Favorite: View {
                                         .frame(width: 160, height: 220)
                                         .clipped()
                                         .clipShape(RoundedRectangle(cornerRadius: 20.0))
-                                    Color.white
+                                    
+                                    Color.myyellow
                                         .opacity(0.6)
+                                        .clipShape(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/))
                                     
                                     HStack{
                                         Spacer()
@@ -155,21 +156,22 @@ struct Favorite: View {
                     
                     HStack{
                         Spacer()
-                        RoundedRectangle(cornerSize: CGSize(width: 30, height: 30))
+                        RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
                             .frame(width: 160, height: 220, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             .overlay(
                                 ZStack{
                                     
                                     Image("image3")
-                                    
                                         .resizable()
                                         .scaledToFill()
                                         .frame(width: 160, height: 220)
                                         .clipped()
                                         .clipShape(RoundedRectangle(cornerRadius: 20.0))
-                                        .foregroundColor(.white)
                                          Color.white
                                         .opacity(0.6)
+                                    
+                                    Color.mypink.opacity(0.3)
+                                        .clipShape(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/))
                                     
                                     HStack{
                                         Spacer()
@@ -212,6 +214,7 @@ struct Favorite: View {
                                         .frame(width: 160, height: 220)
                                         .clipped()
                                         .clipShape(RoundedRectangle(cornerRadius: 20.0))
+                                    
                                     Color.white
                                         .opacity(0.6)
                                     
@@ -304,28 +307,31 @@ struct Favorite: View {
                                   .clipped()
                                   .clipShape(RoundedRectangle(cornerRadius: 20.0))
                                   .foregroundColor(.gray)
-                                        Color.white
-                                        .opacity(0.6)
-                                        HStack{
-                                            Spacer()
-                                            VStack{
-                                                Text(" Afev ")
-                                                    .bold()
-                                                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                                                    .foregroundColor(.black)
-                                                
-                                                Text("Aide aux Devoirs ")
-                                                    .bold()
-                                                    . font(.title2)
-                                                    .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/, 0.3)
-                                            }
-                                            Button {} label: {
-                                                Image(systemName: "heart.fill")
-                                                    .font(.title)
-                                                    .foregroundColor(Color.mypink)
-                                                      .padding (.bottom, 100)
-                                            }
-                                            .offset(x: -10, y: -30.0)
+                                    
+                                Color.myyellow
+                                .opacity(0.6)
+                                .clipShape(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/))
+                                    
+                                    HStack{
+                                        Spacer()
+                                        VStack{
+                                            Text(" Afev ")
+                                                .bold()
+                                                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                                                .foregroundColor(.black)
+                                            
+                                            Text("Aide aux Devoirs ")
+                                                .bold()
+                                                . font(.title2)
+                                                .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/, 0.3)
+                                        }
+                                        Button {} label: {
+                                            Image(systemName: "heart.fill")
+                                                .font(.title)
+                                                .foregroundColor(Color.mypink)
+                                                  .padding (.bottom, 100)
+                                        }
+                                        .offset(x: -10, y: -30.0)
                                     }
                                 }
                             ) //fin overlay

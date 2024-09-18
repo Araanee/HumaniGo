@@ -164,7 +164,7 @@ struct InscriptionTE: View {
                 Text("Tu as déjà un compte ? ")
                 NavigationLink("Connecte-toi")
                 {
-                    ConnexionView()
+//                    ConnexionView()
                 }
                 
                 

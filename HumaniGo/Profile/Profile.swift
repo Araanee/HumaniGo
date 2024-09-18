@@ -4,7 +4,7 @@ import SwiftUI
 
 struct Profil
 {
-    var id: Int
+    var id = UUID()
     var nbmissions: Int
     var nbfeedbacks: Double    //la note
     var points: Int             //score

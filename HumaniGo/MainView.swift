@@ -8,26 +8,32 @@
 import SwiftUI
 
 struct MainView: View {
+    @StateObject var navControl = NavigationControl()
     var body: some View {
-        TabView {
+        TabView(selection: $navControl.tabViewSelection) {
             HomeView()
                 .tabItem {
                     Label("Recherche", systemImage: "magnifyingglass")
                 }
+                .tag(0)
             Favorite()
                 .tabItem {
                     Label("Mes Missions", systemImage: "list.clipboard")
                 }
+                .tag(1)
             NotificationsView()
                 .tabItem {
                     Label("Notifications", systemImage: "bell.badge")
                 }
+                .tag(2)
             ProfileView()
                 .tabItem {
                     Label("Profil", systemImage: "person.crop.circle")
                 }
+                .tag(3)
         }
         .accentColor(Color.mypink)
+        .environmentObject(navControl)
     }
 }
 

@@ -13,7 +13,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis diam a
 
 struct HomeView: View {
 
-    // handles the mission's details panel
+    // handles the mission's details modal
+    @EnvironmentObject var navControl: NavigationControl
     @State var showDetails = false
     @State var mission = Mission(name: "Ramassage de déchets", association: "Ecolo Asso", description: """
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis diam a vehicula egestas. Maecenas tristique, justo vel hendrerit euismod, justo ex hendrerit diam, sit amet placerat leo enim quis lorem.
@@ -26,20 +27,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis diam a
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).bold()
                 SearchBarView()
                 SegmentedControlView()
-                CardsView(showDetails: $showDetails, mission: $mission)
+                CardsView(mission: $mission)
                 Spacer()
             }
         }
-        .sheet(isPresented: $showDetails) {
+        .sheet(isPresented: $navControl.dismissModal) {
             DetailsMissionView(mission: $mission)
-        }
-        .onTapGesture {
-            showDetails = false
         }
     }
 }
 
 
-#Preview {
-    HomeView()
-}
+//#Preview {
+//    HomeView()
+//}
