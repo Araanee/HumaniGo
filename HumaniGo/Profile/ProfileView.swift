@@ -21,7 +21,7 @@ var avis3 = Feedback(association:"Soutien de France", hearts: 4, comment:"Emma s
 
 var listFeedback = [avis1, avis2, avis3]
 
-var infoEmma = InfoProfil(gender: Gender.female, firstname: "Celine", lastname: "TOTO", email: "emma@gmail.com", phone: "0000000000", pswd: "azerty123")
+var infoEmma = InfoProfil(gender: Gender.female, firstname: "Celine", lastname: "TOTO", email: "emma@gmail.com", phone: "0600000001", pswd: "azerty123")
 
 var profil1 = Profil(id:0, nbmissions: 10, nbfeedbacks: 3.5, points: 530, feedbacks: listFeedback,info: infoEmma )
 // Comment on fait pour que le nom rentré par l'asso apparaisse dans le code
@@ -84,7 +84,7 @@ struct ProfileView: View {
                         Rectangle().frame(height: 1).foregroundColor(Color(.systemGray4))
                     }
                     
-                    //displayfeedback(profil1.feedbacks)
+                    displayfeedback(profil1.feedbacks)
                     
                     VStack {
                         
@@ -97,7 +97,7 @@ struct ProfileView: View {
                         {
                             loginVM.champs(name: "Email", def:"emma.benevole@gmail.com",value: $email)
                                 .frame(height: 70)
-                            loginVM.champs(name: "Tel", def:"Jhon",value: $tel)
+                            loginVM.champs(name: "Téléphone", def:"Jhon",value: $tel)
                                 .frame(height: 70)
                             
                             loginVM.champs(name: "Mot de passe", def:"Jhon",value: $mdp)

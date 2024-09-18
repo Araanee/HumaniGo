@@ -7,15 +7,6 @@
 
 import SwiftUI
 
-
-extension Color {
-    static var Pink : Color = Color(red: 255/255, green: 0, blue: 110/255)
-    
-    static var Blue : Color = Color(red: 51/255, green: 129/255, blue: 255/255)
-    
-    static var Yellow : Color = Color(red: 255/255, green: 195/255, blue: 31/255)
-}
-
 struct NotificationsView: View {
      
      var body: some View {

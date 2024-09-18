@@ -198,49 +198,9 @@ struct Favorite: View {
                                 }
                             ) //fin 3
                         
-                        Spacer()
+                        Spacer() //fin 1
+                        
                     
-                        RoundedRectangle(cornerSize: CGSize(width: 30, height: 30))
-                            .frame(width: 170, height: 170, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                            .overlay(
-                                ZStack{
-                                    Image("image4")
-                                        .resizable()
-                                        .scaledToFill()
-                                        .frame(width: 170, height: 170)
-                                        .clipped()
-                                        .clipShape(RoundedRectangle(cornerRadius: 20.0))
-                                        .foregroundColor(.gray)
-                                          Color.white
-                                        .opacity(0.6)
-                                
-                                    HStack{
-                                        Spacer()
-                                        VStack{
-                                            Text("Onela")
-                                                .bold()
-                                                .font(.title)
-                                                .foregroundColor(.black)
-                                            Text("Aide à la personne ")
-                                                .bold()
-                                                . font(.title2)
-                                                .padding(.all, 0.2)
-
-                                        }
-                                        
-                                    }// fin z texte
-                                }//fin  zstack
-                            )
-                  
-                        Spacer()
-                        
-                        //fin 1
-                        
-                        
-                        
-                        
-                        
-                        
                         
                         RoundedRectangle(cornerSize: CGSize(width: 30, height: 30))
                             .frame(width: 160, height: 220, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
