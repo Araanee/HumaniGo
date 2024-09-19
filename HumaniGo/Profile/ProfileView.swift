@@ -13,7 +13,7 @@ var pouce = "👍"
 var etoile = "⭐️"
 var kdo = "🛍️"
 
-var avis1 = Feedback(association:"Les Restos du Coeur", hearts: 2, comment:"Khadija s'est rapidement adaptée à nos besoins. Son sourire a mis du soleil à tous les bénéficiaires qu'elle a rencontré. Merci !" )
+var avis1 = Feedback(association:"Les Restos du Coeur", hearts: 2, comment:"Emma s'est rapidement adaptée à nos besoins. Son sourire a mis du soleil à tous les bénéficiaires qu'elle a rencontré. Merci !" )
 
 var avis2 = Feedback(association:"Soutien de France", hearts: 4, comment:"Les élèves sont de plus en plus nombreux, la motivation d'Emma est un précieux atout." )
 var avis3 = Feedback(association:"Soutien de France", hearts: 4, comment:"Emma s'est rapidement adaptée à nos besoins. Son sourire a mis du soleil à tous les bénéficiaires qu'elle a rencontré. Merci !" )
@@ -21,9 +21,9 @@ var avis3 = Feedback(association:"Soutien de France", hearts: 4, comment:"Emma s
 
 var listFeedback = [avis1, avis2, avis3]
 
-var infoEmma = InfoProfil(gender: Gender.female, firstname: "Celine", lastname: "TOTO", email: "emma@gmail.com", phone: "0600000001", pswd: "azerty123")
+var infoEmma = InfoProfil(gender: Gender.female, firstname: "Emma", lastname: "TOTO", email: "emma@gmail.com", phone: "0600000001", pswd: "azerty123")
 
-var profil1 = Profil(nbmissions: 10, nbfeedbacks: 3.5, points: 530, feedbacks: listFeedback, info: infoEmma )
+var profile = Profil(nbmissions: 10, nbfeedbacks: 3.5, points: 530, feedbacks: listFeedback, info: infoEmma )
 // Comment on fait pour que le nom rentré par l'asso apparaisse dans le code
 
 struct ProfileView: View {
@@ -45,22 +45,22 @@ struct ProfileView: View {
                     Text("Mon profil")
                         .font(.largeTitle)
                         .fontWeight(.semibold)
-                        .frame(alignment: .topLeading).padding()
+                        .frame(width: .infinity, alignment: .leading).padding()
                     
-                    Text("Hey \(profil1.info.firstname)")
+                    Text("Hey \(profile.info.firstname)")
                         .font(.title2)
                         .fontWeight(.semibold)
                         .frame(alignment: .topLeading).padding()
                     
                     HStack{
                         
-                        rond(text:"Missions", icon:pouce, nb:Double(profil1.nbmissions), Color.myyellow)
+                        rond(text:"Missions", icon:pouce, nb:Double(profile.nbmissions), Color.myyellow)
                         Spacer()
                         
-                        rond(text:"Avis", icon:etoile, nb:profil1.nbfeedbacks, Color.mypink)
+                        rond(text:"Avis", icon:etoile, nb:profile.nbfeedbacks, Color.mypink)
                         Spacer()
                         
-                        rond(text:"Points", icon:kdo, nb:Double(profil1.points), Color.myblue)
+                        rond(text:"Points", icon:kdo, nb:Double(profile.points), Color.myblue)
                         
                         
                     }.padding(20)
@@ -84,7 +84,7 @@ struct ProfileView: View {
                         Rectangle().frame(height: 1).foregroundColor(Color(.systemGray4))
                     }
                     
-                    displayfeedback(profil1.feedbacks)
+                    displayfeedback(profile.feedbacks)
                     
                     VStack {
                         
@@ -93,11 +93,11 @@ struct ProfileView: View {
                             .fontWeight(.semibold)
                             .padding(10)
                         
-                        VStack (alignment: .leading)
+                        VStack ()
                         {
-                            loginVM.champs(name: "Email", def:"emma.benevole@gmail.com",value: $email)
+                            loginVM.champs(name: "Email", def:profile.info.email, value: $email)
                                 .frame(height: 70)
-                            loginVM.champs(name: "Téléphone", def:"Jhon",value: $tel)
+                            loginVM.champs(name: "Téléphone", def:profile.info.phone, value: $tel)
                                 .frame(height: 70)
                             
                             loginVM.champs(name: "Mot de passe", def:"Jhon",value: $mdp)

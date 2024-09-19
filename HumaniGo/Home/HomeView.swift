@@ -13,12 +13,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis diam a
 
 struct HomeView: View {
 
-    // handles the mission's details modal
     @EnvironmentObject var navControl: NavigationControl
-    @State var showDetails = false
-    @State var mission = Mission(name: "Ramassage de déchets", association: "Ecolo Asso", description: """
+    @StateObject var missionObject = ShareMissionData(mission: Mission(name: "Ramassage de déchets", association: "Ecolo Asso", description: """
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis diam a vehicula egestas. Maecenas tristique, justo vel hendrerit euismod, justo ex hendrerit diam, sit amet placerat leo enim quis lorem.
-""", time: 2, reward: 50, date: "4 octobbre 2024", address: "4 rue Saint Martin, Paris 75015", members: 2)
+""", time: 2, reward: 50, date: "4 octobbre 2024", address: "4 rue Saint Martin, Paris 75015", members: 2))
         
     var body: some View {
         ZStack {
@@ -27,13 +25,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis diam a
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).bold()
                 SearchBarView()
                 SegmentedControlView()
-                CardsView(mission: $mission)
+                CardsView()
                 Spacer()
             }
         }
         .sheet(isPresented: $navControl.dismissModal) {
-            DetailsMissionView(mission: $mission)
+            DetailsMissionView()
         }
+        .environmentObject(missionObject)
     }
 }
 

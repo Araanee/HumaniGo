@@ -99,7 +99,6 @@ struct Favorite: View {
                                             }
                                             .offset(x: -10, y: -20.0)
                                         }
-                                        
                                     }// fin v stack
                                 }//fin  zstack
                             ) // fin overlay
@@ -308,9 +307,9 @@ struct Favorite: View {
                                   .clipShape(RoundedRectangle(cornerRadius: 20.0))
                                   .foregroundColor(.gray)
                                     
-                                Color.myyellow
-                                .opacity(0.6)
-                                .clipShape(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/))
+                                    Color.myyellow
+                                    .opacity(0.6)
+                                    .clipShape(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/))
                                     
                                     HStack{
                                         Spacer()

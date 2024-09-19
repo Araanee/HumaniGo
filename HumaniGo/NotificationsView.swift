@@ -123,8 +123,8 @@ nous rejoindre....
                Spacer()
                
           }
+          .navigationBarHidden(true)
      }
-     
 }
                
 #Preview {

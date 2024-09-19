@@ -10,7 +10,7 @@ import SwiftUI
 struct CardsView: View {
     
     @EnvironmentObject var navControl: NavigationControl
-    @Binding var mission: Mission
+    @EnvironmentObject var missionObject: ShareMissionData
     
     var body: some View {
         cards()
@@ -59,10 +59,10 @@ struct CardsView: View {
                                     .frame(width: 320, height: 100)
                                     .offset(y: 140)
                                 VStack(alignment: .leading) {
-                                    Text(mission.name).font(.title2)
+                                    Text(missionObject.mission.name).font(.title2)
                                         .bold()
                                         .foregroundStyle(.white)
-                                    Text(mission.association)
+                                    Text(missionObject.mission.association)
                                         .foregroundStyle(.white)
                                 }
                                 .padding(.leading, -50)
@@ -91,9 +91,9 @@ struct CardsView: View {
 
                 Spacer()
                 Button(action: {
-                    mission.addFavorite.toggle()
+                    missionObject.mission.addFavorite.toggle()
                 }, label: {
-                    Image(systemName: mission.addToFavorite())
+                    Image(systemName: missionObject.mission.addToFavorite())
                         .foregroundStyle(Color.mypink)
                         .font(.system(size: 30))
                 })
@@ -108,5 +108,6 @@ struct CardsView: View {
 
 
 #Preview {
-    CardsView(mission: .constant(missionTest))
+    CardsView()
+        .environmentObject(ShareMissionData(mission: missionTest))
 }
