@@ -13,21 +13,15 @@ var pouce = "👍"
 var etoile = "⭐️"
 var kdo = "🛍️"
 
-var avis1 = Feedback(association:"Les Restos du Coeur", hearts: 2, comment:"Emma s'est rapidement adaptée à nos besoins. Son sourire a mis du soleil à tous les bénéficiaires qu'elle a rencontré. Merci !" )
-
-var avis2 = Feedback(association:"Soutien de France", hearts: 4, comment:"Les élèves sont de plus en plus nombreux, la motivation d'Emma est un précieux atout." )
-var avis3 = Feedback(association:"Soutien de France", hearts: 4, comment:"Emma s'est rapidement adaptée à nos besoins. Son sourire a mis du soleil à tous les bénéficiaires qu'elle a rencontré. Merci !" )
 
 
-var listFeedback = [avis1, avis2, avis3]
 
-var infoEmma = InfoProfil(gender: Gender.female, firstname: "Emma", lastname: "TOTO", email: "emma@gmail.com", phone: "0600000001", pswd: "azerty123")
-
-var profile = Profil(nbmissions: 10, nbfeedbacks: 3.5, points: 530, feedbacks: listFeedback, info: infoEmma )
 // Comment on fait pour que le nom rentré par l'asso apparaisse dans le code
 
 struct ProfileView: View {
     
+    
+    @EnvironmentObject var shared: ShareProfilData
     @State private var btn: Color = .yellow
     @State  var tel = ""
     @State  var email = ""
@@ -47,20 +41,20 @@ struct ProfileView: View {
                         .fontWeight(.semibold)
                         .frame(width: .infinity, alignment: .leading).padding()
                     
-                    Text("Hey \(profile.info.firstname)")
+                    Text("Hey \(shared.profil.info.firstname)")
                         .font(.title2)
                         .fontWeight(.semibold)
                         .frame(alignment: .topLeading).padding()
                     
                     HStack{
                         
-                        rond(text:"Missions", icon:pouce, nb:Double(profile.nbmissions), Color.myyellow)
+                        rond(text:"Missions", icon:pouce, nb:Double(shared.profil.nbmissions), Color.myyellow)
                         Spacer()
                         
-                        rond(text:"Avis", icon:etoile, nb:profile.nbfeedbacks, Color.mypink)
+                        rond(text:"Avis", icon:etoile, nb:shared.profil.nbfeedbacks, Color.mypink)
                         Spacer()
                         
-                        rond(text:"Points", icon:kdo, nb:Double(profile.points), Color.myblue)
+                        rond(text:"Points", icon:kdo, nb:Double(shared.profil.points), Color.myblue)
                         
                         
                     }.padding(20)
@@ -84,7 +78,7 @@ struct ProfileView: View {
                         Rectangle().frame(height: 1).foregroundColor(Color(.systemGray4))
                     }
                     
-                    displayfeedback(profile.feedbacks)
+                    displayfeedback(shared.profil.feedbacks)
                     
                     VStack {
                         
@@ -95,9 +89,9 @@ struct ProfileView: View {
                         
                         VStack ()
                         {
-                            loginVM.champs(name: "Email", def:profile.info.email, value: $email)
+                            loginVM.champs(name: "Email", def:shared.profil.info.email, value: $email)
                                 .frame(height: 70)
-                            loginVM.champs(name: "Téléphone", def:profile.info.phone, value: $tel)
+                            loginVM.champs(name: "Téléphone", def:shared.profil.info.phone, value: $tel)
                                 .frame(height: 70)
                             
                             loginVM.champs(name: "Mot de passe", def:"Jhon",value: $mdp)
@@ -127,5 +121,7 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ProfileView()
+    ProfileView().environmentObject(ShareProfilData(profil: Profil(nbmissions: 10, nbfeedbacks: 3.5, points: 530, feedbacks: [Feedback(association:"Les Restos du Coeur", hearts: 2, comment:"Emma s'est rapidement adaptée à nos besoins. Son sourire a mis du soleil à tous les bénéficiaires qu'elle a rencontré. Merci !" ),
+                                                                                                                              Feedback(association:"Soutien de France", hearts: 4, comment:"Les élèves sont de plus en plus nombreux, la motivation d'Emma est un précieux atout." ),Feedback(association:"Soutien de France", hearts: 4, comment:"Emma s'est rapidement adaptée à nos besoins. Son sourire a mis du soleil à tous les bénéficiaires qu'elle a rencontré. Merci !" )],info: InfoProfil(gender: Gender.female, firstname: "Emma", lastname: "TOTO", email: "emma@gmail.com", phone: "0600000001", pswd: "azerty123")
+)))
 }

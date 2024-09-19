@@ -9,7 +9,7 @@ struct Profil
     var nbfeedbacks: Double    //la note
     var points: Int             //score
     var feedbacks: [Feedback]
-    
+    var notification: [String] = ["Tu as reçu des points\rTu as débloqué des récompenses"]
     var info : InfoProfil
     
 }

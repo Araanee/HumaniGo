@@ -7,127 +7,100 @@
 
 import SwiftUI
 
+
+extension Color {
+    static var Pink : Color = Color(red: 255/255, green: 0, blue: 110/255)
+    
+    static var Blue : Color = Color(red: 51/255, green: 129/255, blue: 255/255)
+    
+    static var Yellow : Color = Color(red: 255/255, green: 195/255, blue: 31/255)
+}
+
+struct modelNotif : View {
+    var notif: String
+    
+    var body: some View {
+        VStack
+        {
+            
+            HStack {
+                Circle()
+                    .frame(width: 80, height: 15)
+                    .foregroundStyle(.red)
+                
+                Text(notif)
+                Spacer ()
+            }
+            
+            Rectangle().frame(width: 350, height: 1).foregroundColor(.blue)
+        }
+    }
+}
+
+
 struct NotificationsView: View {
-     
-     var body: some View {
-          
-          VStack {
-               ZStack {
-                    
-                    RoundedRectangle(cornerRadius: 25.0)
-                         .fill(Color.yellow)
-                         .strokeBorder (Color.mypink, lineWidth : 5)
-                         .foregroundColor (.white)
-                        .frame(height: 125)
-                         
-                    
-                    //                .offset(x:0, y: 180)
-                    
-                    
-                    
-                         .overlay {
-                              Spacer()
-                              
-                              Text("Notifications")
-                                   .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                                   .foregroundStyle(.black)
-                              
-                              //                .offset(x:0, y: 185)
-                                   .padding(.top, 5)
-                         }
-               }
-               
-          
-                         
-                         
-                         VStack(spacing: 40) {
-                              VStack {
-                                   
-                                   HStack {
-                                        
-                                        Circle()
-                                             .frame(width: 15, height: 15)
-                                             .foregroundStyle(Color.mypink)
-                                        
-                                        Text("""
-Tu as reçu des points
-Tu as débloqué des récompense
-""")
-                                        Spacer ()
-                                   }
-                              }
-                              VStack {
-                                   
-                                   HStack {
-                                        
-                                        Circle()
-                                             .frame(width: 15, height: 15)
-                                             .foregroundStyle(Color.mypink)
-                                        Text("""
-    Tu as une nouvelle mission
-    Resto du coeur
-    Distribution de repas du ../../..
-    """)
-                                        Spacer()
-                                   }
-                              }
-                              VStack {
-                                   
-                                   HStack {
-                                        
-                                        Circle()
-                                             .frame(width: 15, height: 15)
-                                             .foregroundStyle(Color.mypink)
-                                        
-                                        Text("""
-Tu as reçu un avis
-Resto du Coeur du../../..
-“Super coeq....
-""")
-                                        Spacer()
-                                   }
-                              }
-                              VStack {
-                                   
-                                   HStack {
-                                        
-                                        Circle()
-                                             .frame(width: 15, height: 15)
-                                             .foregroundStyle(Color.mypink)
-                                        
-                                        Text("""
-N’oublie pas de donner ton avis
-Resto du Coeur    du ../../..
-“Super coeq....
-""")
-                                        Spacer()
-                                   }
-                              }
-                              VStack {
-                                   
-                                   HStack {
-                                        
-                                        Circle()
-                                             .frame(width: 15, height: 15)
-                                             .foregroundStyle(Color.mypink)
-                                        
-                                        Text("""
-Une nouvelle Association vient de
-nous rejoindre....
-""")
-                                        Spacer()
-                                   }
-                              }//
+    
+    
+    @EnvironmentObject var profilObject : ShareProfilData
+    
+    var body: some View {
+        
+        
+        NavigationStack {
+            ScrollView
+            {
+                
+                VStack {
+                    Text("Notifications").font(.title).bold().padding(6)
+                        .padding()
+                    ZStack (alignment: Alignment(horizontal: .center, vertical: .top))
+                    {
+                        
+                        RoundedRectangle(cornerRadius: 25.0).strokeBorder(Color.Pink,lineWidth: 5).frame(width: 410,height: 100)
+                            .padding(-7)
+                        Rectangle().foregroundColor(.white)
+                            .frame(width: 400,height: 90).padding()
+                        
+                        
+                        VStack(alignment: .leading, spacing: 40)
+                        {
+                            
+                            displayNotif(profilObject.profil)
+                            
+                            Button(action: {
+                                profilObject.profil.notification.append("Tu as reçu des points\rTu as débloqué des récompenses")
+                                
+                                print(profilObject.profil.notification)
+                            }, label: {
+                                /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
+                            })
+                            
+                            
+                            
+                        }.padding()
+                        
                     }
-                    .padding()
-               Spacer()
-               
-          }
-          .navigationBarHidden(true)
-     }
+                    Spacer()
+                    
+                }
+            }
+        }
+    }
+    
+    func displayNotif(_ profil: Profil) -> some View {
+        //func displayNotif() -> some View {
+        //func displayNotif() -> some View {
+        ForEach (profil.notification, id:\.self) { notif in
+            
+            modelNotif(notif: notif)
+            
+        }
+    }
+    
 }
-               
-#Preview {
-    NotificationsView()
-}
+    #Preview {
+        NotificationsView().environmentObject(ShareProfilData(profil: Profil(nbmissions: 10, nbfeedbacks: 3.5, points: 530, feedbacks: [Feedback(association:"Les Restos du Coeur", hearts: 2, comment:"Emma s'est rapidement adaptée à nos besoins. Son sourire a mis du soleil à tous les bénéficiaires qu'elle a rencontré. Merci !" ),
+                                                                                                                                        Feedback(association:"Soutien de France", hearts: 4, comment:"Les élèves sont de plus en plus nombreux, la motivation d'Emma est un précieux atout." ),Feedback(association:"Soutien de France", hearts: 4, comment:"Emma s'est rapidement adaptée à nos besoins. Son sourire a mis du soleil à tous les bénéficiaires qu'elle a rencontré. Merci !" )],info: InfoProfil(gender: Gender.female, firstname: "Emma", lastname: "TOTO", email: "emma@gmail.com", phone: "0600000001", pswd: "azerty123")
+                                                                            )))
+    }
 

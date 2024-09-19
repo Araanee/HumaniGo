@@ -89,7 +89,7 @@ struct InscriptionNP: View {
                     ZStack(alignment: Alignment(horizontal: .center, vertical: .top))
                     {
                         //-----------------BORD ROSE------------------------
-                        RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/).strokeBorder(Pink,lineWidth: 5).frame(width: 410,height: 100)
+                        RoundedRectangle(cornerRadius: 25.0).strokeBorder(Pink,lineWidth: 5).frame(width: 410,height: 100)
                             .padding(-7)
                         Rectangle().foregroundColor(.white)
                             .frame(width: 400,height: 90).padding()

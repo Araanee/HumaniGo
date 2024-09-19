@@ -14,3 +14,11 @@ class ShareMissionData: ObservableObject {
         self.mission = mission
     }
 }
+
+class ShareProfilData: ObservableObject {
+    @Published var profil: Profil
+    
+    init(profil: Profil) {
+        self.profil = profil
+    }
+}
