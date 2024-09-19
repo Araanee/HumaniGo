@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MainView: View {
+struct RootNavView: View {
     @StateObject var navControl = NavigationControl()
     var body: some View {
         TabView(selection: $navControl.tabViewSelection) {
@@ -37,8 +37,8 @@ struct MainView: View {
     }
 }
 
-struct MainView_Previews: PreviewProvider {
+struct RootNavView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        RootNavView()
     }
 }
