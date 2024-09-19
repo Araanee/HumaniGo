@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		710852142C9ACA6700525E53 /* NavigationControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710852132C9ACA6700525E53 /* NavigationControl.swift */; };
+		710852162C9AE12F00525E53 /* ShareMissionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710852152C9AE12F00525E53 /* ShareMissionData.swift */; };
 		7155A9082C943F0300A563B2 /* challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7155A9072C943F0300A563B2 /* challenge.swift */; };
 		7155A90C2C9487B800A563B2 /* Sexe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7155A9092C9487B800A563B2 /* Sexe.swift */; };
 		7155A90D2C9487B800A563B2 /* PhoneMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7155A90A2C9487B800A563B2 /* PhoneMail.swift */; };
@@ -30,16 +32,15 @@
 		71A703592C9433FF0012CEFE /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A703582C9433FF0012CEFE /* SearchBarView.swift */; };
 		71A7035B2C94355A0012CEFE /* SegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A7035A2C94355A0012CEFE /* SegmentedControlView.swift */; };
 		71A7035D2C94363B0012CEFE /* CardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A7035C2C94363B0012CEFE /* CardsView.swift */; };
-		71D971912C998BD40098771D /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D971902C998BD40098771D /* Feedback.swift */; };
 		71D971932C998C0E0098771D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D971922C998C0E0098771D /* ProfileView.swift */; };
-		71D971952C998C900098771D /* HelloWorldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D971942C998C900098771D /* HelloWorldView.swift */; };
+		71D971952C998C900098771D /* ConfirmationEngagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D971942C998C900098771D /* ConfirmationEngagement.swift */; };
 		ED14EE082C98340900D58FAA /* DelayNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED14EE072C98340900D58FAA /* DelayNav.swift */; };
-		EDF8A2F92C996E730041E657 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF8A2F82C996E730041E657 /* ProfileView.swift */; };
 		EDF8A2FE2C998D560041E657 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF8A2FD2C998D560041E657 /* Feedback.swift */; };
-		EDF8A3002C998D9E0041E657 /* HelloWorldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF8A2FF2C998D9E0041E657 /* HelloWorldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		710852132C9ACA6700525E53 /* NavigationControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControl.swift; sourceTree = "<group>"; };
+		710852152C9AE12F00525E53 /* ShareMissionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareMissionData.swift; sourceTree = "<group>"; };
 		7155A9072C943F0300A563B2 /* challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = challenge.swift; sourceTree = "<group>"; };
 		7155A9092C9487B800A563B2 /* Sexe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sexe.swift; sourceTree = "<group>"; };
 		7155A90A2C9487B800A563B2 /* PhoneMail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneMail.swift; sourceTree = "<group>"; };
@@ -64,13 +65,10 @@
 		71A703582C9433FF0012CEFE /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		71A7035A2C94355A0012CEFE /* SegmentedControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlView.swift; sourceTree = "<group>"; };
 		71A7035C2C94363B0012CEFE /* CardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsView.swift; sourceTree = "<group>"; };
-		71D971902C998BD40098771D /* Feedback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Feedback.swift; path = ../../../Downloads/Feedback.swift; sourceTree = "<group>"; };
 		71D971922C998C0E0098771D /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		71D971942C998C900098771D /* HelloWorldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelloWorldView.swift; sourceTree = "<group>"; };
+		71D971942C998C900098771D /* ConfirmationEngagement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationEngagement.swift; sourceTree = "<group>"; };
 		ED14EE072C98340900D58FAA /* DelayNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayNav.swift; sourceTree = "<group>"; };
-		EDF8A2F82C996E730041E657 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = ../../../../Downloads/ProfileView.swift; sourceTree = "<group>"; };
 		EDF8A2FD2C998D560041E657 /* Feedback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
-		EDF8A2FF2C998D9E0041E657 /* HelloWorldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelloWorldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +82,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		710852122C99919600525E53 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				EDF8A2FD2C998D560041E657 /* Feedback.swift */,
+				7155A9282C985A8500A563B2 /* Profile.swift */,
+				71D971922C998C0E0098771D /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		7155A9172C98180300A563B2 /* Inscription */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,20 +137,18 @@
 				716DB0CA2C9860F400AEF827 /* Home */,
 				7155A9242C984D4300A563B2 /* MyColors.swift */,
 				7155A9132C9487C700A563B2 /* ConnexionView.swift */,
+				710852132C9ACA6700525E53 /* NavigationControl.swift */,
+				710852152C9AE12F00525E53 /* ShareMissionData.swift */,
 				71A703522C9311CD0012CEFE /* DetailsMissionView.swift */,
-				7155A9282C985A8500A563B2 /* Profile.swift */,
 				716DB0CB2C98637E00AEF827 /* Favorite.swift */,
-				71D971942C998C900098771D /* HelloWorldView.swift */,
+				71D971942C998C900098771D /* ConfirmationEngagement.swift */,
 				7155A91A2C981E6200A563B2 /* FeedbackView.swift */,
 				ED14EE072C98340900D58FAA /* DelayNav.swift */,
-				EDF8A2FF2C998D9E0041E657 /* HelloWorldView.swift */,
-				7155A9172C98180300A563B2 /* Inscription */,
 				718187772C91DBDD003F6855 /* MainView.swift */,
+				7155A9172C98180300A563B2 /* Inscription */,
 				7155A91C2C981E6D00A563B2 /* MiniComposants.swift */,
-				EDF8A2FD2C998D560041E657 /* Feedback.swift */,
+				710852122C99919600525E53 /* Profile */,
 				7155A9262C984FE800A563B2 /* Mission.swift */,
-				71D971902C998BD40098771D /* Feedback.swift */,
-				71D971922C998C0E0098771D /* ProfileView.swift */,
 				716DB0C82C9860BB00AEF827 /* NotificationsView.swift */,
 				7155A90F2C9487C100A563B2 /* utils_connection.swift */,
 				7155A9072C943F0300A563B2 /* challenge.swift */,
@@ -233,10 +239,11 @@
 				716DB0C92C9860BB00AEF827 /* NotificationsView.swift in Sources */,
 				71D971932C998C0E0098771D /* ProfileView.swift in Sources */,
 				7155A90E2C9487B800A563B2 /* Mdp.swift in Sources */,
-				71D971912C998BD40098771D /* Feedback.swift in Sources */,
+				710852162C9AE12F00525E53 /* ShareMissionData.swift in Sources */,
 				7155A9122C9487C100A563B2 /* NameFirstName.swift in Sources */,
 				7155A90D2C9487B800A563B2 /* PhoneMail.swift in Sources */,
 				71A7035D2C94363B0012CEFE /* CardsView.swift in Sources */,
+				710852142C9ACA6700525E53 /* NavigationControl.swift in Sources */,
 				7155A9252C984D4300A563B2 /* MyColors.swift in Sources */,
 				71A703592C9433FF0012CEFE /* SearchBarView.swift in Sources */,
 				7155A9152C9487C700A563B2 /* ConnexionView.swift in Sources */,
@@ -247,7 +254,7 @@
 				EDF8A2FE2C998D560041E657 /* Feedback.swift in Sources */,
 				7155A91D2C981E6D00A563B2 /* MiniComposants.swift in Sources */,
 				ED14EE082C98340900D58FAA /* DelayNav.swift in Sources */,
-				71D971952C998C900098771D /* HelloWorldView.swift in Sources */,
+				71D971952C998C900098771D /* ConfirmationEngagement.swift in Sources */,
 				718187782C91DBDD003F6855 /* MainView.swift in Sources */,
 				7155A9082C943F0300A563B2 /* challenge.swift in Sources */,
 				7155A9112C9487C100A563B2 /* utils_connection.swift in Sources */,
@@ -389,7 +396,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HumaniGo/Preview Content\"";
-				DEVELOPMENT_TEAM = MJSMRM5F2Q;
+				DEVELOPMENT_TEAM = VYBWP87S3J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
