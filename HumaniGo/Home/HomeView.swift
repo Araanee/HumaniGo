@@ -11,11 +11,9 @@ import SwiftData
 struct HomeView: View {
 
     @EnvironmentObject var navControl: NavigationControl
-    @Query var missions: [Mission]
     @EnvironmentObject var missionsData: ShareMissionData
     
     var body: some View {
-//        missionsData = ShareMissionData(missions: missions, mission: missions[0])
         ZStack {
             VStack {
                 Text("Trouve ta mission")
@@ -29,8 +27,6 @@ struct HomeView: View {
         .sheet(isPresented: $navControl.dismissModal) {
             DetailsMissionView()
         }
-        
-//
     }
 }
 

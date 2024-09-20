@@ -86,14 +86,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		710852122C99919600525E53 /* Profile */ = {
+		711D497F2C9DB46D002FBE94 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				EDF8A2FD2C998D560041E657 /* Feedback.swift */,
+				7155A9262C984FE800A563B2 /* Mission.swift */,
 				7155A9282C985A8500A563B2 /* Profile.swift */,
-				71D971922C998C0E0098771D /* ProfileView.swift */,
+				EDE1980A2C9D96FA007624DD /* CreateInitialProfil.swift */,
+				710852392C9D5F7D00525E53 /* CreateInitialMissions.swift */,
 			);
-			path = Profile;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		7155A9172C98180300A563B2 /* Inscription */ = {
@@ -151,10 +152,9 @@
 				718187772C91DBDD003F6855 /* RootNavView.swift */,
 				7155A9172C98180300A563B2 /* Inscription */,
 				7155A91C2C981E6D00A563B2 /* MiniComposants.swift */,
-				710852122C99919600525E53 /* Profile */,
-				7155A9262C984FE800A563B2 /* Mission.swift */,
-				710852392C9D5F7D00525E53 /* CreateInitialMissions.swift */,
-				EDE1980A2C9D96FA007624DD /* CreateInitialProfil.swift */,
+				71D971922C998C0E0098771D /* ProfileView.swift */,
+				EDF8A2FD2C998D560041E657 /* Feedback.swift */,
+				711D497F2C9DB46D002FBE94 /* Model */,
 				716DB0C82C9860BB00AEF827 /* NotificationsView.swift */,
 				7155A90F2C9487C100A563B2 /* utils_connection.swift */,
 				7155A9072C943F0300A563B2 /* challenge.swift */,
@@ -260,7 +260,6 @@
 				7155A91D2C981E6D00A563B2 /* MiniComposants.swift in Sources */,
 				ED14EE082C98340900D58FAA /* DelayNav.swift in Sources */,
 				EDE1980B2C9D96FA007624DD /* CreateInitialProfil.swift in Sources */,
-
 				71D971952C998C900098771D /* ConfirmationEngagement.swift in Sources */,
 				718187782C91DBDD003F6855 /* RootNavView.swift in Sources */,
 				7155A9082C943F0300A563B2 /* challenge.swift in Sources */,

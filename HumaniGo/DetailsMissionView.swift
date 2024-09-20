@@ -12,6 +12,13 @@ struct DetailsMissionView: View {
     @EnvironmentObject var missionsData: ShareMissionData
     let dateFormatter = DateFormatter()
     
+    var formattedDate: String {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .full
+            formatter.locale = Locale(identifier: "fr_FR")
+        return formatter.string(from: missionsData.mission.date)
+        }
+    
     var body: some View {
         NavigationStack {
             let mission = missionsData.mission
@@ -65,7 +72,7 @@ struct DetailsMissionView: View {
                             }
                             .foregroundStyle(Color.mypink)
                             VStack(alignment: .leading, spacing: 40) {
-                                Text(dateFormatter.string(from: mission.date))
+                                Text(formattedDate)
                                 Text(mission.address)
                                 Text("\(mission.members) places")
                             }
