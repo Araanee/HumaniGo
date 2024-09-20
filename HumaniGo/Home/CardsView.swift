@@ -53,25 +53,24 @@ struct CardsView: View {
                         .clipped()
                         .clipShape(RoundedRectangle(cornerRadius: 20.0))
                         .overlay(
-                            ZStack(alignment: .leading) {
-                                RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-                                    .fill(
-                                        LinearGradient(gradient: Gradient(colors: [.black, .clear]), startPoint: .bottom, endPoint: .top)
-                                    )
-                                    .frame(width: 320, height: 100)
-                                VStack(alignment: .leading) {
-                                    Text(missions[indexMission].name).font(.title2)
-                                        .bold()
-                                        .foregroundStyle(.white)
-                                    Text(missions[indexMission].association)
-                                        .foregroundStyle(.white)
+                            VStack {
+                                Spacer()
+                                ZStack(alignment: .leading) {
+                                    RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                                        .fill(
+                                            LinearGradient(gradient: Gradient(colors: [.black, .clear]), startPoint: .bottom, endPoint: .top)
+                                        )
+                                        .frame(width: 320, height: 100)
+                                    VStack(alignment: .leading) {
+                                        Text(missions[indexMission].name).font(.title2)
+                                            .bold()
+                                            .foregroundStyle(.white)
+                                        Text(missions[indexMission].association)
+                                            .foregroundStyle(.white)
+                                    }
+                                    .padding(.horizontal, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                                 }
-//                              .padding(.leading, -50)
-//                              .offset(y: 150)
                             }
-                            .padding(.bottom)
-                            .padding(.leading)
-                            .frame(width: 320, height: 375)
                         )
                 )
                 .rotationEffect(.degrees(-2))
