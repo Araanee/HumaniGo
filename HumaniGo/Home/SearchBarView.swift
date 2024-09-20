@@ -11,6 +11,7 @@ struct SearchBarView: View {
     
     // gets the text input in the search bar
     @State var searchText = ""
+    @EnvironmentObject var navControl: NavigationControl
     
     var body: some View {
         searchBar()
@@ -28,7 +29,7 @@ struct SearchBarView: View {
             
             // Filtres
             Button(action: {
-                // Action filtres
+                navControl.dismissFilters.toggle()
             }) {
                 Image(systemName: "line.horizontal.3.decrease.circle")
                     .resizable()

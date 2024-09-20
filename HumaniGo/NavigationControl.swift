@@ -10,4 +10,5 @@ import Foundation
 class NavigationControl: ObservableObject {
     @Published var dismissModal = false
     @Published var tabViewSelection = 0
+    @Published var dismissFilters = false
 }

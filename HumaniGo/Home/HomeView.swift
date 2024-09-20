@@ -27,6 +27,9 @@ struct HomeView: View {
         .sheet(isPresented: $navControl.dismissModal) {
             DetailsMissionView()
         }
+        .sheet(isPresented: $navControl.dismissFilters) {
+            FiltresView()
+        }
     }
 }
 

@@ -31,7 +31,15 @@ Proposer des activités culturelles et sportives adaptées et accompagner les pe
         
         Mission(imageName: "image2", name: "Soutien aux Réfugiés et Migrants", association: "Accueil Sans Frontières", description: """
 Proposer des cours de langue française et accompagner les réfugiés dans leurs démarches administratives pour favoriser leur intégration.
-""", time: 120, reward: 50, date: Date(), address: "27 Rue de l’Accueil, 94000 Créteil", members: 10)
+""", time: 120, reward: 50, date: Date(), address: "27 Rue de l’Accueil, 94000 Créteil", members: 10),
+        
+        Mission(imageName: "français", name: "Soutien linguistique", association: "Accueil Sans Frontières", description: """
+Proposer des cours de soutien à l'apprentissage de la langue française.
+""", time: 60, reward: 30, date: Date(), address: "55 Rue du soutien scolaire, 93210 La Plaine Saint-Denis", members: 10),
+        
+        Mission(imageName: "Spa calin", name: "Défendre la cause animale", association: "SPA", description: """
+Aider les bénévoles de la SPA à améliorer la vie des animaux en refuge.
+""", time: 60, reward: 30, date: Date(), address: "55 Rue du soutien scolaire, 93210 La Plaine Saint-Denis", members: 35)
     ]
 }
 
