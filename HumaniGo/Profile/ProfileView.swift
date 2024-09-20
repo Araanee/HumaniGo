@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 var prenom: String = ""
 
@@ -20,9 +21,12 @@ var kdo = "🛍️"
 
 struct ProfileView: View {
     
+    @Environment(\.modelContext) var modelContext
+    @Query  var shared: [Profil]
+    //@State  var profil:ShareProfilData? = shared.first
     
-    @EnvironmentObject var shared: ShareProfilData
-    @State private var btn: Color = .yellow
+    
+    @State  private var btn: Color = .yellow
     @State  var tel = ""
     @State  var email = ""
     @State  var mdp = ""
@@ -41,23 +45,23 @@ struct ProfileView: View {
                         .fontWeight(.semibold)
                         .frame(width: .infinity, alignment: .leading).padding()
                     
-                    Text("Hey \(shared.profil.info.firstname)")
+                    Text("Hey \(shared.first!)")
                         .font(.title2)
                         .fontWeight(.semibold)
                         .frame(alignment: .topLeading).padding()
                     
-                    HStack{
-                        
-                        rond(text:"Missions", icon:pouce, nb:Double(shared.profil.nbmissions), Color.myyellow)
-                        Spacer()
-                        
-                        rond(text:"Avis", icon:etoile, nb:shared.profil.nbfeedbacks, Color.mypink)
-                        Spacer()
-                        
-                        rond(text:"Points", icon:kdo, nb:Double(shared.profil.points), Color.myblue)
-                        
-                        
-                    }.padding(20)
+//                    HStack{
+//                        
+//                        rond(text:"Missions", icon:pouce, nb:Double(shared.first!.nbmissions), Color.myyellow)
+//                        Spacer()
+//                        
+//                        rond(text:"Avis", icon:etoile, nb:shared.first!.nbfeedbacks, Color.mypink)
+//                        Spacer()
+//                        
+//                        rond(text:"Points", icon:kdo, nb:Double(shared.first!.points), Color.myblue)
+//                        
+//                        
+//                    }.padding(20)
                     
                     
                     HStack(alignment: .center) {
@@ -78,7 +82,7 @@ struct ProfileView: View {
                         Rectangle().frame(height: 1).foregroundColor(Color(.systemGray4))
                     }
                     
-                    displayfeedback(shared.profil.feedbacks)
+                    displayfeedback(shared.first?.feedbacks)
                     
                     VStack {
                         
@@ -89,15 +93,15 @@ struct ProfileView: View {
                         
                         VStack ()
                         {
-                            loginVM.champs(name: "Email", def:shared.profil.info.email, value: $email)
-                                .frame(height: 70)
-                            loginVM.champs(name: "Téléphone", def:shared.profil.info.phone, value: $tel)
+//                            loginVM.champs(name: "Email", def:shared.first!.info.email , value: $email)
+//                                .frame(height: 70)
+//                            loginVM.champs(name: "Téléphone", def:shared.first!.info.phone , value: $tel)
+//                                .frame(height: 70)
+                            
+                            loginVM.champs(name: "Mot de passe", def:"*****",value: $mdp)
                                 .frame(height: 70)
                             
-                            loginVM.champs(name: "Mot de passe", def:"Jhon",value: $mdp)
-                                .frame(height: 70)
-                            
-                            loginVM.champs(name: "Confirmer le mot de passe", def:"Jhon",value: $cmdp)
+                            loginVM.champs(name: "Confirmer le mot de passe", def:"*****",value: $cmdp)
                                 .frame(height: 70)
                             
                         }.frame(maxWidth: 300)
@@ -121,7 +125,5 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ProfileView().environmentObject(ShareProfilData(profil: Profil(nbmissions: 10, nbfeedbacks: 3.5, points: 530, feedbacks: [Feedback(association:"Les Restos du Coeur", hearts: 2, comment:"Emma s'est rapidement adaptée à nos besoins. Son sourire a mis du soleil à tous les bénéficiaires qu'elle a rencontré. Merci !" ),
-                                                                                                                              Feedback(association:"Soutien de France", hearts: 4, comment:"Les élèves sont de plus en plus nombreux, la motivation d'Emma est un précieux atout." ),Feedback(association:"Soutien de France", hearts: 4, comment:"Emma s'est rapidement adaptée à nos besoins. Son sourire a mis du soleil à tous les bénéficiaires qu'elle a rencontré. Merci !" )],info: InfoProfil(gender: Gender.female, firstname: "Emma", lastname: "TOTO", email: "emma@gmail.com", phone: "0600000001", pswd: "azerty123")
-)))
+    ProfileView()
 }
