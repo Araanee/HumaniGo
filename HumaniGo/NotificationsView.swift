@@ -41,7 +41,7 @@ struct modelNotif : View {
 struct NotificationsView: View {
     
     
-    @EnvironmentObject var profilObject : ShareProfilData
+    //@EnvironmentObject var profilObject : ShareProfilData
     
     var body: some View {
         
@@ -65,15 +65,15 @@ struct NotificationsView: View {
                         VStack(alignment: .leading, spacing: 40)
                         {
                             
-                            displayNotif(profilObject.profil)
-                            
-                            Button(action: {
-                                profilObject.profil.notification.append("Tu as reçu des points\rTu as débloqué des récompenses")
-                                
-                                print(profilObject.profil.notification)
-                            }, label: {
-                                /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
-                            })
+//                            displayNotif(profilObject.profil)
+//                            
+//                            Button(action: {
+//                                profilObject.profil.notification.append("Tu as reçu des points\rTu as débloqué des récompenses")
+//                                
+//                                print(profilObject.profil.notification)
+//                            }, label: {
+//                                /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
+//                            })
                             
                             
                             
@@ -99,8 +99,8 @@ struct NotificationsView: View {
     
 }
     #Preview {
-        NotificationsView().environmentObject(ShareProfilData(profil: Profil(nbmissions: 10, nbfeedbacks: 3.5, points: 530, feedbacks: [Feedback(association:"Les Restos du Coeur", hearts: 2, comment:"Emma s'est rapidement adaptée à nos besoins. Son sourire a mis du soleil à tous les bénéficiaires qu'elle a rencontré. Merci !" ),
-                                                                                                                                        Feedback(association:"Soutien de France", hearts: 4, comment:"Les élèves sont de plus en plus nombreux, la motivation d'Emma est un précieux atout." ),Feedback(association:"Soutien de France", hearts: 4, comment:"Emma s'est rapidement adaptée à nos besoins. Son sourire a mis du soleil à tous les bénéficiaires qu'elle a rencontré. Merci !" )],info: InfoProfil(gender: Gender.female, firstname: "Emma", lastname: "TOTO", email: "emma@gmail.com", phone: "0600000001", pswd: "azerty123")
-                                                                            )))
+       NotificationsView()// .environmentObject(ShareProfilData(profil: Profil(nbmissions: 10, nbfeedbacks: 3.5, points: 530, feedbacks: [Feedback(association:"Les Restos du Coeur", hearts: 2, comment:"Emma s'est rapidement adaptée à nos besoins. Son sourire a mis du soleil à tous les bénéficiaires qu'elle a rencontré. Merci !" ),
+//                                                                                                                                        Feedback(association:"Soutien de France", hearts: 4, comment:"Les élèves sont de plus en plus nombreux, la motivation d'Emma est un précieux atout." ),Feedback(association:"Soutien de France", hearts: 4, comment:"Emma s'est rapidement adaptée à nos besoins. Son sourire a mis du soleil à tous les bénéficiaires qu'elle a rencontré. Merci !" )],info: InfoProfil(gender: Gender.female, firstname: "Emma", lastname: "TOTO", email: "emma@gmail.com", phone: "0600000001", pswd: "azerty123")
+//                                                                            )))
     }
 

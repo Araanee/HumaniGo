@@ -7,28 +7,28 @@
 
 import SwiftUI
 
-struct Feedback
+struct Feedback: Codable
 {
     var association: String
     var hearts : Int
     var comment : String
 }
 
-func displayfeedback(_ list:[Feedback]) -> some View
+func displayfeedback(_ list:[Feedback]?) -> some View
 {
     //afficher tous les avis de la liste
     ScrollView  {
-        ForEach(0..<list.count, id: \.self) { i in
+        ForEach(0..<(list?.count ?? 0), id: \.self) { i in
             VStack (alignment: .center)
             {
                 HStack
                 {
-                    affCoeurs(count: list[i].hearts)
+                    affCoeurs(count: list![i].hearts)
                     Spacer()
-                    Text(list[i].association)
+                    Text(list![i].association)
                 }
                 Rectangle().frame(height: 1).foregroundStyle(Color.mypink)
-                Text(list[i].comment)
+                Text(list![i].comment)
             }
             .padding()
         }

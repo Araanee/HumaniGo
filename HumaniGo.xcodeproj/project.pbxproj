@@ -12,7 +12,6 @@
 		7108523A2C9D5F7D00525E53 /* CreateInitialMissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710852392C9D5F7D00525E53 /* CreateInitialMissions.swift */; };
 		7155A9082C943F0300A563B2 /* challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7155A9072C943F0300A563B2 /* challenge.swift */; };
 		7155A90C2C9487B800A563B2 /* Sexe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7155A9092C9487B800A563B2 /* Sexe.swift */; };
-		7155A90D2C9487B800A563B2 /* PhoneMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7155A90A2C9487B800A563B2 /* PhoneMail.swift */; };
 		7155A90E2C9487B800A563B2 /* Mdp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7155A90B2C9487B800A563B2 /* Mdp.swift */; };
 		7155A9112C9487C100A563B2 /* utils_connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7155A90F2C9487C100A563B2 /* utils_connection.swift */; };
 		7155A9122C9487C100A563B2 /* NameFirstName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7155A9102C9487C100A563B2 /* NameFirstName.swift */; };
@@ -35,6 +34,7 @@
 		71A7035D2C94363B0012CEFE /* CardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A7035C2C94363B0012CEFE /* CardsView.swift */; };
 		71D971932C998C0E0098771D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D971922C998C0E0098771D /* ProfileView.swift */; };
 		71D971952C998C900098771D /* ConfirmationEngagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D971942C998C900098771D /* ConfirmationEngagement.swift */; };
+		ED0B42E42C9D64F50098BB37 /* PhoneMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0B42E32C9D64F50098BB37 /* PhoneMail.swift */; };
 		ED14EE082C98340900D58FAA /* DelayNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED14EE072C98340900D58FAA /* DelayNav.swift */; };
 		EDE1980B2C9D96FA007624DD /* CreateInitialProfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE1980A2C9D96FA007624DD /* CreateInitialProfil.swift */; };
 		EDF8A2FE2C998D560041E657 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF8A2FD2C998D560041E657 /* Feedback.swift */; };
@@ -46,7 +46,6 @@
 		710852392C9D5F7D00525E53 /* CreateInitialMissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateInitialMissions.swift; sourceTree = "<group>"; };
 		7155A9072C943F0300A563B2 /* challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = challenge.swift; sourceTree = "<group>"; };
 		7155A9092C9487B800A563B2 /* Sexe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sexe.swift; sourceTree = "<group>"; };
-		7155A90A2C9487B800A563B2 /* PhoneMail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneMail.swift; sourceTree = "<group>"; };
 		7155A90B2C9487B800A563B2 /* Mdp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mdp.swift; sourceTree = "<group>"; };
 		7155A90F2C9487C100A563B2 /* utils_connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = utils_connection.swift; sourceTree = "<group>"; };
 		7155A9102C9487C100A563B2 /* NameFirstName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameFirstName.swift; sourceTree = "<group>"; };
@@ -70,6 +69,7 @@
 		71A7035C2C94363B0012CEFE /* CardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsView.swift; sourceTree = "<group>"; };
 		71D971922C998C0E0098771D /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		71D971942C998C900098771D /* ConfirmationEngagement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationEngagement.swift; sourceTree = "<group>"; };
+		ED0B42E32C9D64F50098BB37 /* PhoneMail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneMail.swift; sourceTree = "<group>"; };
 		ED14EE072C98340900D58FAA /* DelayNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayNav.swift; sourceTree = "<group>"; };
 		EDE1980A2C9D96FA007624DD /* CreateInitialProfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateInitialProfil.swift; sourceTree = "<group>"; };
 		EDF8A2FD2C998D560041E657 /* Feedback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				7155A9102C9487C100A563B2 /* NameFirstName.swift */,
-				7155A90A2C9487B800A563B2 /* PhoneMail.swift */,
+				ED0B42E32C9D64F50098BB37 /* PhoneMail.swift */,
 				7155A9092C9487B800A563B2 /* Sexe.swift */,
 				7155A90B2C9487B800A563B2 /* Mdp.swift */,
 			);
@@ -247,7 +247,6 @@
 				7155A90E2C9487B800A563B2 /* Mdp.swift in Sources */,
 				710852162C9AE12F00525E53 /* ShareData.swift in Sources */,
 				7155A9122C9487C100A563B2 /* NameFirstName.swift in Sources */,
-				7155A90D2C9487B800A563B2 /* PhoneMail.swift in Sources */,
 				71A7035D2C94363B0012CEFE /* CardsView.swift in Sources */,
 				710852142C9ACA6700525E53 /* NavigationControl.swift in Sources */,
 				7155A9252C984D4300A563B2 /* MyColors.swift in Sources */,
@@ -261,12 +260,14 @@
 				7155A91D2C981E6D00A563B2 /* MiniComposants.swift in Sources */,
 				ED14EE082C98340900D58FAA /* DelayNav.swift in Sources */,
 				EDE1980B2C9D96FA007624DD /* CreateInitialProfil.swift in Sources */,
+
 				71D971952C998C900098771D /* ConfirmationEngagement.swift in Sources */,
 				718187782C91DBDD003F6855 /* RootNavView.swift in Sources */,
 				7155A9082C943F0300A563B2 /* challenge.swift in Sources */,
 				7108523A2C9D5F7D00525E53 /* CreateInitialMissions.swift in Sources */,
 				7155A9112C9487C100A563B2 /* utils_connection.swift in Sources */,
 				7155A91B2C981E6200A563B2 /* FeedbackView.swift in Sources */,
+				ED0B42E42C9D64F50098BB37 /* PhoneMail.swift in Sources */,
 				716DB0CC2C98637E00AEF827 /* Favorite.swift in Sources */,
 				7155A9292C985A8500A563B2 /* Profile.swift in Sources */,
 				718187682C91A185003F6855 /* HumaniGoApp.swift in Sources */,
