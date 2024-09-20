@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftData
 
 class ShareMissionData: ObservableObject {
     @Published var missions: [Mission]
@@ -17,10 +18,11 @@ class ShareMissionData: ObservableObject {
     }
 }
 
-class ShareProfilData: ObservableObject {
-    @Published var profil: Profil
-    
-    init(profil: Profil) {
-        self.profil = profil
-    }
-}
+//@Model
+//final class ShareProfilData {
+//    @Attribute var profil: Profil
+//    
+//    init(profil: Profil) {
+//        self.profil = profil
+//    }
+//}
