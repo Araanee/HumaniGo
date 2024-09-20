@@ -9,7 +9,8 @@ import SwiftUI
 import SwiftData
 
 @Model
-class Mission {
+class Mission: Identifiable {
+    @Attribute var id = UUID()
     @Attribute var imageName: String
     @Attribute var name: String
     @Attribute var association: String

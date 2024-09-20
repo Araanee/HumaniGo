@@ -11,7 +11,7 @@ import SwiftData
 struct CardsView: View {
     
     @EnvironmentObject var navControl: NavigationControl
-    @Query var missions: [Mission]
+    @EnvironmentObject var missionsData: ShareMissionData
     @State var indexMission: Int = 0
     
     var body: some View {
@@ -42,6 +42,7 @@ struct CardsView: View {
     
     func contentCard() -> some View {
         VStack {
+            let missions = missionsData.missions
             Spacer()
             RoundedRectangle(cornerRadius: 25.0)
                 .frame(width: 320, height: 375)
@@ -79,6 +80,7 @@ struct CardsView: View {
                 Spacer()
                 Button(action: {
                     indexMission = (indexMission + 1) % missions.count
+                    missionsData.mission = missions[indexMission]
                 }, label: {
                     Image(systemName: "xmark")
                         .foregroundStyle(Color.myblue)
@@ -114,5 +116,4 @@ struct CardsView: View {
 
 #Preview {
     CardsView()
-        //.environmentObject(ShareMissionData(mission: missionTest))
 }

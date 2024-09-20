@@ -6,19 +6,16 @@
 //
 
 import SwiftUI
-
-var missionTest = Mission(imageName: "imageMission", name: "Ramassage de déchets", association: "Ecolo Asso", description: """
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis diam a vehicula egestas. Maecenas tristique, justo vel hendrerit euismod, justo ex hendrerit diam, sit amet placerat leo enim quis lorem.
-""", time: 2, reward: 50, date: Date(), address: "4 rue Saint Martin, Paris 75015", members: 2)
+import SwiftData
 
 struct HomeView: View {
 
     @EnvironmentObject var navControl: NavigationControl
-    @StateObject var missionObject = ShareMissionData(mission: Mission(imageName: "imageMission",name: "Ramassage de déchets", association: "Ecolo Asso", description: """
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis diam a vehicula egestas. Maecenas tristique, justo vel hendrerit euismod, justo ex hendrerit diam, sit amet placerat leo enim quis lorem.
-""", time: 2, reward: 50, date: Date(), address: "4 rue Saint Martin, Paris 75015", members: 2))
-        
+    @Query var missions: [Mission]
+    @EnvironmentObject var missionsData: ShareMissionData
+    
     var body: some View {
+//        missionsData = ShareMissionData(missions: missions, mission: missions[0])
         ZStack {
             VStack {
                 Text("Trouve ta mission")
@@ -32,7 +29,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis diam a
         .sheet(isPresented: $navControl.dismissModal) {
             DetailsMissionView()
         }
-        .environmentObject(missionObject)
+        
+//
     }
 }
 

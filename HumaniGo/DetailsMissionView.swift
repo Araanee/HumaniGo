@@ -9,12 +9,12 @@ import SwiftUI
 
 struct DetailsMissionView: View {
     
-    @EnvironmentObject var missionObject: ShareMissionData
+    @EnvironmentObject var missionsData: ShareMissionData
     let dateFormatter = DateFormatter()
     
     var body: some View {
         NavigationStack {
-            
+            let mission = missionsData.mission
             RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
                 .fill(Color.mypink)
                 .frame(height: 5)
@@ -22,9 +22,9 @@ struct DetailsMissionView: View {
                 ScrollView {
                     
                     VStack(alignment: .leading) {
-                        Text(missionObject.mission.name)
+                        Text(mission.name)
                             .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                        Text(missionObject.mission.association)
+                        Text(mission.association)
                             .font(.title3)
                             .foregroundStyle(Color(.gray))
                         
@@ -35,9 +35,9 @@ struct DetailsMissionView: View {
                         Text("Description")
                             .foregroundStyle(Color(.systemGray))
                             .padding(.top)
-                        Text(missionObject.mission.missionDescription)
+                        Text(mission.missionDescription)
                         HStack {
-                            Text("\(missionObject.mission.time) h")
+                            Text("\(mission.time) h")
                                 .font(.largeTitle)
                                 .bold()
                                 .foregroundStyle(.white)
@@ -46,7 +46,7 @@ struct DetailsMissionView: View {
                                 .background(Color.myblue)
                                 .clipShape(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/))
                                 .padding()
-                            Text("💰 \(missionObject.mission.reward)")
+                            Text("💰 \(mission.reward)")
                                 .font(.largeTitle)
                                 .bold()
                                 .foregroundStyle(.white)
@@ -65,9 +65,9 @@ struct DetailsMissionView: View {
                             }
                             .foregroundStyle(Color.mypink)
                             VStack(alignment: .leading, spacing: 40) {
-                                Text(dateFormatter.string(from: missionObject.mission.date))
-                                Text(missionObject.mission.address)
-                                Text("\(missionObject.mission.members) places")
+                                Text(dateFormatter.string(from: mission.date))
+                                Text(mission.address)
+                                Text("\(mission.members) places")
                             }
                         }
                         .padding()
@@ -101,5 +101,4 @@ struct DetailsMissionView: View {
 
 #Preview {
     DetailsMissionView()
-        .environmentObject(ShareMissionData(mission: missionTest))
 }

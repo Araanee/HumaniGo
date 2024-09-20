@@ -8,9 +8,11 @@
 import Foundation
 
 class ShareMissionData: ObservableObject {
+    @Published var missions: [Mission]
     @Published var mission: Mission
     
-    init(mission: Mission) {
+    init(missions: [Mission], mission: Mission) {
+        self.missions = missions
         self.mission = mission
     }
 }

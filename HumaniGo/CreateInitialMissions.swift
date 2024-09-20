@@ -34,3 +34,7 @@ Proposer des cours de langue française et accompagner les réfugiés dans leurs
 """, time: 120, reward: 50, date: Date(), address: "27 Rue de l’Accueil, 94000 Créteil", members: 10)
     ]
 }
+
+let toto = Mission(imageName: "imageMission",name: "Ramassage de déchets", association: "Ecolo Asso", description: """
+Rejoignez-nous pour une mission de ramassage de déchets organisée par notre association. Ensemble, contribuons à rendre notre quartier plus propre et agréable à vivre. Rendez-vous sur place avec votre bonne humeur et votre motivation !
+""", time: 120, reward: 40, date: Date(), address: "12 rue Marcel, 75013 Paris", members: 10)
