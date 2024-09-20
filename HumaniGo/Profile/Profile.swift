@@ -26,11 +26,11 @@ class Profil
     }
 }
 
-enum Gender {
+enum Gender: Codable {
     case female, male, other
 }
 
-struct InfoProfil
+struct InfoProfil: Codable
 {
     var gender: Gender
     var firstname:String

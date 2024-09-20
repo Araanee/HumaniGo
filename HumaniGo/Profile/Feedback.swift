@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Feedback
+struct Feedback: Codable
 {
     var association: String
     var hearts : Int

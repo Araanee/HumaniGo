@@ -50,18 +50,18 @@ struct ProfileView: View {
                         .fontWeight(.semibold)
                         .frame(alignment: .topLeading).padding()
                     
-//                    HStack{
-//                        
-//                        rond(text:"Missions", icon:pouce, nb:Double(shared.first!.nbmissions), Color.myyellow)
-//                        Spacer()
-//                        
-//                        rond(text:"Avis", icon:etoile, nb:shared.first!.nbfeedbacks, Color.mypink)
-//                        Spacer()
-//                        
-//                        rond(text:"Points", icon:kdo, nb:Double(shared.first!.points), Color.myblue)
-//                        
-//                        
-//                    }.padding(20)
+                    HStack{
+                        
+                        rond(text:"Missions", icon:pouce, nb:Double(shared.first!.nbmissions), Color.myyellow)
+                        Spacer()
+                        
+                        rond(text:"Avis", icon:etoile, nb:shared.first!.nbfeedbacks, Color.mypink)
+                        Spacer()
+                        
+                        rond(text:"Points", icon:kdo, nb:Double(shared.first!.points), Color.myblue)
+                        
+                        
+                    }.padding(20)
                     
                     
                     HStack(alignment: .center) {
@@ -93,10 +93,10 @@ struct ProfileView: View {
                         
                         VStack ()
                         {
-//                            loginVM.champs(name: "Email", def:shared.first!.info.email , value: $email)
-//                                .frame(height: 70)
-//                            loginVM.champs(name: "Téléphone", def:shared.first!.info.phone , value: $tel)
-//                                .frame(height: 70)
+                            loginVM.champs(name: "Email", def:shared.first!.info.email , value: $email)
+                                .frame(height: 70)
+                            loginVM.champs(name: "Téléphone", def:shared.first!.info.phone , value: $tel)
+                                .frame(height: 70)
                             
                             loginVM.champs(name: "Mot de passe", def:"*****",value: $mdp)
                                 .frame(height: 70)
