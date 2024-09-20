@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct CardsView: View {
     
     @EnvironmentObject var navControl: NavigationControl
-    @EnvironmentObject var missionObject: ShareMissionData
+    @Query var missions: [Mission]
+    @State var indexMission: Int = 0
+    lazy private var lenMissions: Int = missions.count
     
     var body: some View {
         cards()
@@ -44,7 +47,7 @@ struct CardsView: View {
             RoundedRectangle(cornerRadius: 25.0)
                 .frame(width: 320, height: 375)
                 .overlay(
-                    Image("imageMission")
+                    Image(missions[indexMission].imageName)
                         .resizable()
                         .scaledToFill()
                         .frame(width: 320, height: 375)
@@ -59,10 +62,10 @@ struct CardsView: View {
                                     .frame(width: 320, height: 100)
                                     .offset(y: 140)
                                 VStack(alignment: .leading) {
-                                    Text(missionObject.mission.name).font(.title2)
+                                    Text(missions[indexMission].name).font(.title2)
                                         .bold()
                                         .foregroundStyle(.white)
-                                    Text(missionObject.mission.association)
+                                    Text(missions[indexMission].association)
                                         .foregroundStyle(.white)
                                 }
                                 .padding(.leading, -50)
@@ -74,7 +77,9 @@ struct CardsView: View {
             Spacer()
             HStack {
                 Spacer()
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                Button(action: {
+                    indexMission = (indexMission + 1) % lenMissions
+                }, label: {
                     Image(systemName: "xmark")
                         .foregroundStyle(Color.myblue)
                         .font(.system(size: 30))
@@ -91,9 +96,9 @@ struct CardsView: View {
 
                 Spacer()
                 Button(action: {
-                    missionObject.mission.addFavorite.toggle()
+                    missions[indexMission].addFavorite.toggle()
                 }, label: {
-                    Image(systemName: missionObject.mission.addToFavorite())
+                    Image(systemName: missions[indexMission].addToFavorite())
                         .foregroundStyle(Color.mypink)
                         .font(.system(size: 30))
                 })
@@ -109,5 +114,5 @@ struct CardsView: View {
 
 #Preview {
     CardsView()
-        .environmentObject(ShareMissionData(mission: missionTest))
+        //.environmentObject(ShareMissionData(mission: missionTest))
 }

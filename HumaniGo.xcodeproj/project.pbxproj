@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		710852142C9ACA6700525E53 /* NavigationControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710852132C9ACA6700525E53 /* NavigationControl.swift */; };
-		710852192C9C51FA00525E53 /* .xcdatamodeld.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 710852172C9C51FA00525E53 /* .xcdatamodeld.xcdatamodeld */; };
 		710852162C9AE12F00525E53 /* ShareData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710852152C9AE12F00525E53 /* ShareData.swift */; };
+		7108523A2C9D5F7D00525E53 /* CreateInitialMissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710852392C9D5F7D00525E53 /* CreateInitialMissions.swift */; };
 		7155A9082C943F0300A563B2 /* challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7155A9072C943F0300A563B2 /* challenge.swift */; };
 		7155A90C2C9487B800A563B2 /* Sexe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7155A9092C9487B800A563B2 /* Sexe.swift */; };
 		7155A90D2C9487B800A563B2 /* PhoneMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7155A90A2C9487B800A563B2 /* PhoneMail.swift */; };
@@ -41,8 +41,8 @@
 
 /* Begin PBXFileReference section */
 		710852132C9ACA6700525E53 /* NavigationControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControl.swift; sourceTree = "<group>"; };
-        710852182C9C51FA00525E53 /* .xcdatamodeld.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = .xcdatamodeld.xcdatamodel; sourceTree = "<group>"; };
 		710852152C9AE12F00525E53 /* ShareData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareData.swift; sourceTree = "<group>"; };
+		710852392C9D5F7D00525E53 /* CreateInitialMissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateInitialMissions.swift; sourceTree = "<group>"; };
 		7155A9072C943F0300A563B2 /* challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = challenge.swift; sourceTree = "<group>"; };
 		7155A9092C9487B800A563B2 /* Sexe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sexe.swift; sourceTree = "<group>"; };
 		7155A90A2C9487B800A563B2 /* PhoneMail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneMail.swift; sourceTree = "<group>"; };
@@ -119,7 +119,6 @@
 		7181875B2C91A185003F6855 = {
 			isa = PBXGroup;
 			children = (
-				710852172C9C51FA00525E53 /* .xcdatamodeld.xcdatamodeld */,
 				718187662C91A185003F6855 /* HumaniGo */,
 				718187652C91A185003F6855 /* Products */,
 			);
@@ -152,6 +151,7 @@
 				7155A91C2C981E6D00A563B2 /* MiniComposants.swift */,
 				710852122C99919600525E53 /* Profile */,
 				7155A9262C984FE800A563B2 /* Mission.swift */,
+				710852392C9D5F7D00525E53 /* CreateInitialMissions.swift */,
 				716DB0C82C9860BB00AEF827 /* NotificationsView.swift */,
 				7155A90F2C9487C100A563B2 /* utils_connection.swift */,
 				7155A9072C943F0300A563B2 /* challenge.swift */,
@@ -257,10 +257,10 @@
 				EDF8A2FE2C998D560041E657 /* Feedback.swift in Sources */,
 				7155A91D2C981E6D00A563B2 /* MiniComposants.swift in Sources */,
 				ED14EE082C98340900D58FAA /* DelayNav.swift in Sources */,
-				710852192C9C51FA00525E53 /* .xcdatamodeld.xcdatamodeld in Sources */,
 				71D971952C998C900098771D /* ConfirmationEngagement.swift in Sources */,
 				718187782C91DBDD003F6855 /* RootNavView.swift in Sources */,
 				7155A9082C943F0300A563B2 /* challenge.swift in Sources */,
+				7108523A2C9D5F7D00525E53 /* CreateInitialMissions.swift in Sources */,
 				7155A9112C9487C100A563B2 /* utils_connection.swift in Sources */,
 				7155A91B2C981E6200A563B2 /* FeedbackView.swift in Sources */,
 				716DB0CC2C98637E00AEF827 /* Favorite.swift in Sources */,
@@ -472,20 +472,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		710852172C9C51FA00525E53 /* .xcdatamodeld.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				710852182C9C51FA00525E53 /* .xcdatamodeld.xcdatamodel */,
-			);
-			currentVersion = 710852182C9C51FA00525E53 /* .xcdatamodeld.xcdatamodel */;
-			name = .xcdatamodeld.xcdatamodeld;
-			path = /Users/apprenant157/Documents/HumaniGo/.xcdatamodeld.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 7181875C2C91A185003F6855 /* Project object */;
 }

@@ -6,12 +6,40 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct HumaniGoApp: App {
+    
+    // Création du conteneur de modèle avec les entités
+    var container: ModelContainer
+    init() {
+        do {
+            container = try ModelContainer(for: Mission.self)
+            
+            // Vérifiez si le modèle contient déjà des données
+            if try !container.mainContext.fetch(FetchDescriptor<Mission>()).isEmpty {
+                // Si des missions existent déjà, ne pas ajouter de données initiales
+                print("Missions already exist. Skipping initialization.")
+            } else {
+                // Ajouter les missions initiales dans le contexte
+                let initialMissions = createInitialMissions()
+                for mission in initialMissions {
+                    container.mainContext.insert(mission)
+                }
+                // Sauvegarder le contexte
+                try container.mainContext.save()
+                print("Initial missions have been added to the database.")
+            }
+        } catch {
+            fatalError("Failed to initialize ModelContainer: \(error)")
+        }
+    }
+    
     var body: some Scene {
         WindowGroup {
             RootNavView()
+                .modelContainer(container) // Associe le conteneur au contenu de l'application
         }
     }
 }

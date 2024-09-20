@@ -7,16 +7,16 @@
 
 import SwiftUI
 
-var missionTest = Mission(name: "Ramassage de déchets", association: "Ecolo Asso", description: """
+var missionTest = Mission(imageName: "imageMission", name: "Ramassage de déchets", association: "Ecolo Asso", description: """
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis diam a vehicula egestas. Maecenas tristique, justo vel hendrerit euismod, justo ex hendrerit diam, sit amet placerat leo enim quis lorem.
-""", time: 2, reward: 50, date: "4 octobbre 2024", address: "4 rue Saint Martin, Paris 75015", members: 2)
+""", time: 2, reward: 50, date: Date(), address: "4 rue Saint Martin, Paris 75015", members: 2)
 
 struct HomeView: View {
 
     @EnvironmentObject var navControl: NavigationControl
-    @StateObject var missionObject = ShareMissionData(mission: Mission(name: "Ramassage de déchets", association: "Ecolo Asso", description: """
+    @StateObject var missionObject = ShareMissionData(mission: Mission(imageName: "imageMission",name: "Ramassage de déchets", association: "Ecolo Asso", description: """
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis diam a vehicula egestas. Maecenas tristique, justo vel hendrerit euismod, justo ex hendrerit diam, sit amet placerat leo enim quis lorem.
-""", time: 2, reward: 50, date: "4 octobbre 2024", address: "4 rue Saint Martin, Paris 75015", members: 2))
+""", time: 2, reward: 50, date: Date(), address: "4 rue Saint Martin, Paris 75015", members: 2))
         
     var body: some View {
         ZStack {

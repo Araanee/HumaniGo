@@ -10,6 +10,7 @@ import SwiftUI
 struct DetailsMissionView: View {
     
     @EnvironmentObject var missionObject: ShareMissionData
+    let dateFormatter = DateFormatter()
     
     var body: some View {
         NavigationStack {
@@ -34,7 +35,7 @@ struct DetailsMissionView: View {
                         Text("Description")
                             .foregroundStyle(Color(.systemGray))
                             .padding(.top)
-                        Text(missionObject.mission.description)
+                        Text(missionObject.mission.missionDescription)
                         HStack {
                             Text("\(missionObject.mission.time) h")
                                 .font(.largeTitle)
@@ -64,7 +65,7 @@ struct DetailsMissionView: View {
                             }
                             .foregroundStyle(Color.mypink)
                             VStack(alignment: .leading, spacing: 40) {
-                                Text(missionObject.mission.date)
+                                Text(dateFormatter.string(from: missionObject.mission.date))
                                 Text(missionObject.mission.address)
                                 Text("\(missionObject.mission.members) places")
                             }

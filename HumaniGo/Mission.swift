@@ -6,20 +6,35 @@
 //
 
 import SwiftUI
+import SwiftData
 
-struct Mission {
-    var name : String
-    var association : String
-    var description :  String
-    var time : Int
-    var reward : Int
-    var date : String
-    var address : String
-    var members : Int
+@Model
+class Mission {
+    @Attribute var imageName: String
+    @Attribute var name: String
+    @Attribute var association: String
+    @Attribute var missionDescription: String
+    @Attribute var time: Int
+    @Attribute var reward: Int
+    @Attribute var date: Date
+    @Attribute var address: String
+    @Attribute var members: Int
+    @Attribute var addFavorite: Bool = false
     
-    var addFavorite : Bool = false
+    init(imageName: String, name: String, association: String, description: String, time: Int, reward: Int, date: Date, address: String, members: Int) {
+            self.imageName = imageName
+            self.name = name
+            self.association = association
+            self.missionDescription = description
+            self.time = time
+            self.reward = reward
+            self.date = date
+            self.address = address
+            self.members = members
+        }
     
     func addToFavorite() -> String {
         addFavorite ? "heart.fill" : "heart"
     }
+    
 }
