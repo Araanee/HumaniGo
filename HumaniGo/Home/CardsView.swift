@@ -13,7 +13,6 @@ struct CardsView: View {
     @EnvironmentObject var navControl: NavigationControl
     @Query var missions: [Mission]
     @State var indexMission: Int = 0
-    lazy private var lenMissions: Int = missions.count
     
     var body: some View {
         cards()
@@ -54,13 +53,12 @@ struct CardsView: View {
                         .clipped()
                         .clipShape(RoundedRectangle(cornerRadius: 20.0))
                         .overlay(
-                            ZStack {
+                            ZStack(alignment: .leading) {
                                 RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
                                     .fill(
                                         LinearGradient(gradient: Gradient(colors: [.black, .clear]), startPoint: .bottom, endPoint: .top)
                                     )
                                     .frame(width: 320, height: 100)
-                                    .offset(y: 140)
                                 VStack(alignment: .leading) {
                                     Text(missions[indexMission].name).font(.title2)
                                         .bold()
@@ -68,9 +66,12 @@ struct CardsView: View {
                                     Text(missions[indexMission].association)
                                         .foregroundStyle(.white)
                                 }
-                                .padding(.leading, -50)
-                                .offset(y: 150)
+//                              .padding(.leading, -50)
+//                              .offset(y: 150)
                             }
+                            .padding(.bottom)
+                            .padding(.leading)
+                            .frame(width: 320, height: 375)
                         )
                 )
                 .rotationEffect(.degrees(-2))
@@ -78,7 +79,7 @@ struct CardsView: View {
             HStack {
                 Spacer()
                 Button(action: {
-                    indexMission = (indexMission + 1) % lenMissions
+                    indexMission = (indexMission + 1) % missions.count
                 }, label: {
                     Image(systemName: "xmark")
                         .foregroundStyle(Color.myblue)
