@@ -10,6 +10,8 @@ import SwiftUI
 struct ConfirmationEngagement: View {
     @EnvironmentObject var navControl: NavigationControl
     
+    
+    
     var body: some View {
         VStack
         {
@@ -27,6 +29,10 @@ struct ConfirmationEngagement: View {
                         Text("Tu pourras retrouver \r cette mission dans la section").multilineTextAlignment(.center).font(.system(size: 20)).font(.title).italic().foregroundColor(.white)
                         Text("Mes Missions").font(.system(size: 20)).font(.title).bold().foregroundColor(.white)
                     }.padding(20)
+                    DelayedNavigationLink(delay: .seconds(2)) {
+                
+                        ProfileView()
+                    }
                 }
             }
             .onTapGesture {

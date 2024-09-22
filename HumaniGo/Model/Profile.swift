@@ -4,12 +4,11 @@ import SwiftUI
 import SwiftData
 
 
-class UIDProfile
+class UIDProfile:ObservableObject
 {
-    var id: UUID = UUID()
-    var connected = false
+    //@Published var id: UUID = UUID()
+    @Published var connected = false
     
-    private init() {}
 }
 
 @Model

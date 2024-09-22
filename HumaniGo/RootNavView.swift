@@ -12,7 +12,7 @@ struct RootNavView: View {
     @StateObject var navControl = NavigationControl()
     @Query var missions: [Mission]
     @StateObject var missionsData = ShareMissionData(missions: [Mission](), mission: toto)
-
+    @StateObject var uidProfil: UIDProfile = UIDProfile()
     var body: some View {
         TabView(selection: $navControl.tabViewSelection) {
             HomeView()
@@ -25,16 +25,39 @@ struct RootNavView: View {
                     Label("Mes Missions", systemImage: "list.clipboard")
                 }
                 .tag(1)
-            NotificationsView()
-                .tabItem {
-                    Label("Notifications", systemImage: "bell.badge")
-                }
-                .tag(2)
-            ProfileView()
-                .tabItem {
-                    Label("Profil", systemImage: "person.crop.circle")
-                }
-                .tag(3)
+            if (uidProfil.connected)
+            {
+                NotificationsView()
+                    .tabItem {
+                        Label("Notifications", systemImage: "bell.badge")
+                    }
+                    .tag(2)
+            }
+            else
+            {
+                ConnexionView()
+                    .tabItem {
+                        Label("Notifications", systemImage: "bell.badge")
+                    }
+                    .tag(2)
+            }
+            if (uidProfil.connected)
+            {
+                ProfileView()
+                    .tabItem {
+                        Label("Profil", systemImage: "person.crop.circle")
+                    }
+                    .tag(3)
+            }
+            else
+            {
+                ConnexionView()
+                    .tabItem {
+                        Label("Profil", systemImage: "person.crop.circle")
+                    }
+                    .tag(3)
+            }
+            
         }
         .onAppear {
             missionsData.missions = missions

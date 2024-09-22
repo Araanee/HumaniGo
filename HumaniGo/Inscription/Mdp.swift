@@ -12,6 +12,7 @@ struct Mdp: View {
     
     @Environment(\.modelContext) var modelContext
     @StateObject var loginVM = utilsPswd()
+    @StateObject var uidProfil = UIDProfile()
     
     @Binding var sexe: Gender
     @Binding var firstname: String
@@ -47,8 +48,8 @@ struct Mdp: View {
                     {
                         
                         Error = ""
-                        var newProfil : Profile = ajouterProfil(gender: sexe, firstname: firstname, lastname: lastname, email: email, phone: phone, pswd: mdp)
-                        modelContext.insert(newProfil)
+                        uidProfil.connected = true
+                        modelContext.insert(ajouterProfil(gender: sexe, firstname: firstname, lastname: lastname, email: email, phone: phone, pswd: mdp))
                     }
                     
                     
@@ -64,7 +65,8 @@ struct Mdp: View {
                 if (Error.isEmpty)
                 {
                     Text("Compte créé").foregroundStyle(.green)
-                    DelayedNavigationLink(delay: .seconds(2)) {
+                    
+                    DelayedNavigationLink(delay: .seconds(1)) {
                     
                         ConfirmationEngagement()
                     }
