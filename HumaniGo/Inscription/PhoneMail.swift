@@ -14,41 +14,21 @@ private var Yellow : Color = Color(red: 255/255, green: 195/255, blue: 31/255)
 
 struct InscriptionTE: View {
     
+    @Binding var sexe: Gender
+    @Binding var firstname: String
+    @Binding var lastname: String
+    
     @StateObject var loginVM = utilsPswd()
-    @State  var sexe = ""
-    @State  var nom = ""
-    @State  var prenom = ""
     @State  var tel = ""
     @State  var email = ""
-    @State  var mdp = ""
-    @State  var cmdp = ""
     
-    @State private var Error = ""
-    func Sexe()-> some View
-    {
-        VStack (alignment: .leading)
-        {
-            HStack
-            {
-                Text("Sexe :").frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 50, alignment: .leading)//.padding(40)
-                
-                Menu(sexe.isEmpty ? "Sélectionnez" : sexe)
-                {
-                    Button("Autre", action: { sexe = "Autre"})
-                    Button("Femme", action: { sexe = "Femme" })
-                    Button("Homme", action: { sexe = "Homme" })
-                }.foregroundColor(Pink)
-                
-            }
-            
-        }
-    }
+    @State private var Error = "Tous les champs doivent être remplis"
     
     
     @State var btn : Bool = false
     func inscription() -> some View
     {
-        ZStack
+        VStack
         {
             Button(
                 action: {
@@ -73,29 +53,26 @@ struct InscriptionTE: View {
                     
                 },
                 label :
-                    {})
+                    {Text("Suivant").foregroundColor(.black).font(.headline)})
             .frame(width: 150, height: 50)
             .background(Yellow)
             .clipShape(RoundedRectangle(cornerRadius: 25.0))
             
-            NavigationLink("Suivant")
+            if (Error.isEmpty)
             {
-                Mdp()
-            }.foregroundColor(.black).font(.headline)
-            if (btn)
-            {
-                if (Error.isEmpty)
-                {
-                    Text("Compte créé").foregroundStyle(.green)
-                    
-                    //ICI ENREGISTRER LES CHAMPS POUR LA CREATION DU COMPTE
+                Text("Compte créé").foregroundStyle(.green)
+                DelayedNavigationLink(delay: .seconds(0)) {
+                
+                    Mdp(sexe: $sexe, firstname: $firstname, lastname:$lastname, phone:$tel, email:$email)
                 }
-                else
-                {
-                    Text("\(Error)").foregroundStyle(.red)
-                    
-                }
+                //ICI ENREGISTRER LES CHAMPS POUR LA CREATION DU COMPTE
             }
+            else if (btn)
+            {
+                Text("\(Error)").foregroundStyle(.red).frame(width: 300)
+                
+            }
+            
         }
     }
     
@@ -173,8 +150,9 @@ struct InscriptionTE: View {
     }
 }
 
-#Preview {
-    InscriptionTE()
-}
+//#Preview {
+//    InscriptionTE(sexe: Gender.other, firstname: "Doe", lastname: "John")
+//}
+
 
 

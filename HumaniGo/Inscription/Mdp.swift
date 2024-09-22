@@ -8,143 +8,160 @@
 import SwiftUI
 
 struct Mdp: View {
-   
-        @StateObject var loginVM = utilsPswd()
-        @State  var sexe = ""
-        @State  var nom = ""
-        @State  var prenom = ""
-        @State  var tel = ""
-        @State  var email = ""
-        @State  var mdp = ""
-        @State  var cmdp = ""
-        
-        @State private var Error = ""
-        
-        @State var btn : Bool = false
-        func inscription() -> some View
+    
+    
+    @Environment(\.modelContext) var modelContext
+    @StateObject var loginVM = utilsPswd()
+    
+    @Binding var sexe: Gender
+    @Binding var firstname: String
+    @Binding var lastname: String
+    @Binding var phone: String
+    @Binding var email: String
+    
+    @State  var mdp = ""
+    @State  var cmdp = ""
+    
+    @State private var Error = "Tous les champs doivent être remplis"
+    
+    @State var btn : Bool = false
+    func inscription() -> some View
+    {
+        VStack
         {
-            ZStack
-            {
-                
-                Button(
-                    action: {
-                        
-                        if mdp.isEmpty || cmdp.isEmpty
-                        {
-                            
-                            Error = "Tous les champs doivent être remplis"
-                        }
-                        else if (mdp != cmdp)
-                        {
-                            
-                            Error = "Le mot de passe n'est pas identique"
-                        }
-                        else
-                        {
-                            
-                            Error = ""
-                        }
-                        
-                        
-                    }, label:{})
-                    .frame(width: 150, height: 50)
-                    .background(Color.myyellow)
-                    .clipShape(RoundedRectangle(cornerRadius: 25.0))
-                
-                NavigationLink("Inscris-toi !")
-                {
-                    ConfirmationEngagement()
-                }.foregroundColor(.black).font(.headline)
-                
-                if (btn)
-                {
-                    if (Error.isEmpty)
+            
+            Button(
+                action: {
+                    btn = true
+                    if mdp.isEmpty || cmdp.isEmpty
                     {
-                        Text("Compte créé").foregroundStyle(.green)
                         
-                        //ICI ENREGISTRER LES CHAMPS POUR LA CREATION DU COMPTE
+                        Error = "Tous les champs doivent être remplis"
+                    }
+                    else if (mdp != cmdp)
+                    {
+                        
+                        Error = "Le mot de passe n'est pas identique"
                     }
                     else
                     {
-                        Text("\(Error)").foregroundStyle(.red)
                         
+                        Error = ""
+                        var newProfil : Profile = ajouterProfil(gender: sexe, firstname: firstname, lastname: lastname, email: email, phone: phone, pswd: mdp)
+                        modelContext.insert(newProfil)
                     }
+                    
+                    
+                }, label:{Text("Inscris-toi !").foregroundColor(.black).font(.headline)})
+            .frame(width: 150, height: 50)
+            .background(Color.myyellow)
+            .clipShape(RoundedRectangle(cornerRadius: 25.0))
+            
+            
+            
+            if (btn)
+            {
+                if (Error.isEmpty)
+                {
+                    Text("Compte créé").foregroundStyle(.green)
+                    DelayedNavigationLink(delay: .seconds(2)) {
+                    
+                        ConfirmationEngagement()
+                    }
+                    
+                    
+                }
+                else
+                {
+                    Text("\(Error)").foregroundStyle(.red).frame(width: 300)
+                    
                 }
             }
         }
-        
-        
-        
+    }
+    
+    
+    
     var body: some View {
-            NavigationStack {
-                VStack
+        NavigationStack {
+            VStack
+            {
+                Spacer()
+                Text("Inscris-toi").font(.title).bold()
+                    .padding(6)
+                
+                
+                ZStack(alignment: Alignment(horizontal: .center, vertical: .top))
                 {
-                    Spacer()
-                    Text("Inscris-toi").font(.title).bold()
-                        .padding(6)
+                    //-----------------BORD ROSE------------------------
+                    
+                    RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/).strokeBorder(Color.mypink,lineWidth: 5).frame(width: 410,height: 100)
+                        .padding(-7)
+                    Rectangle().foregroundColor(.white)
+                        .frame(width: 400,height: 90).padding()
+                    //-----------------BORD ROSE------------------------
                     
                     
-                    ZStack(alignment: Alignment(horizontal: .center, vertical: .top))
+                    
+                    
+                    VStack (alignment: .leading)
                     {
-                        //-----------------BORD ROSE------------------------
-                        
-                        RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/).strokeBorder(Color.mypink,lineWidth: 5).frame(width: 410,height: 100)
-                            .padding(-7)
-                        Rectangle().foregroundColor(.white)
-                            .frame(width: 400,height: 90).padding()
-                        //-----------------BORD ROSE------------------------
+                        //Spacer()
+                        loginVM.champs(name: "Mot de passe", def:"**********",value:$mdp).font(.title3).frame(height: 150)
+                        loginVM.champs(name: "Confirmer le mot de passe", def:"**********", value: $cmdp).font(.title3)
                         
                         
                         
-                        
-                        VStack (alignment: .leading)
-                        {
-                            //Spacer()
-                            loginVM.champs(name: "Mot de passe", def:"**********",value:$mdp).font(.title3).frame(height: 150)
-                            loginVM.champs(name: "Confirmer le mot de passe", def:"**********", value: $cmdp).font(.title3)
-                            
-                            
-                            
-                        }.frame(maxWidth: 300) // Aligne tout à gauche
-                                                
-                    }.offset(CGSize(width: 1.0, height: 10.0))
-                    inscription().padding(100)
-
+                    }.frame(maxWidth: 300) // Aligne tout à gauche
                     
-                    //---------------inscription avec ----------------------
-                    ZStack
-                    {
-                        
-                        Rectangle()
-                            .frame(height: 2)
-                            .foregroundColor(Color(.systemGray)).frame(maxWidth: 300)
-                        Text("Inscription avec")
-                            .frame(width: 150, height: 10)
-                            .background(.white)
-                        
-                    }.padding(5)
-                    HStack
-                    {
-                        ApiConnect(name:"Apple", logo:"apple.logo")
-                        
-                        ApiConnect(name:"Google", logo:"google")
-                    }
+                }.offset(CGSize(width: 1.0, height: 10.0))
+                inscription().padding(100)
+                
+                
+                //---------------inscription avec ----------------------
+                ZStack
+                {
                     
-                }
+                    Rectangle()
+                        .frame(height: 2)
+                        .foregroundColor(Color(.systemGray)).frame(maxWidth: 300)
+                    Text("Inscription avec")
+                        .frame(width: 150, height: 10)
+                        .background(.white)
+                    
+                }.padding(5)
                 HStack
                 {
-                    Text("Tu as déjà un compte ? ")
-                    NavigationLink("Connecte-toi")
-                    {
-//                        ConnexionView()
-                    }
-
+                    ApiConnect(name:"Apple", logo:"apple.logo")
                     
-                }.padding()
+                    ApiConnect(name:"Google", logo:"google")
+                }
+                
             }
+            HStack
+            {
+                Text("Tu as déjà un compte ? ")
+                NavigationLink("Connecte-toi")
+                {
+                    //                        ConnexionView()
+                }
+                
+                
+            }.padding()
+        }
     }
 }
 
-#Preview {
-    Mdp()
+
+
+func ajouterProfil(gender: Gender, firstname: String, lastname: String, email: String, phone: String, pswd: String) -> Profile {
+    return Profile(nbmissions: 0, nbfeedbacks: 0, points: 0, feedbacks: [avis1, avis2,avis3],
+                  notification: ["bien inscrit"]
+                  ,info: InfoProfile(gender: gender, firstname: firstname, lastname: lastname, email: email, phone: phone, pswd: pswd))
+    
 }
+
+//#Preview {
+//    Mdp()
+//}
+

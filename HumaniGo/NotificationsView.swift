@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 
 extension Color {
@@ -16,32 +17,11 @@ extension Color {
     static var Yellow : Color = Color(red: 255/255, green: 195/255, blue: 31/255)
 }
 
-struct modelNotif : View {
-    var notif: String
-    
-    var body: some View {
-        VStack
-        {
-            
-            HStack {
-                Circle()
-                    .frame(width: 80, height: 15)
-                    .foregroundStyle(.red)
-                
-                Text(notif)
-                Spacer ()
-            }
-            
-            Rectangle().frame(width: 350, height: 1).foregroundColor(.blue)
-        }
-    }
-}
-
-
 struct NotificationsView: View {
     
+    @Environment(\.modelContext) var modelContext
     
-    //@EnvironmentObject var profilObject : ShareProfilData
+    @Query  var shared: [Profile]
     
     var body: some View {
         
@@ -65,15 +45,15 @@ struct NotificationsView: View {
                         VStack(alignment: .leading, spacing: 40)
                         {
                             
-//                            displayNotif(profilObject.profil)
-//                            
-//                            Button(action: {
-//                                profilObject.profil.notification.append("Tu as reçu des points\rTu as débloqué des récompenses")
-//                                
-//                                print(profilObject.profil.notification)
-//                            }, label: {
-//                                /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
-//                            })
+                            displayNotif(shared.first!)
+
+                            Button(action: {
+                                shared.first!.notification.append("Tu as reçu des points\rTu as débloqué des récompenses")
+                                
+                                print(shared.first!.notification)
+                            }, label: {
+                                /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
+                            })
                             
                             
                             
@@ -87,12 +67,23 @@ struct NotificationsView: View {
         }
     }
     
-    func displayNotif(_ profil: Profil) -> some View {
-        //func displayNotif() -> some View {
-        //func displayNotif() -> some View {
+    func displayNotif(_ profil: Profile) -> some View {
         ForEach (profil.notification, id:\.self) { notif in
+            VStack
+            {
+                
+                HStack {
+                    Circle()
+                        .frame(width: 80, height: 15)
+                        .foregroundStyle(.red)
+                    
+                    Text(notif)
+                    Spacer ()
+                }
+                
+                Rectangle().frame(width: 350, height: 1).foregroundColor(.blue)
+            }
             
-            modelNotif(notif: notif)
             
         }
     }
@@ -103,4 +94,5 @@ struct NotificationsView: View {
 //                                                                                                                                        Feedback(association:"Soutien de France", hearts: 4, comment:"Les élèves sont de plus en plus nombreux, la motivation d'Emma est un précieux atout." ),Feedback(association:"Soutien de France", hearts: 4, comment:"Emma s'est rapidement adaptée à nos besoins. Son sourire a mis du soleil à tous les bénéficiaires qu'elle a rencontré. Merci !" )],info: InfoProfil(gender: Gender.female, firstname: "Emma", lastname: "TOTO", email: "emma@gmail.com", phone: "0600000001", pswd: "azerty123")
 //                                                                            )))
     }
+
 

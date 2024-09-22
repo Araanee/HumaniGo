@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import SwiftData
 
 class utilsPswd: ObservableObject {
+    
     @Published var seeMdp = false
     @Published var iconMdp = "eye"
+    
     
     func champs(name: String, def: String,value: Binding<String>) -> some View {
         //        @ObservedObject var p: Mdp
@@ -31,7 +34,7 @@ class utilsPswd: ObservableObject {
                         SecureField("**********", text:value)
                     }
                     else
-                    {   
+                    {
                         TextField(def, text: value)
                     }
                     Button(
@@ -101,6 +104,7 @@ func ErrorMail(_email: String) -> Bool {
     return emailPred.evaluate(with: _email)
 }
 
-#Preview {
-    Mdp()
-}
+//#Preview {
+//    Mdp(sexe: , firstname: <#T##Binding<String>#>, lastname: <#T##Binding<String>#>, phone: <#T##Binding<String>#>, email: <#T##Binding<String>#>)
+//}
+

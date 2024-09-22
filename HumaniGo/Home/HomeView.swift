@@ -23,6 +23,7 @@ struct HomeView: View {
                 CardsView()
                 Spacer()
             }
+            
         }
         .sheet(isPresented: $navControl.dismissModal) {
             DetailsMissionView()

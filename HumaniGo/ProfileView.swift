@@ -21,11 +21,11 @@ var kdo = "🛍️"
 
 struct ProfileView: View {
     
+    
     @Environment(\.modelContext) var modelContext
-    @Query  var shared: [Profil]
-    //@State  var profil:ShareProfilData? = shared.first
     
-    
+    @Query  var shared: [Profile]
+    //@State private var profils: [Profil] = []
     @State  private var btn: Color = .yellow
     @State  var tel = ""
     @State  var email = ""
@@ -34,7 +34,17 @@ struct ProfileView: View {
     @StateObject var loginVM = utilsPswd()
     
     
+//    private func loadProfils() {
+//         let fetchRequest = FetchDescriptor<Profil>()
+//         do {
+//             profils = try modelContext.fetch(fetchRequest)
+//         } catch {
+//             print("Erreur lors du chargement des profils : \(error)")
+//         }
+//     }
+    
     var body: some View {
+        
         
         VStack {
             ScrollView {
@@ -43,22 +53,22 @@ struct ProfileView: View {
                     Text("Mon profil")
                         .font(.largeTitle)
                         .fontWeight(.semibold)
-                        .frame(width: .infinity, alignment: .leading).padding()
+                        .frame(alignment: .leading).padding()
                     
-                    Text("Hey \(shared.first!)")
+                    Text("Hey \(shared.last!.info.firstname)")
                         .font(.title2)
                         .fontWeight(.semibold)
                         .frame(alignment: .topLeading).padding()
                     
                     HStack{
                         
-                        rond(text:"Missions", icon:pouce, nb:Double(shared.first!.nbmissions), Color.myyellow)
+                        rond(text:"Missions", icon:pouce, nb:Double(shared.last!.nbmissions), Color.myyellow)
+                        Spacer()
+
+                        rond(text:"Avis", icon:etoile, nb:shared.last!.nbfeedbacks, Color.mypink)
                         Spacer()
                         
-                        rond(text:"Avis", icon:etoile, nb:shared.first!.nbfeedbacks, Color.mypink)
-                        Spacer()
-                        
-                        rond(text:"Points", icon:kdo, nb:Double(shared.first!.points), Color.myblue)
+                        rond(text:"Points", icon:kdo, nb:Double(shared.last!.points), Color.myblue)
                         
                         
                     }.padding(20)
@@ -93,9 +103,9 @@ struct ProfileView: View {
                         
                         VStack ()
                         {
-                            loginVM.champs(name: "Email", def:shared.first!.info.email , value: $email)
+                            loginVM.champs(name: "Email", def:shared.last!.info.email , value: $email)
                                 .frame(height: 70)
-                            loginVM.champs(name: "Téléphone", def:shared.first!.info.phone , value: $tel)
+                            loginVM.champs(name: "Téléphone", def:shared.last!.info.phone , value: $tel)
                                 .frame(height: 70)
                             
                             loginVM.champs(name: "Mot de passe", def:"*****",value: $mdp)
@@ -105,7 +115,7 @@ struct ProfileView: View {
                                 .frame(height: 70)
                             
                         }.frame(maxWidth: 300)
-                        NavigationLink("Modifiez")
+                        NavigationLink("Modifier")
                         {
                             Text("modif here")
                         }
@@ -127,3 +137,4 @@ struct ProfileView: View {
 #Preview {
     ProfileView()
 }
+

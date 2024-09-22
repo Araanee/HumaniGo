@@ -3,19 +3,28 @@
 import SwiftUI
 import SwiftData
 
+
+class UIDProfile
+{
+    var id: UUID = UUID()
+    var connected = false
+    
+    private init() {}
+}
+
 @Model
-class Profil
+class Profile
 {
    @Attribute   var id: UUID
    @Attribute   var nbmissions: Int
    @Attribute   var nbfeedbacks: Double    //la note
    @Attribute   var points: Int             //score
     @Attribute   var feedbacks: [Feedback]
-    @Attribute   var notification: [String] = ["Tu as reçu des points\rTu as débloqué des récompenses"]
-    @Attribute  var info : InfoProfil
+    @Attribute   var notification: [String] = []
+    @Attribute  var info : InfoProfile
     
     
-    init(id: UUID = UUID(), nbmissions: Int, nbfeedbacks: Double, points: Int, feedbacks: [Feedback], notification: [String], info: InfoProfil) {
+    init(id: UUID = UUID(), nbmissions: Int, nbfeedbacks: Double, points: Int, feedbacks: [Feedback], notification: [String], info: InfoProfile) {
         self.id = id
         self.nbmissions = nbmissions
         self.nbfeedbacks = nbfeedbacks
@@ -27,10 +36,25 @@ class Profil
 }
 
 enum Gender: Codable {
-    case female, male, other
+    case female, male, other, nul
+    var value: String{
+        switch self {
+        case .female:
+            return "Femme"
+        case .male:
+            return "Homme"
+        case .other:
+            return "Autre"
+        case .nul:
+            return ""
+        }
+        
+    }
+    
+    
 }
 
-struct InfoProfil: Codable
+struct InfoProfile: Codable
 {
     var gender: Gender
     var firstname:String
@@ -39,3 +63,4 @@ struct InfoProfil: Codable
     var phone:String
     var pswd:String
 }
+

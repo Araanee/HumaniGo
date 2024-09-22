@@ -15,9 +15,9 @@ private var Yellow : Color = Color(red: 255/255, green: 195/255, blue: 31/255)
 struct InscrSexe: View {
    
         @StateObject var loginVM = utilsPswd()
-        @State  var sexe = ""
+    @State var sexe: Gender = Gender.nul
         
-        @State private var Error = ""
+        
         func Sexe()-> some View
         {
             VStack (alignment: .leading)
@@ -27,11 +27,11 @@ struct InscrSexe: View {
                     Text("Sexe :").font(.title2)
                         .frame(height: 150).frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 50, alignment: .leading)
                  
-                    Menu(sexe.isEmpty ? "Sélectionnez" : sexe)
+                    Menu(sexe.value.isEmpty ?  "Sélectionnez" : sexe.value )
                     {
-                        Button("Autre", action: { sexe = "Autre"}).font(.title3)
-                        Button("Femme", action: { sexe = "Femme" }).font(.title3)
-                        Button("Homme", action: { sexe = "Homme" }).font(.title3)
+                        Button("Autre", action: { sexe = Gender.other}).font(.title3)
+                        Button("Femme", action: { sexe = Gender.female }).font(.title3)
+                        Button("Homme", action: { sexe = Gender.male }).font(.title3)
                     }.foregroundColor(Pink).font(.title2)
                 }
             }
@@ -45,47 +45,31 @@ struct InscrSexe: View {
             {
                 Button(
                     action: {
-                        btn = true
-                        if sexe.isEmpty
-                        {
-                            
-                            Error = "Le champs doit être remplis"
-                        }
-                        else
-                        {
-                            
-                            Error = ""
-                        }
+                        btn.toggle()
                     },
                     label :
                         {
                             ZStack (alignment: .center)
                             {
-                                NavigationLink("Suivant")
-                                {
-                                    InscriptionNP()
-                                }
+                                Text("Suivant")
                                     .foregroundColor(.black)
                                     .font(.headline)
                                     .frame(width: 150, height: 50)
                                     .background(Yellow)
                                     .clipShape(RoundedRectangle(cornerRadius: 25.0))
+                                
+                                    
                             }
                         })
-                if (btn)
+                
+                if (!sexe.value.isEmpty && btn)
                 {
-                    if (Error.isEmpty)
-                    {
-                        Text("Compte créé").foregroundStyle(.green)
-                        
-                        //ICI ENREGISTRER LES CHAMPS POUR LA CREATION DU COMPTE
-                    }
-                    else
-                    {
-                        Text("\(Error)").foregroundStyle(.red)
-                        
+                    DelayedNavigationLink(delay: .seconds(0)) {
+                
+                        InscriptionNP(sexe: $sexe)
                     }
                 }
+                
             }
         }
         
@@ -144,7 +128,7 @@ struct InscrSexe: View {
                     Text("Tu as déjà un compte ? ")
                     NavigationLink("Connecte-toi")
                     {
-//                        ConnexionView()
+                        ConnexionView()
                     }
                 }.padding()
             }
@@ -155,4 +139,5 @@ struct InscrSexe: View {
 #Preview {
     InscrSexe()
 }
+
 

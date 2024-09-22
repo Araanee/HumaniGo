@@ -15,7 +15,7 @@ struct HumaniGoApp: App {
     var container: ModelContainer
     init() {
         do {
-            container = try ModelContainer(for: Mission.self)
+            container = try ModelContainer(for: Mission.self, Profile.self)
             
             // Vérifiez si le modèle contient déjà des données
             if try !container.mainContext.fetch(FetchDescriptor<Mission>()).isEmpty {
@@ -31,15 +31,36 @@ struct HumaniGoApp: App {
                 try container.mainContext.save()
                 print("Initial missions have been added to the database.")
             }
+            
+            if try !container.mainContext.fetch(FetchDescriptor<Profile>()).isEmpty
+            {
+                print("Profils already exist. Skipping initialization.")
+            }
+            else
+            {
+                let initProfils = createInitialProfil()
+                for profil in initProfils
+                {
+                    container.mainContext.insert(profil)
+                }
+                try container.mainContext.save()
+                print("Initial profil have been added to the database.")
+            }
         } catch {
             fatalError("Failed to initialize ModelContainer: \(error)")
         }
-    }
+        
+        
+        
     
-    var body: some Scene {
-        WindowGroup {
-            RootNavView()
-                .modelContainer(container) // Associe le conteneur au contenu de l'application
-        }
+}
+
+var body: some Scene {
+    WindowGroup {
+        RootNavView()
+            .modelContainer(container) // Associe le conteneur au contenu de l'application
+        //.modelContainer(for: Profil.self)
     }
 }
+}
+
