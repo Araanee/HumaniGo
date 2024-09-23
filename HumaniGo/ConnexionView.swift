@@ -6,43 +6,85 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ConnexionView: View {
     
+    
+    @Query  var shared: [Profile]
     @StateObject var loginVM = utilsPswd()
+    
+    @EnvironmentObject var navControl : NavigationControl
+    @EnvironmentObject var uidProfil: UIDProfile
+    
     @State  var email = ""
-    @State  var mdp = ""
-    @State var Error = ""
+    @State  var pswd = ""
+    @State var Error = "Merci de remplir les champs"
     
     @State var btn : Bool = false
+    
+    func checkin(_ email: String, _ pswd : String) -> Bool
+    {
+        
+        return shared.contains { profile in
+            profile.info.email == email && profile.info.pswd == pswd
+        }
+    }
     func connexion() -> some View
     {
         VStack
         {
             Button(
                 action: {
+                    btn = true
                         //VERIFIER MDP ET MAIL BDD
-                    if(!ErrorMail(_email:email))
+                    if(!checkin(email, pswd))
                     {
-                        Error = "Email pas valide"
+                        Error = "Email ou mot de passe incorrecte"
                     } //en attendant
-                    else {
+                    else 
+                    {
                         Error = ""
+                        uidProfil.connected = true
                     }
                 },
                 label :
+                    {Text("Connecte-toi").foregroundColor(.black).font(.headline)})
+            .frame(width: 150, height: 50)
+            .background(Color.myyellow)
+            .clipShape(RoundedRectangle(cornerRadius: 25.0))
+            if (btn)
+            {
+                if (Error.isEmpty)
+                {
+                    Text("Compte connecté").foregroundStyle(.green)
+                    
+                    if (uidProfil.engaged)
                     {
-                        NavigationLink("Connecte-toi")
-                        {
-                            //VERIFIER DANS LA BASE DE DONNEE
+                        DelayedNavigationLink(delay: .seconds(1)) {
+                            
                             ConfirmationEngagement()
                         }
-                            .foregroundColor(.black)
-                            .font(.headline)
-                            .frame(width: 150, height: 50)
-                            .background(Color.myyellow)
-                            .clipShape(RoundedRectangle(cornerRadius: 25.0))
-            })
+                        
+                        
+                    }
+                    else
+                    {
+                        
+                        DelayedNavigationLink(delay: .seconds(1)) {
+                            
+                            ProfileView()
+                        }.onAppear{navControl.tabViewSelection = 4}
+                    }
+                    //ICI ENREGISTRER LES CHAMPS POUR LA CREATION DU COMPTE
+                }
+                else
+                {
+                    Text("\(Error)").foregroundStyle(.red).frame(width: 300)
+                    
+                }
+            }
+            
         }
     }
     
@@ -55,11 +97,11 @@ struct ConnexionView: View {
                     //-----------------BORD ROSE------------------------
                     
                     RoundedRectangle(cornerRadius: 25.0).strokeBorder(Color.pink,lineWidth: 5).foregroundColor(.white)
-                        .frame(width: 410,height: 380).offset(x:0, y: 180)
+                        .frame(width: 410,height: 380).offset(x:0, y: 170)
                     
                     RoundedRectangle(cornerRadius: 25.0)
                         .foregroundColor(.white)
-                        .frame(width: 410,height: 390).offset(x:0, y: 185)
+                        .frame(width: 410,height: 390).offset(x:0, y: 175)
                     
                     //-----------------BORD ROSE------------------------
                     VStack
@@ -69,7 +111,7 @@ struct ConnexionView: View {
                         
                         loginVM.champs(name: "Email", def: "johndoe@gmail.com", value: $email).padding()
                         
-                        loginVM.champs(name: "Mot de passe", def: "*********", value: $mdp).padding()
+                        loginVM.champs(name: "Mot de passe", def: "*********", value: $pswd).padding()
                         
                     }.frame(maxWidth: 300)//.padding(10)
                     
@@ -77,7 +119,7 @@ struct ConnexionView: View {
                 VStack
                 {
                     connexion().padding(6)
-                    Text(Error).foregroundStyle(.red)
+//                    Text(Error).foregroundStyle(.red)
                 }
                 
                 //---------------inscription avec ----------------------

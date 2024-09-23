@@ -15,6 +15,7 @@ struct ConfirmationEngagement: View {
     var body: some View {
         VStack
         {
+            
             ZStack {
                 Color.mypink.edgesIgnoringSafeArea(.all)
                 
@@ -30,14 +31,12 @@ struct ConfirmationEngagement: View {
                         Text("Mes Missions").font(.system(size: 20)).font(.title).bold().foregroundColor(.white)
                     }.padding(20)
                     DelayedNavigationLink(delay: .seconds(2)) {
-                
-                        ProfileView()
-                    }
+                        
+                        HomeView()
+                    }.onDisappear{
+                        navControl.tabViewSelection = 0
+                    print("hello")}
                 }
-            }
-            .onTapGesture {
-                navControl.dismissModal = false
-                navControl.tabViewSelection = 3
             }
             
         }.navigationBarBackButtonHidden(true)

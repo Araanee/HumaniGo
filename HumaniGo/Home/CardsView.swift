@@ -37,7 +37,7 @@ struct CardsView: View {
                     .overlay(
                         contentCard()
                     )
-        }
+        }.navigationBarBackButtonHidden(true)
     }
     
     func contentCard() -> some View {

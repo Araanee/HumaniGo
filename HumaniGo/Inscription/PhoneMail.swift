@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 private var Pink : Color = Color(red: 255/255, green: 0, blue: 110/255)
 private var Blue : Color = Color(red: 51/255, green: 129/255, blue: 255/255)
@@ -14,6 +15,7 @@ private var Yellow : Color = Color(red: 255/255, green: 195/255, blue: 31/255)
 
 struct InscriptionTE: View {
     
+    @Query var shared: [Profile]
     @Binding var sexe: Gender
     @Binding var firstname: String
     @Binding var lastname: String
@@ -33,6 +35,7 @@ struct InscriptionTE: View {
             Button(
                 action: {
                     btn = true
+                    
                     if(!ErrorMail(_email:email))
                     {
                         Error = "Email pas valide"
@@ -43,6 +46,10 @@ struct InscriptionTE: View {
                     {
                         
                         Error = "Tous les champs doivent être remplis"
+                    }
+                    else if (shared.contains{profile in email == profile.info.email})
+                    {
+                        Error = "Ce mail existe déjà, connecte-toi directement."
                     }
                     else
                     {
@@ -63,6 +70,7 @@ struct InscriptionTE: View {
                 Text("Compte créé").foregroundStyle(.green)
                 DelayedNavigationLink(delay: .seconds(0)) {
                 
+                    
                     Mdp(sexe: $sexe, firstname: $firstname, lastname:$lastname, phone:$tel, email:$email)
                 }
                 //ICI ENREGISTRER LES CHAMPS POUR LA CREATION DU COMPTE

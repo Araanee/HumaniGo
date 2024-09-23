@@ -10,16 +10,22 @@ import SwiftUI
 struct DetailsMissionView: View {
     
     @EnvironmentObject var missionsData: ShareMissionData
+    @EnvironmentObject var uidProfil: UIDProfile
+    @EnvironmentObject var navControl : NavigationControl
+    
+    @State private var shouldNavigate = false
+    
     let dateFormatter = DateFormatter()
     
     var formattedDate: String {
-            let formatter = DateFormatter()
-            formatter.dateStyle = .full
-            formatter.locale = Locale(identifier: "fr_FR")
+        let formatter = DateFormatter()
+        formatter.dateStyle = .full
+        formatter.locale = Locale(identifier: "fr_FR")
         return formatter.string(from: missionsData.mission.date)
-        }
+    }
     
-    var body: some View {
+    var body: some View
+    {
         NavigationStack {
             let mission = missionsData.mission
             RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
@@ -86,24 +92,46 @@ struct DetailsMissionView: View {
                                 .font(.subheadline)
                                 .foregroundStyle(.gray)
                             
-                            NavigationLink("M'engager") {
-                                ConnexionView()
+                            Button(action: {
+                                uidProfil.engaged = true
+                                navControl.dismissModal = false
+                                navControl.tabViewSelection = 3
+                                print(navControl.dismissModal)
+                            }, label: {Text("M'engager")}).bold()
+                                .padding()
+                                .foregroundStyle(.white)
+                                .background(Color.pink)
+                                .clipShape(RoundedRectangle(cornerRadius: 25.0))
+                            
+                            if (uidProfil.connected && uidProfil.engaged)
+                            {
+                                
+                                DelayedNavigationLink(delay: .seconds(0))
+                                {
+                                    ConfirmationEngagement()
+                                }
+                                
                             }
-                            .bold()
-                            .padding()
-                            .foregroundStyle(.white)
-                            .background(Color.mypink)
-                            .clipShape(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/))
+                            else if (uidProfil.engaged)
+                            {
+                                DelayedNavigationLink(delay: .seconds(0))
+                                {
+                                    ConnexionView()
+                                }
+                            }
                         }
-                        .padding(.top, 30)
+                        
+                        
                     }
-                    
+                    .padding(.top, 30)
                 }
+                
             }
-            .padding()
         }
+        .padding()
     }
 }
+
 
 
 #Preview {

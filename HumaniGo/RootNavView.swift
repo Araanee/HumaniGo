@@ -20,11 +20,22 @@ struct RootNavView: View {
                     Label("Recherche", systemImage: "magnifyingglass")
                 }
                 .tag(0)
-            Favorite()
-                .tabItem {
-                    Label("Mes Missions", systemImage: "list.clipboard")
-                }
-                .tag(1)
+            if (uidProfil.connected)
+            {
+                Favorite()
+                    .tabItem {
+                        Label("Mes Missions", systemImage: "list.clipboard")
+                    }
+                    .tag(1)
+            }
+            else
+            {
+                ConnexionView()
+                    .tabItem {
+                        Label("Mes Missions", systemImage: "list.clipboard")
+                    }
+                    .tag(1)
+            }
             if (uidProfil.connected)
             {
                 NotificationsView()
@@ -66,6 +77,7 @@ struct RootNavView: View {
         .accentColor(Color.mypink)
         .environmentObject(navControl)
         .environmentObject(missionsData)
+        .environmentObject(uidProfil)
     }
 }
 

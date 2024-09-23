@@ -14,7 +14,7 @@ private var Yellow : Color = Color(red: 255/255, green: 195/255, blue: 31/255)
 
 struct InscrSexe: View {
    
-        @StateObject var loginVM = utilsPswd()
+    @StateObject var loginVM = utilsPswd()
     @State var sexe: Gender = Gender.nul
         
         

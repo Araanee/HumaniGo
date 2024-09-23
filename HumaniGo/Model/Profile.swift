@@ -8,6 +8,7 @@ class UIDProfile:ObservableObject
 {
     //@Published var id: UUID = UUID()
     @Published var connected = false
+    @Published var engaged = false
     
 }
 

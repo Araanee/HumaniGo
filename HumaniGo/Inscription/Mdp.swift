@@ -9,10 +9,11 @@ import SwiftUI
 
 struct Mdp: View {
     
-    
+    @EnvironmentObject var navControl: NavigationControl
+    @EnvironmentObject var uidProfil : UIDProfile
     @Environment(\.modelContext) var modelContext
+    
     @StateObject var loginVM = utilsPswd()
-    @StateObject var uidProfil = UIDProfile()
     
     @Binding var sexe: Gender
     @Binding var firstname: String
@@ -48,6 +49,7 @@ struct Mdp: View {
                     {
                         
                         Error = ""
+                        //print(uidProfil.connected)
                         uidProfil.connected = true
                         modelContext.insert(ajouterProfil(gender: sexe, firstname: firstname, lastname: lastname, email: email, phone: phone, pswd: mdp))
                     }
@@ -65,13 +67,23 @@ struct Mdp: View {
                 if (Error.isEmpty)
                 {
                     Text("Compte créé").foregroundStyle(.green)
-                    
-                    DelayedNavigationLink(delay: .seconds(1)) {
-                    
-                        ConfirmationEngagement()
+                    if (uidProfil.engaged)
+                    {
+                        DelayedNavigationLink(delay: .seconds(1)) {
+                            
+                            ConfirmationEngagement()
+                        }
+                        
+                        
                     }
-                    
-                    
+                    else
+                    {
+                        
+                        DelayedNavigationLink(delay: .seconds(1)) {
+                            
+                            ProfileView()
+                        }.onAppear{navControl.tabViewSelection = 4}
+                    }
                 }
                 else
                 {
@@ -158,12 +170,12 @@ struct Mdp: View {
 
 func ajouterProfil(gender: Gender, firstname: String, lastname: String, email: String, phone: String, pswd: String) -> Profile {
     return Profile(nbmissions: 0, nbfeedbacks: 0, points: 0, feedbacks: [avis1, avis2,avis3],
-                  notification: ["bien inscrit"]
-                  ,info: InfoProfile(gender: gender, firstname: firstname, lastname: lastname, email: email, phone: phone, pswd: pswd))
+                   notification: ["bien inscrit"]
+                   ,info: InfoProfile(gender: gender, firstname: firstname, lastname: lastname, email: email, phone: phone, pswd: pswd))
     
 }
 
 //#Preview {
-//    Mdp()
+//   Mdp().environmentObject(NavigationControl())
 //}
 
