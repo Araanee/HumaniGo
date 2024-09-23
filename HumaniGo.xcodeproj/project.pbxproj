@@ -42,6 +42,7 @@
 		ED0B42E42C9D64F50098BB37 /* PhoneMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0B42E32C9D64F50098BB37 /* PhoneMail.swift */; };
 		ED14EE082C98340900D58FAA /* DelayNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED14EE072C98340900D58FAA /* DelayNav.swift */; };
 		EDE1980B2C9D96FA007624DD /* CreateInitialProfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE1980A2C9D96FA007624DD /* CreateInitialProfil.swift */; };
+		EDE1980F2CA17455007624DD /* RefreshScrollModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE1980E2CA17455007624DD /* RefreshScrollModel.swift */; };
 		EDF8A2FE2C998D560041E657 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF8A2FD2C998D560041E657 /* Feedback.swift */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +83,7 @@
 		ED0B42E32C9D64F50098BB37 /* PhoneMail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneMail.swift; sourceTree = "<group>"; };
 		ED14EE072C98340900D58FAA /* DelayNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayNav.swift; sourceTree = "<group>"; };
 		EDE1980A2C9D96FA007624DD /* CreateInitialProfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateInitialProfil.swift; sourceTree = "<group>"; };
+		EDE1980E2CA17455007624DD /* RefreshScrollModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshScrollModel.swift; sourceTree = "<group>"; };
 		EDF8A2FD2C998D560041E657 /* Feedback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +105,7 @@
 				7155A9282C985A8500A563B2 /* Profile.swift */,
 				EDE1980A2C9D96FA007624DD /* CreateInitialProfil.swift */,
 				710852392C9D5F7D00525E53 /* CreateInitialMissions.swift */,
+				EDE1980E2CA17455007624DD /* RefreshScrollModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				EDE1980B2C9D96FA007624DD /* CreateInitialProfil.swift in Sources */,
 				71D971952C998C900098771D /* ConfirmationEngagement.swift in Sources */,
 				718187782C91DBDD003F6855 /* RootNavView.swift in Sources */,
+				EDE1980F2CA17455007624DD /* RefreshScrollModel.swift in Sources */,
 				7155A9082C943F0300A563B2 /* challenge.swift in Sources */,
 				7108523A2C9D5F7D00525E53 /* CreateInitialMissions.swift in Sources */,
 				7155A9112C9487C100A563B2 /* utils_connection.swift in Sources */,

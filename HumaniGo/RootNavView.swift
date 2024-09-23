@@ -39,7 +39,7 @@ struct RootNavView: View {
                     .tabItem {
                         Label("Mes Missions", systemImage: "list.clipboard")
                     }
-                    .tag(4)
+                    .tag(1)
             }
             
             // Notifications page if connected
@@ -57,7 +57,7 @@ struct RootNavView: View {
                     .tabItem {
                         Label("Notifications", systemImage: "bell.badge")
                     }
-                    .tag(4)
+                    .tag(2)
             }
             
             // Profile page if connected
@@ -73,7 +73,7 @@ struct RootNavView: View {
                     .tabItem {
                         Label("Profil", systemImage: "person.crop.circle")
                     }
-                    .tag(4)
+                    .tag(3)
             }
         }
         .onAppear {
