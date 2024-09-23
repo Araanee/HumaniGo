@@ -25,7 +25,6 @@ struct ConnexionView: View {
     
     func checkin(_ email: String, _ pswd : String) -> Bool
     {
-        
         return shared.contains { profile in
             profile.info.email == email && profile.info.pswd == pswd
         }

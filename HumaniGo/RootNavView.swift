@@ -13,7 +13,14 @@ struct RootNavView: View {
     @Query var missions: [Mission]
     @StateObject var missionsData = ShareMissionData(missions: [Mission](), mission: toto)
     @StateObject var uidProfil: UIDProfile = UIDProfile()
+    @State private var test = false
     var body: some View {
+        
+        if !test {
+            Launch(test: $test)
+        } else {
+        
+        
         TabView(selection: $navControl.tabViewSelection) {
             HomeView()
                 .tabItem {
@@ -22,7 +29,7 @@ struct RootNavView: View {
                 .tag(0)
             if (uidProfil.connected)
             {
-                Favorite()
+                MyMissions()
                     .tabItem {
                         Label("Mes Missions", systemImage: "list.clipboard")
                     }
@@ -78,6 +85,8 @@ struct RootNavView: View {
         .environmentObject(navControl)
         .environmentObject(missionsData)
         .environmentObject(uidProfil)
+        .navigationBarBackButtonHidden()
+    }
     }
 }
 

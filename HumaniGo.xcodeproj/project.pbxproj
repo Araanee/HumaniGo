@@ -23,7 +23,6 @@
 		7155A9272C984FE800A563B2 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7155A9262C984FE800A563B2 /* Mission.swift */; };
 		7155A9292C985A8500A563B2 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7155A9282C985A8500A563B2 /* Profile.swift */; };
 		716DB0C92C9860BB00AEF827 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716DB0C82C9860BB00AEF827 /* NotificationsView.swift */; };
-		716DB0CC2C98637E00AEF827 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716DB0CB2C98637E00AEF827 /* Favorite.swift */; };
 		718187682C91A185003F6855 /* HumaniGoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718187672C91A185003F6855 /* HumaniGoApp.swift */; };
 		7181876A2C91A185003F6855 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718187692C91A185003F6855 /* HomeView.swift */; };
 		7181876C2C91A186003F6855 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7181876B2C91A186003F6855 /* Assets.xcassets */; };
@@ -35,6 +34,11 @@
 		71A7035D2C94363B0012CEFE /* CardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A7035C2C94363B0012CEFE /* CardsView.swift */; };
 		71D971932C998C0E0098771D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D971922C998C0E0098771D /* ProfileView.swift */; };
 		71D971952C998C900098771D /* ConfirmationEngagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D971942C998C900098771D /* ConfirmationEngagement.swift */; };
+		71F4972C2CA1991F004EC892 /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4972B2CA1991F004EC892 /* Launch.swift */; };
+		71F4972E2CA19D0E004EC892 /* MyMissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4972D2CA19D0E004EC892 /* MyMissions.swift */; };
+		71F497302CA19D17004EC892 /* FinishedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4972F2CA19D17004EC892 /* FinishedView.swift */; };
+		71F497322CA19D1C004EC892 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F497312CA19D1C004EC892 /* FavoriteView.swift */; };
+		71F497342CA19D20004EC892 /* AvenirView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F497332CA19D20004EC892 /* AvenirView.swift */; };
 		ED0B42E42C9D64F50098BB37 /* PhoneMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0B42E32C9D64F50098BB37 /* PhoneMail.swift */; };
 		ED14EE082C98340900D58FAA /* DelayNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED14EE072C98340900D58FAA /* DelayNav.swift */; };
 		EDE1980B2C9D96FA007624DD /* CreateInitialProfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE1980A2C9D96FA007624DD /* CreateInitialProfil.swift */; };
@@ -58,7 +62,6 @@
 		7155A9262C984FE800A563B2 /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
 		7155A9282C985A8500A563B2 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		716DB0C82C9860BB00AEF827 /* NotificationsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
-		716DB0CB2C98637E00AEF827 /* Favorite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		718187642C91A185003F6855 /* HumaniGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HumaniGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		718187672C91A185003F6855 /* HumaniGoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumaniGoApp.swift; sourceTree = "<group>"; };
 		718187692C91A185003F6855 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -71,6 +74,11 @@
 		71A7035C2C94363B0012CEFE /* CardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsView.swift; sourceTree = "<group>"; };
 		71D971922C998C0E0098771D /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		71D971942C998C900098771D /* ConfirmationEngagement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationEngagement.swift; sourceTree = "<group>"; };
+		71F4972B2CA1991F004EC892 /* Launch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
+		71F4972D2CA19D0E004EC892 /* MyMissions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMissions.swift; sourceTree = "<group>"; };
+		71F4972F2CA19D17004EC892 /* FinishedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishedView.swift; sourceTree = "<group>"; };
+		71F497312CA19D1C004EC892 /* FavoriteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
+		71F497332CA19D20004EC892 /* AvenirView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvenirView.swift; sourceTree = "<group>"; };
 		ED0B42E32C9D64F50098BB37 /* PhoneMail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneMail.swift; sourceTree = "<group>"; };
 		ED14EE072C98340900D58FAA /* DelayNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayNav.swift; sourceTree = "<group>"; };
 		EDE1980A2C9D96FA007624DD /* CreateInitialProfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateInitialProfil.swift; sourceTree = "<group>"; };
@@ -147,7 +155,8 @@
 				710852132C9ACA6700525E53 /* NavigationControl.swift */,
 				710852152C9AE12F00525E53 /* ShareData.swift */,
 				71A703522C9311CD0012CEFE /* DetailsMissionView.swift */,
-				716DB0CB2C98637E00AEF827 /* Favorite.swift */,
+				71F4972B2CA1991F004EC892 /* Launch.swift */,
+				71F497352CA19D23004EC892 /* MyMissions */,
 				71D971942C998C900098771D /* ConfirmationEngagement.swift */,
 				7155A91A2C981E6200A563B2 /* FeedbackView.swift */,
 				ED14EE072C98340900D58FAA /* DelayNav.swift */,
@@ -173,6 +182,17 @@
 				7181876E2C91A186003F6855 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		71F497352CA19D23004EC892 /* MyMissions */ = {
+			isa = PBXGroup;
+			children = (
+				71F497332CA19D20004EC892 /* AvenirView.swift */,
+				71F4972D2CA19D0E004EC892 /* MyMissions.swift */,
+				71F497312CA19D1C004EC892 /* FavoriteView.swift */,
+				71F4972F2CA19D17004EC892 /* FinishedView.swift */,
+			);
+			path = MyMissions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,10 +267,12 @@
 			files = (
 				716DB0C92C9860BB00AEF827 /* NotificationsView.swift in Sources */,
 				71D971932C998C0E0098771D /* ProfileView.swift in Sources */,
+				71F497302CA19D17004EC892 /* FinishedView.swift in Sources */,
 				7155A90E2C9487B800A563B2 /* Mdp.swift in Sources */,
 				710852162C9AE12F00525E53 /* ShareData.swift in Sources */,
 				7155A9122C9487C100A563B2 /* NameFirstName.swift in Sources */,
 				71A7035D2C94363B0012CEFE /* CardsView.swift in Sources */,
+				71F4972E2CA19D0E004EC892 /* MyMissions.swift in Sources */,
 				710852142C9ACA6700525E53 /* NavigationControl.swift in Sources */,
 				711D49812C9DBF88002FBE94 /* FiltersView.swift in Sources */,
 				7155A9252C984D4300A563B2 /* MyColors.swift in Sources */,
@@ -261,6 +283,7 @@
 				7181876A2C91A185003F6855 /* HomeView.swift in Sources */,
 				7155A9272C984FE800A563B2 /* Mission.swift in Sources */,
 				EDF8A2FE2C998D560041E657 /* Feedback.swift in Sources */,
+				71F497322CA19D1C004EC892 /* FavoriteView.swift in Sources */,
 				7155A91D2C981E6D00A563B2 /* MiniComposants.swift in Sources */,
 				ED14EE082C98340900D58FAA /* DelayNav.swift in Sources */,
 				EDE1980B2C9D96FA007624DD /* CreateInitialProfil.swift in Sources */,
@@ -271,7 +294,8 @@
 				7155A9112C9487C100A563B2 /* utils_connection.swift in Sources */,
 				7155A91B2C981E6200A563B2 /* FeedbackView.swift in Sources */,
 				ED0B42E42C9D64F50098BB37 /* PhoneMail.swift in Sources */,
-				716DB0CC2C98637E00AEF827 /* Favorite.swift in Sources */,
+				71F497342CA19D20004EC892 /* AvenirView.swift in Sources */,
+				71F4972C2CA1991F004EC892 /* Launch.swift in Sources */,
 				7155A9292C985A8500A563B2 /* Profile.swift in Sources */,
 				718187682C91A185003F6855 /* HumaniGoApp.swift in Sources */,
 				71A703532C9311CD0012CEFE /* DetailsMissionView.swift in Sources */,

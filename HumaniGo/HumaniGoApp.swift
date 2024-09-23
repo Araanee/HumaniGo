@@ -49,9 +49,6 @@ struct HumaniGoApp: App {
         } catch {
             fatalError("Failed to initialize ModelContainer: \(error)")
         }
-        
-        
-        
     
 }
 
@@ -59,7 +56,6 @@ var body: some Scene {
     WindowGroup {
         RootNavView()
             .modelContainer(container) // Associe le conteneur au contenu de l'application
-        //.modelContainer(for: Profil.self)
     }
 }
 }
