@@ -39,12 +39,13 @@ struct ConnexionView: View {
                         //VERIFIER MDP ET MAIL BDD
                     if(!checkin(email, pswd))
                     {
-                        Error = "Email ou mot de passe incorrecte"
+                        Error = "Email ou mot de passe incorrect"
                     } //en attendant
                     else 
                     {
                         Error = ""
                         uidProfil.connected = true
+                        uidProfil.email = email
                     }
                 },
                 label :
