@@ -47,7 +47,7 @@ struct Launch: View {
                             .font(.title)
                             .padding()
                             .foregroundStyle(.black)
-                            .frame(width: 300, height: 80,alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .frame(width: 300, height: 80,alignment: .center)
                             .background (Color(.systemGray6))
                             .clipShape( RoundedRectangle(cornerRadius: 30))
                     })
