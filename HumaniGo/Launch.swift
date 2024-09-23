@@ -16,7 +16,13 @@ struct Launch: View {
                 Image("fd_launch")
                 
                 VStack(spacing: 40) {
-                    Image("Logo_Humaniterre3")
+                    Image("logo")
+                        .frame(width: 50, height: 30)
+                        .padding(.bottom, 40)
+                    Text("HumaniGo")
+                        .font(.system(size: 45))
+                        .foregroundStyle(.white)
+                        .bold()
                     
                     Button(action: {}, label: {
                         

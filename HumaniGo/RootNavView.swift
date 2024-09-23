@@ -36,7 +36,7 @@ struct RootNavView: View {
             else {
                 ConnexionView()
                     .tabItem {
-                        Label("Notifications", systemImage: "bell.badge")
+                        Label("Notifications", systemImage: "list.clipboard")
                     }
                     .tag(4)
             }
