@@ -20,13 +20,13 @@ struct ProfileView: View {
     
     @EnvironmentObject var uidProfil : UIDProfile
     
-    @Query  var profiles: [Profile]
-    
-    @State  private var btn: Color = .yellow
-    @State  var tel = ""
-    @State  var email = ""
-    @State  var mdp = ""
-    @State  var cmdp = ""
+    @Query var profiles: [Profile]
+
+    @State private var btn: Color = .yellow
+    @State var tel = ""
+    @State var email = ""
+    @State var mdp = ""
+    @State var cmdp = ""
     @StateObject var loginVM = utilsPswd()
 
     func logout(){

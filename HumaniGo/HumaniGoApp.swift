@@ -33,14 +33,11 @@ struct HumaniGoApp: App {
             }
             
             if try !container.mainContext.fetch(FetchDescriptor<Profile>()).isEmpty
-            {
+{
                 print("Profils already exist. Skipping initialization.")
-            }
-            else
-            {
+            } else{
                 let initProfils = createInitialProfil()
-                for profil in initProfils
-                {
+                for profil in initProfils{
                     container.mainContext.insert(profil)
                 }
                 try container.mainContext.save()
