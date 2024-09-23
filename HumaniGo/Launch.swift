@@ -8,6 +8,8 @@ import SwiftUI
 
 struct Launch: View {
     
+    @Binding var test: Bool
+    
     var body: some View {
         
         NavigationStack {
@@ -37,8 +39,10 @@ struct Launch: View {
                             .clipShape( RoundedRectangle(cornerRadius: 30))
                         
                     })
-                    NavigationLink (destination: RootNavView()) {
-                        
+
+                    Button(action: {
+                        test.toggle()
+                    }, label: {
                         Text("Bénévoles")
                             .font(.title)
                             .padding()
@@ -46,7 +50,7 @@ struct Launch: View {
                             .frame(width: 300, height: 80,alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             .background (Color(.systemGray6))
                             .clipShape( RoundedRectangle(cornerRadius: 30))
-                    }
+                    })
                 }
             }
         }
@@ -54,5 +58,5 @@ struct Launch: View {
 }
 
 #Preview {
-    Launch()
+    Launch(test: .constant(false))
 }
