@@ -8,16 +8,10 @@
 import SwiftUI
 import SwiftData
 
-var prenom: String = ""
-
 var pouce = "👍"
 var etoile = "⭐️"
 var kdo = "🛍️"
 
-
-
-
-// Comment on fait pour que le nom rentré par l'asso apparaisse dans le code
 
 struct ProfileView: View {
     
@@ -25,7 +19,6 @@ struct ProfileView: View {
     @Environment(\.modelContext) var modelContext
     
     @Query  var shared: [Profile]
-    //@State private var profils: [Profil] = []
     @State  private var btn: Color = .yellow
     @State  var tel = ""
     @State  var email = ""

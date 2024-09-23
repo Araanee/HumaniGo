@@ -22,7 +22,7 @@ struct RootNavView: View {
                     Label("Recherche", systemImage: "magnifyingglass")
                 }
                 .tag(0)
-            FavoriteView()
+            MyMissions()
                 .tabItem {
                     Label("Mes Missions", systemImage: "list.clipboard")
                 }
@@ -41,7 +41,7 @@ struct RootNavView: View {
                     .tabItem {
                         Label("Notifications", systemImage: "bell.badge")
                     }
-                    .tag(2)
+                    .tag(4)
             }
             if (uidProfil.connected)
             {
@@ -57,7 +57,7 @@ struct RootNavView: View {
                     .tabItem {
                         Label("Profil", systemImage: "person.crop.circle")
                     }
-                    .tag(3)
+                    .tag(4)
             }
             
         }

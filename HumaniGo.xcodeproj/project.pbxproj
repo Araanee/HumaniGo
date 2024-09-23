@@ -11,6 +11,9 @@
 		710852162C9AE12F00525E53 /* ShareData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710852152C9AE12F00525E53 /* ShareData.swift */; };
 		7108523A2C9D5F7D00525E53 /* CreateInitialMissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710852392C9D5F7D00525E53 /* CreateInitialMissions.swift */; };
 		711D49812C9DBF88002FBE94 /* FiltersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711D49802C9DBF88002FBE94 /* FiltersView.swift */; };
+		711D49832CA158B4002FBE94 /* AvenirView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711D49822CA158B4002FBE94 /* AvenirView.swift */; };
+		711D49852CA15B39002FBE94 /* MyMissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711D49842CA15B39002FBE94 /* MyMissions.swift */; };
+		711D49872CA15C95002FBE94 /* FinishedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711D49862CA15C95002FBE94 /* FinishedView.swift */; };
 		7155A9082C943F0300A563B2 /* challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7155A9072C943F0300A563B2 /* challenge.swift */; };
 		7155A90C2C9487B800A563B2 /* Sexe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7155A9092C9487B800A563B2 /* Sexe.swift */; };
 		7155A90E2C9487B800A563B2 /* Mdp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7155A90B2C9487B800A563B2 /* Mdp.swift */; };
@@ -46,6 +49,9 @@
 		710852152C9AE12F00525E53 /* ShareData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareData.swift; sourceTree = "<group>"; };
 		710852392C9D5F7D00525E53 /* CreateInitialMissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateInitialMissions.swift; sourceTree = "<group>"; };
 		711D49802C9DBF88002FBE94 /* FiltersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltersView.swift; sourceTree = "<group>"; };
+		711D49822CA158B4002FBE94 /* AvenirView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvenirView.swift; sourceTree = "<group>"; };
+		711D49842CA15B39002FBE94 /* MyMissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMissions.swift; sourceTree = "<group>"; };
+		711D49862CA15C95002FBE94 /* FinishedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedView.swift; sourceTree = "<group>"; };
 		7155A9072C943F0300A563B2 /* challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = challenge.swift; sourceTree = "<group>"; };
 		7155A9092C9487B800A563B2 /* Sexe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sexe.swift; sourceTree = "<group>"; };
 		7155A90B2C9487B800A563B2 /* Mdp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mdp.swift; sourceTree = "<group>"; };
@@ -148,6 +154,9 @@
 				710852152C9AE12F00525E53 /* ShareData.swift */,
 				71A703522C9311CD0012CEFE /* DetailsMissionView.swift */,
 				716DB0CB2C98637E00AEF827 /* FavoriteView.swift */,
+				711D49822CA158B4002FBE94 /* AvenirView.swift */,
+				711D49862CA15C95002FBE94 /* FinishedView.swift */,
+				711D49842CA15B39002FBE94 /* MyMissions.swift */,
 				71D971942C998C900098771D /* ConfirmationEngagement.swift */,
 				7155A91A2C981E6200A563B2 /* FeedbackView.swift */,
 				ED14EE072C98340900D58FAA /* DelayNav.swift */,
@@ -247,10 +256,12 @@
 			files = (
 				716DB0C92C9860BB00AEF827 /* NotificationsView.swift in Sources */,
 				71D971932C998C0E0098771D /* ProfileView.swift in Sources */,
+				711D49872CA15C95002FBE94 /* FinishedView.swift in Sources */,
 				7155A90E2C9487B800A563B2 /* Mdp.swift in Sources */,
 				710852162C9AE12F00525E53 /* ShareData.swift in Sources */,
 				7155A9122C9487C100A563B2 /* NameFirstName.swift in Sources */,
 				71A7035D2C94363B0012CEFE /* CardsView.swift in Sources */,
+				711D49852CA15B39002FBE94 /* MyMissions.swift in Sources */,
 				710852142C9ACA6700525E53 /* NavigationControl.swift in Sources */,
 				711D49812C9DBF88002FBE94 /* FiltersView.swift in Sources */,
 				7155A9252C984D4300A563B2 /* MyColors.swift in Sources */,
@@ -260,6 +271,7 @@
 				7155A90C2C9487B800A563B2 /* Sexe.swift in Sources */,
 				7181876A2C91A185003F6855 /* HomeView.swift in Sources */,
 				7155A9272C984FE800A563B2 /* Mission.swift in Sources */,
+				711D49832CA158B4002FBE94 /* AvenirView.swift in Sources */,
 				EDF8A2FE2C998D560041E657 /* Feedback.swift in Sources */,
 				7155A91D2C981E6D00A563B2 /* MiniComposants.swift in Sources */,
 				ED14EE082C98340900D58FAA /* DelayNav.swift in Sources */,
