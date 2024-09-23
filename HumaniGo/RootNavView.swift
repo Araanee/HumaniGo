@@ -14,8 +14,15 @@ struct RootNavView: View {
     @Query var missions: [Mission]
     @StateObject var missionsData = ShareMissionData(missions: [Mission](), mission: toto)
     @StateObject var uidProfil: UIDProfile = UIDProfile()
+    @State private var test = false
     
     var body: some View {
+        
+        if !test {
+            Launch(test: $test)
+        } else {
+        
+        
         TabView(selection: $navControl.tabViewSelection) {
             
             // Search for missions page
@@ -85,6 +92,7 @@ struct RootNavView: View {
         .environmentObject(missionsData)
         .environmentObject(uidProfil)
         .navigationBarBackButtonHidden()
+    }
     }
 }
 
