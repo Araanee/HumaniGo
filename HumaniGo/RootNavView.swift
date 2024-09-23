@@ -17,49 +17,61 @@ struct RootNavView: View {
     
     var body: some View {
         TabView(selection: $navControl.tabViewSelection) {
+            
+            // Search for missions page
             HomeView()
                 .tabItem {
                     Label("Recherche", systemImage: "magnifyingglass")
                 }
                 .tag(0)
-            MyMissions()
-                .tabItem {
-                    Label("Mes Missions", systemImage: "list.clipboard")
-                }
-                .tag(1)
-            if (uidProfil.connected)
-            {
+            
+            // My missions page if connected
+            if (uidProfil.connected){
+                MyMissions()
+                    .tabItem {
+                        Label("Mes Missions", systemImage: "list.clipboard")
+                    }
+                    .tag(1)
+            }
+            else {
+                ConnexionView()
+                    .tabItem {
+                        Label("Notifications", systemImage: "bell.badge")
+                    }
+                    .tag(4)
+            }
+            
+            // Notifications page if connected
+            if (uidProfil.connected){
                 NotificationsView()
                     .tabItem {
                         Label("Notifications", systemImage: "bell.badge")
                     }
                     .tag(2)
             }
-            else
-            {
+            else {
                 ConnexionView()
                     .tabItem {
                         Label("Notifications", systemImage: "bell.badge")
                     }
                     .tag(4)
             }
-            if (uidProfil.connected)
-            {
+            
+            // Profile page if connected
+            if (uidProfil.connected){
                 ProfileView()
                     .tabItem {
                         Label("Profil", systemImage: "person.crop.circle")
                     }
                     .tag(3)
             }
-            else
-            {
+            else {
                 ConnexionView()
                     .tabItem {
                         Label("Profil", systemImage: "person.crop.circle")
                     }
                     .tag(4)
             }
-            
         }
         .onAppear {
             missionsData.missions = missions
@@ -68,6 +80,7 @@ struct RootNavView: View {
         .accentColor(Color.mypink)
         .environmentObject(navControl)
         .environmentObject(missionsData)
+        .navigationBarBackButtonHidden()
     }
 }
 
