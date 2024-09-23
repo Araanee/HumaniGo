@@ -24,14 +24,10 @@ struct FiltresView: View {
         
     ZStack (alignment: Alignment(horizontal: .center, vertical: .top))
             {
-                RoundedRectangle(cornerRadius: 25.0)
-                    .fill(Color.mypink)
-                    .frame(width: 410,height: 70)
+                RoundedRectangle(cornerRadius: 15.0).strokeBorder(Color.pink,lineWidth: 5).frame(width: 410,height: 100)
                     .padding(-7)
-                RoundedRectangle(cornerRadius: 0)
-                    .foregroundColor(.white)
-                    .frame(width: 400,height: 90)
-                    .padding(-6)
+                Rectangle().foregroundColor(.white)
+                    .frame(width: 400,height: 90).padding()
         
         VStack(alignment: .leading, spacing: 30) {
 

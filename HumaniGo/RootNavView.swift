@@ -9,10 +9,12 @@ import SwiftUI
 import SwiftData
 
 struct RootNavView: View {
+    
     @StateObject var navControl = NavigationControl()
     @Query var missions: [Mission]
     @StateObject var missionsData = ShareMissionData(missions: [Mission](), mission: toto)
     @StateObject var uidProfil: UIDProfile = UIDProfile()
+    
     var body: some View {
         TabView(selection: $navControl.tabViewSelection) {
             HomeView()
@@ -20,7 +22,7 @@ struct RootNavView: View {
                     Label("Recherche", systemImage: "magnifyingglass")
                 }
                 .tag(0)
-            Favorite()
+            FavoriteView()
                 .tabItem {
                     Label("Mes Missions", systemImage: "list.clipboard")
                 }

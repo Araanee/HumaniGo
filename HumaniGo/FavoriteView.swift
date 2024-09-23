@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Favorite: View {
+struct FavoriteView: View {
   
     var body: some View
     {
@@ -437,5 +437,5 @@ struct Favorite: View {
 }
 
 #Preview {
-    Favorite()
+    FavoriteView()
 }
