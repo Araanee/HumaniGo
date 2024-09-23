@@ -94,8 +94,8 @@ struct DetailsMissionView: View {
                             
                             Button(action: {
                                 uidProfil.engaged = true
-                                navControl.dismissModal = false
-                                navControl.tabViewSelection = 3
+                                //navControl.dismissModal = false
+                                //navControl.tabViewSelection = 3
                                 print(navControl.dismissModal)
                             }, label: {Text("M'engager")}).bold()
                                 .padding()
@@ -109,7 +109,7 @@ struct DetailsMissionView: View {
                                 DelayedNavigationLink(delay: .seconds(0))
                                 {
                                     ConfirmationEngagement()
-                                }
+                                }.ignoresSafeArea()
                                 
                             }
                             else if (uidProfil.engaged)
@@ -117,7 +117,7 @@ struct DetailsMissionView: View {
                                 DelayedNavigationLink(delay: .seconds(0))
                                 {
                                     ConnexionView()
-                                }
+                                }.ignoresSafeArea()
                             }
                         }
                         

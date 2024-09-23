@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct ConfirmationEngagement: View {
-    @EnvironmentObject var navControl: NavigationControl
     
+    @Query var profiles: [Profile]
+    
+    @EnvironmentObject var navControl: NavigationControl
+    @EnvironmentObject var uidProfile: UIDProfile
     
     
     var body: some View {
@@ -34,7 +37,10 @@ struct ConfirmationEngagement: View {
                         
                         HomeView()
                     }.onDisappear{
+                        //profiles[uidProfile]
+                        navControl.dismissModal = false
                         navControl.tabViewSelection = 0
+                        uidProfile.engaged = false
                     print("hello")}
                 }
             }
@@ -43,7 +49,7 @@ struct ConfirmationEngagement: View {
     }
 }
 
-#Preview {
-    ConfirmationEngagement()
-        .environmentObject(NavigationControl())
-}
+//#Preview {
+//    ConfirmationEngagement()
+//        .environmentObject(NavigationControl())
+//}

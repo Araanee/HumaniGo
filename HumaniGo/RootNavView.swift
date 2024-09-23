@@ -16,6 +16,8 @@ struct RootNavView: View {
     @StateObject var uidProfil: UIDProfile = UIDProfile()
     @State private var test = false
     
+   
+    
     var body: some View {
         
         if !test {
@@ -75,13 +77,15 @@ struct RootNavView: View {
                     }
                     .tag(3)
             }
-            else {
+            else
+            {
                 ConnexionView()
                     .tabItem {
                         Label("Profil", systemImage: "person.crop.circle")
                     }
                     .tag(3)
             }
+            
         }
         .onAppear {
             missionsData.missions = missions

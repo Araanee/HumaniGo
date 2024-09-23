@@ -10,6 +10,9 @@ import SwiftData
 
 struct CardsView: View {
     
+    @Query var profiles: [Profile]
+    
+    @EnvironmentObject var uidProfil: UID
     @EnvironmentObject var navControl: NavigationControl
     @EnvironmentObject var missionsData: ShareMissionData
     @State var indexMission: Int = 0
@@ -20,12 +23,12 @@ struct CardsView: View {
     
     func cards() -> some View {
         ZStack {
-            RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+            RoundedRectangle(cornerRadius: 25.0)
                 .fill(Color.myyellow3)
                 .frame(width: 250, height: 450)
                 .offset(y: 40)
                 .rotationEffect(.degrees(-3))
-            RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+            RoundedRectangle(cornerRadius: 25.0)
                 .fill(Color.myyellow2)
                 .frame(width: 300, height: 450)
                 .offset(y: 20)

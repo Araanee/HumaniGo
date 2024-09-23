@@ -29,6 +29,7 @@ struct ConnexionView: View {
             profile.info.email == email && profile.info.pswd == pswd
         }
     }
+    
     func connexion() -> some View
     {
         VStack
@@ -36,6 +37,8 @@ struct ConnexionView: View {
             Button(
                 action: {
                     btn = true
+                    
+                    print(String(uidProfil.engaged) + ": engaged")
                         //VERIFIER MDP ET MAIL BDD
                     if(!checkin(email, pswd))
                     {
@@ -45,10 +48,12 @@ struct ConnexionView: View {
                     {
                         Error = ""
                         uidProfil.connected = true
+                        print(String(uidProfil.connected) + ": connected")
                     }
                 },
                 label :
-                    {Text("Connecte-toi").foregroundColor(.black).font(.headline)})
+                    {
+                        Text("Connecte-toi").foregroundColor(.black).font(.headline)})
             .frame(width: 150, height: 50)
             .background(Color.myyellow)
             .clipShape(RoundedRectangle(cornerRadius: 25.0))
@@ -60,7 +65,7 @@ struct ConnexionView: View {
                     
                     if (uidProfil.engaged)
                     {
-                        DelayedNavigationLink(delay: .seconds(1)) {
+                        DelayedNavigationLink(delay: .seconds(2)) {
                             
                             ConfirmationEngagement()
                         }
@@ -70,10 +75,10 @@ struct ConnexionView: View {
                     else
                     {
                         
-                        DelayedNavigationLink(delay: .seconds(1)) {
+                        DelayedNavigationLink(delay: .seconds(2)) {
                             
                             ProfileView()
-                        }.onAppear{navControl.tabViewSelection = 4}
+                        }//.onAppear{navControl.tabViewSelection = 4}
                     }
                     //ICI ENREGISTRER LES CHAMPS POUR LA CREATION DU COMPTE
                 }
