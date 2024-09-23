@@ -57,9 +57,10 @@ struct HumaniGoApp: App {
 
 var body: some Scene {
     WindowGroup {
-        RootNavView()
-            .modelContainer(container) // Associe le conteneur au contenu de l'application
-        //.modelContainer(for: Profil.self)
+        Launch()
+            .modelContainer(container)
+//        RootNavView()
+//            .modelContainer(container) // Associe le conteneur au contenu de l'application
     }
 }
 }
