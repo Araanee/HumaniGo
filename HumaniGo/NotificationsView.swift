@@ -80,17 +80,18 @@ struct NotificationsView: View {
                         NavigationLink(notif.message) {
                             
                             FeedbackView()
-                        }.foregroundStyle(.black)
+                        }
+                        .foregroundStyle(.black)
                     }
                     else
                     {
-                        Text(notif.message).foregroundStyle(.black)
-
+                        Text(notif.message)
+                            .foregroundStyle(.black)
                     }
                     
                 }
                 
-                Spacer ()
+                //Spacer ()
             }
             
             Rectangle().frame(width: 350, height: 1).foregroundColor(.gray)
