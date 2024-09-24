@@ -66,23 +66,15 @@ struct Mdp: View {
             {
                 if (Error.isEmpty)
                 {
-                    Text("Compte créé").foregroundStyle(.green)
+                    Text("Compte connecté").foregroundStyle(.green)
+                    
                     if (uidProfil.engaged)
                     {
-                        DelayedNavigationLink(delay: .seconds(1)) {
+                        DelayedNavigationLink(delay: .seconds(2)) {
                             
                             ConfirmationEngagement()
                         }
                         
-                        
-                    }
-                    else
-                    {
-                        
-                        DelayedNavigationLink(delay: .seconds(1)) {
-                            
-                            ProfileView()
-                        }.onAppear{navControl.tabViewSelection = 4}
                     }
                 }
                 else
@@ -169,8 +161,8 @@ struct Mdp: View {
 
 
 func ajouterProfil(gender: Gender, firstname: String, lastname: String, email: String, phone: String, pswd: String) -> Profile {
-    return Profile(nbmissions: 0, nbfeedbacks: 0, points: 0, feedbacks: [avis1, avis2,avis3],
-                   notification: ["bien inscrit"]
+    return Profile(nbmissions: 0, nbfeedbacks: 0, points: 0, feedbacks: [],
+                   notification: ["Bravo ! Tu as finalisé\(gender == Gender.female ? "e":"") ton inscription.\rTu peux désormais participer aux missions disponibles."]
                    ,info: InfoProfile(gender: gender, firstname: firstname, lastname: lastname, email: email, phone: phone, pswd: pswd))
     
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 
+
 var avis1: Feedback = Feedback(association:"Les Restos du Coeur", hearts: 5, comment:"Emma s'est rapidement adaptée à nos besoins. Son sourire a mis du soleil à tous les bénéficiaires qu'elle a rencontré. Merci !" )
 
 var avis2: Feedback = Feedback(association:"Soutien de France", hearts: 4, comment:"Les élèves sont de plus en plus nombreux, la motivation d'Emma est un précieux atout." )
