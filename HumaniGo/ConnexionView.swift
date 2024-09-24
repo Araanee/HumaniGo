@@ -74,14 +74,14 @@ struct ConnexionView: View {
                         }
                         
                     }
-                    else
-                    {
-                        
-                        DelayedNavigationLink(delay: .seconds(2)) {
-                            
-                            ProfileView()
-                        }//.onAppear{navControl.tabViewSelection = 4}
-                    }
+//                    else
+//                    {
+//                        
+//                        DelayedNavigationLink(delay: .seconds(2)) {
+//                            
+//                            ProfileView()
+//                        }//.onAppear{navControl.tabViewSelection = 4}
+//                    }
                     //ICI ENREGISTRER LES CHAMPS POUR LA CREATION DU COMPTE
                 }
                 else

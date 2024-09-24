@@ -10,10 +10,7 @@ import SwiftUI
 struct DetailsMissionView: View {
     
     @EnvironmentObject var missionsData: ShareMissionData
-    @EnvironmentObject var uidProfil: UIDProfile
-    @EnvironmentObject var navControl : NavigationControl
-    
-    @State private var shouldNavigate = false
+    @EnvironmentObject var uidProfile: UIDProfile
     
     let dateFormatter = DateFormatter()
     
@@ -23,10 +20,8 @@ struct DetailsMissionView: View {
         formatter.locale = Locale(identifier: "fr_FR")
         return formatter.string(from: missionsData.mission.date)
     }
-  
     
-    var body: some View
-    {
+    var body: some View {
         NavigationStack {
             let mission = missionsData.mission
             RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
@@ -72,23 +67,17 @@ struct DetailsMissionView: View {
                         }
                         
                         HStack {
-                            VStack() {
+                            VStack(spacing: 40) {
                                 Image(systemName: "calendar")
-                                Spacer()
                                 Image(systemName: "mappin.and.ellipse")
-                                Spacer()
                                 Image(systemName: "person.3.fill")
                             }
                             .foregroundStyle(Color.mypink)
-                            .frame(height: 150)
-                            VStack(alignment: .leading) {
+                            VStack(alignment: .leading, spacing: 40) {
                                 Text(formattedDate)
-                                Spacer()
                                 Text(mission.address)
-                                Spacer()
                                 Text("\(mission.members) places")
                             }
-                            .frame(height: 150)
                         }
                         .padding()
                         .font(.title3)
@@ -98,44 +87,52 @@ struct DetailsMissionView: View {
                             Text("Si tu est motivé-e à apporter ton aide, rejoins nous !")
                                 .font(.subheadline)
                                 .foregroundStyle(.gray)
+                            Button(action:{uidProfile.engaged = true}, label: {
+                                ZStack{
+                                    Text("M'engager").bold()
+                                        .padding()
+                                        .foregroundStyle(.white)
+                                        .background(Color.mypink)
+                                        .clipShape(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/))
+                                }})
                             
-                            Button(action: {
-                                uidProfil.engaged = true
-                                navControl.dismissModal = false
-                                navControl.tabViewSelection = 3
-                            }, label: {Text("M'engager")}).bold()
-                                .padding()
-                                .foregroundStyle(.white)
-                                .background(Color.pink)
-                                .clipShape(RoundedRectangle(cornerRadius: 25.0))
-                            
-                            if (uidProfil.connected && uidProfil.engaged) {
-                                DelayedNavigationLink(delay: .seconds(1)) {
-                                    ConfirmationEngagement()
-                                }
+                            //                            NavigationLink("M'engager") {
+                            //                                ConnexionView()
+                            //                            }.onTapGesture {
+                            //                                uidProfile.engaged = true
+                            //                                print("hello nav")
+                            //                            }
                                 
-                            }
-                            else if (uidProfil.engaged) {
-                                DelayedNavigationLink(delay: .seconds(0)) {
-                                    ConnexionView()
+                            if (uidProfile.engaged)
+                            {
+                                if (uidProfile.connected)
+                                {
+                                    DelayedNavigationLink(delay: .seconds(0)) {
+                                        
+                                        ConfirmationEngagement()
+                                    }
+                                }
+                                else
+                                {
+                                    DelayedNavigationLink(delay: .seconds(0)) {
+                                        
+                                        ConnexionView()
+                                    }
                                 }
                             }
-
                         }
-                        
-                        
+                        .padding(.top, 30)
                     }
-                    .padding(.top, 30)
+                    
                 }
-                
             }
+            .padding()
         }
-        .padding()
     }
 }
-
 
 
 #Preview {
     DetailsMissionView()
 }
+

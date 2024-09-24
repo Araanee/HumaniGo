@@ -6,16 +6,10 @@
 //
 
 import SwiftUI
-import SwiftData
 
 struct ConfirmationEngagement: View {
-    
-    @Query var profiles: [Profile]
-    
     @EnvironmentObject var navControl: NavigationControl
-    @EnvironmentObject var uidProfile: UIDProfile
-
-    
+    @EnvironmentObject var uidProfil: UIDProfile
     
     var body: some View {
         VStack
@@ -35,24 +29,22 @@ struct ConfirmationEngagement: View {
                         Text("Tu pourras retrouver \r cette mission dans la section").multilineTextAlignment(.center).font(.system(size: 20)).font(.title).italic().foregroundColor(.white)
                         Text("Mes Missions").font(.system(size: 20)).font(.title).bold().foregroundColor(.white)
                     }.padding(20)
-                    
-                    DelayedNavigationLink(delay: .seconds(2)) {
-                        HomeView()
-                    }.onDisappear{
-                        profiles[uidProfile.idx].notification.append("Tu as bien été inscrit a la mission")
-                        navControl.dismissModal = false
-                        navControl.tabViewSelection = 0
-                        uidProfile.engaged = false
-                    print("hello")}
-
                 }
+            }.onAppear
+            {
+                uidProfil.engaged = false
+            }
+            .onTapGesture {
+                navControl.dismissModal = false
+                //navControl.tabViewSelection = 3
             }
             
         }.navigationBarBackButtonHidden(true)
     }
 }
 
-//#Preview {
-//    ConfirmationEngagement()
-//        .environmentObject(NavigationControl())
-//}
+#Preview {
+    ConfirmationEngagement()
+        .environmentObject(NavigationControl())
+}
+
