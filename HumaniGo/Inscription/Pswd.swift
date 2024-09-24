@@ -162,7 +162,7 @@ struct Mdp: View {
 
 func ajouterProfil(gender: Gender, firstname: String, lastname: String, email: String, phone: String, pswd: String) -> Profile {
     return Profile(nbmissions: 0, nbfeedbacks: 0, points: 0, feedbacks: [],
-                   notification: ["Bravo ! Tu as finalisé\(gender == Gender.female ? "e":"") ton inscription.\rTu peux désormais participer aux missions disponibles."]
+                   notification: [NotificationProfile(message: "Bravo ! Tu as finalisé\(gender == Gender.female ? "e":"") ton inscription.\rTu peux désormais participer aux missions disponibles.", type: TypeNotif.DefaultNotif)]
                    ,info: InfoProfile(gender: gender, firstname: firstname, lastname: lastname, email: email, phone: phone, pswd: pswd))
     
 }

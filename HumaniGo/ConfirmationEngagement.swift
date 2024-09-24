@@ -33,6 +33,7 @@ struct ConfirmationEngagement: View {
             }.onAppear
             {
                 uidProfil.engaged = false
+                
             }
             .onTapGesture {
                 navControl.dismissModal = false

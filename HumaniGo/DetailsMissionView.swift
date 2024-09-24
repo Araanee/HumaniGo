@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct DetailsMissionView: View {
     
     @EnvironmentObject var missionsData: ShareMissionData
     @EnvironmentObject var uidProfile: UIDProfile
+    @Query var profile: [Profile]
     
     let dateFormatter = DateFormatter()
     
@@ -113,9 +115,20 @@ struct DetailsMissionView: View {
                             {
                                 if (uidProfile.connected)
                                 {
-                                    DelayedNavigationLink(delay: .seconds(0)) {
+                                    
+                                    
+                                    DelayedNavigationLink(delay: .seconds(0)){
                                         
                                         ConfirmationEngagement()
+                                    }.onAppear
+                                    {
+                                        let selectedProfile = profile[uidProfile.idx]
+                                        selectedProfile.notification.append(NotificationProfile(message: "Tu as bien été inscrit\(profile[uidProfile.idx].info.gender == Gender.female ? "e" : "") pour la mission \(mission.name)", type: TypeNotif.DefaultNotif))
+                                        profile[uidProfile.idx].notification.append(NotificationProfile(message: "Ta mission s'est bien passée ? Laisse un avis !", type: TypeNotif.AvisNotif))
+                                       // DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                                        //   )
+                                            
+                                        //}
                                     }
                                 }
                                 else
