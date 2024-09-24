@@ -50,13 +50,16 @@ struct ConnexionView: View {
                         uidProfil.connected = true
                         uidProfil.email = email
                     }
+                    
                 },
                 label :
                     {
-                        Text("Connecte-toi").foregroundColor(.black).font(.headline)})
-            .frame(width: 150, height: 50)
-            .background(Color.myyellow)
-            .clipShape(RoundedRectangle(cornerRadius: 25.0))
+                        Text("Connecte-toi").foregroundColor(.black).font(.headline)
+                    })
+                    .frame(width: 150, height: 50)
+                    .background(Color.myyellow)
+                    .clipShape(RoundedRectangle(cornerRadius: 25.0))
+            
             if (btn)
             {
                 if (Error.isEmpty)
@@ -69,7 +72,6 @@ struct ConnexionView: View {
                             
                             ConfirmationEngagement()
                         }
-                        
                         
                     }
                     else

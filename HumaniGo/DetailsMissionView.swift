@@ -23,6 +23,7 @@ struct DetailsMissionView: View {
         formatter.locale = Locale(identifier: "fr_FR")
         return formatter.string(from: missionsData.mission.date)
     }
+  
     
     var body: some View
     {
@@ -100,9 +101,8 @@ struct DetailsMissionView: View {
                             
                             Button(action: {
                                 uidProfil.engaged = true
-                                //navControl.dismissModal = false
-                                //navControl.tabViewSelection = 3
-                                print(navControl.dismissModal)
+                                navControl.dismissModal = false
+                                navControl.tabViewSelection = 3
                             }, label: {Text("M'engager")}).bold()
                                 .padding()
                                 .foregroundStyle(.white)
@@ -110,16 +110,17 @@ struct DetailsMissionView: View {
                                 .clipShape(RoundedRectangle(cornerRadius: 25.0))
                             
                             if (uidProfil.connected && uidProfil.engaged) {
-                                DelayedNavigationLink(delay: .seconds(0)) {
+                                DelayedNavigationLink(delay: .seconds(1)) {
                                     ConfirmationEngagement()
-                                }.ignoresSafeArea()
+                                }
                                 
                             }
                             else if (uidProfil.engaged) {
                                 DelayedNavigationLink(delay: .seconds(0)) {
                                     ConnexionView()
-                                }.ignoresSafeArea()
+                                }
                             }
+
                         }
                         
                         
