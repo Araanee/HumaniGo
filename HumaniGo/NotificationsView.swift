@@ -71,17 +71,20 @@ struct NotificationsView: View {
         ForEach (profil.notification, id:\.self) { notif in
             VStack
             {
-                
                 HStack {
                     Circle()
                         .frame(width: 80, height: 15)
-                        .foregroundStyle(.red)
+                        .foregroundStyle(Color.mypink)
                     
-                    Text(notif)
+                    NavigationLink(notif){
+                        FeedbackView()
+                    }
+                    .foregroundStyle(.black)
+                    
                     Spacer ()
                 }
                 
-                Rectangle().frame(width: 350, height: 1).foregroundColor(.blue)
+                Rectangle().frame(width: 350, height: 1).foregroundColor(.gray)
             }
             
             
