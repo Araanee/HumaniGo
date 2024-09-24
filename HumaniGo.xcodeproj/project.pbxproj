@@ -11,8 +11,8 @@
 		710852162C9AE12F00525E53 /* ShareData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710852152C9AE12F00525E53 /* ShareData.swift */; };
 		7108523A2C9D5F7D00525E53 /* CreateInitialMissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710852392C9D5F7D00525E53 /* CreateInitialMissions.swift */; };
 		7155A9082C943F0300A563B2 /* challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7155A9072C943F0300A563B2 /* challenge.swift */; };
-		7155A90C2C9487B800A563B2 /* Sexe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7155A9092C9487B800A563B2 /* Sexe.swift */; };
-		7155A90E2C9487B800A563B2 /* Mdp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7155A90B2C9487B800A563B2 /* Mdp.swift */; };
+		7155A90C2C9487B800A563B2 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7155A9092C9487B800A563B2 /* Gender.swift */; };
+		7155A90E2C9487B800A563B2 /* Pswd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7155A90B2C9487B800A563B2 /* Pswd.swift */; };
 		7155A9112C9487C100A563B2 /* utils_connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7155A90F2C9487C100A563B2 /* utils_connection.swift */; };
 		7155A9122C9487C100A563B2 /* NameFirstName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7155A9102C9487C100A563B2 /* NameFirstName.swift */; };
 		7155A9152C9487C700A563B2 /* ConnexionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7155A9132C9487C700A563B2 /* ConnexionView.swift */; };
@@ -51,8 +51,8 @@
 		710852152C9AE12F00525E53 /* ShareData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareData.swift; sourceTree = "<group>"; };
 		710852392C9D5F7D00525E53 /* CreateInitialMissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateInitialMissions.swift; sourceTree = "<group>"; };
 		7155A9072C943F0300A563B2 /* challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = challenge.swift; sourceTree = "<group>"; };
-		7155A9092C9487B800A563B2 /* Sexe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sexe.swift; sourceTree = "<group>"; };
-		7155A90B2C9487B800A563B2 /* Mdp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mdp.swift; sourceTree = "<group>"; };
+		7155A9092C9487B800A563B2 /* Gender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
+		7155A90B2C9487B800A563B2 /* Pswd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pswd.swift; sourceTree = "<group>"; };
 		7155A90F2C9487C100A563B2 /* utils_connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = utils_connection.swift; sourceTree = "<group>"; };
 		7155A9102C9487C100A563B2 /* NameFirstName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameFirstName.swift; sourceTree = "<group>"; };
 		7155A9132C9487C700A563B2 /* ConnexionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnexionView.swift; sourceTree = "<group>"; };
@@ -115,8 +115,8 @@
 			children = (
 				7155A9102C9487C100A563B2 /* NameFirstName.swift */,
 				ED0B42E32C9D64F50098BB37 /* PhoneMail.swift */,
-				7155A9092C9487B800A563B2 /* Sexe.swift */,
-				7155A90B2C9487B800A563B2 /* Mdp.swift */,
+				7155A9092C9487B800A563B2 /* Gender.swift */,
+				7155A90B2C9487B800A563B2 /* Pswd.swift */,
 			);
 			path = Inscription;
 			sourceTree = "<group>";
@@ -271,7 +271,7 @@
 				716DB0C92C9860BB00AEF827 /* NotificationsView.swift in Sources */,
 				71D971932C998C0E0098771D /* ProfileView.swift in Sources */,
 				71F497302CA19D17004EC892 /* FinishedView.swift in Sources */,
-				7155A90E2C9487B800A563B2 /* Mdp.swift in Sources */,
+				7155A90E2C9487B800A563B2 /* Pswd.swift in Sources */,
 				710852162C9AE12F00525E53 /* ShareData.swift in Sources */,
 				7155A9122C9487C100A563B2 /* NameFirstName.swift in Sources */,
 				71A7035D2C94363B0012CEFE /* CardsView.swift in Sources */,
@@ -281,7 +281,7 @@
 				71A703592C9433FF0012CEFE /* SearchBarView.swift in Sources */,
 				7155A9152C9487C700A563B2 /* ConnexionView.swift in Sources */,
 				71A7035B2C94355A0012CEFE /* SegmentedControlView.swift in Sources */,
-				7155A90C2C9487B800A563B2 /* Sexe.swift in Sources */,
+				7155A90C2C9487B800A563B2 /* Gender.swift in Sources */,
 				7181876A2C91A185003F6855 /* HomeView.swift in Sources */,
 				7155A9272C984FE800A563B2 /* Mission.swift in Sources */,
 				EDF8A2FE2C998D560041E657 /* Feedback.swift in Sources */,

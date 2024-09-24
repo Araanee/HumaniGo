@@ -11,11 +11,11 @@ class Profile
    @Attribute   var nbfeedbacks: Double    //la note
    @Attribute   var points: Int             //score
     @Attribute   var feedbacks: [Feedback]
-    @Attribute   var notification: [String] = []
+    @Attribute   var notification: [NotificationProfile] = []
     @Attribute  var info : InfoProfile
     
     
-    init(id: UUID = UUID(), nbmissions: Int, nbfeedbacks: Double, points: Int, feedbacks: [Feedback], notification: [String], info: InfoProfile) {
+    init(id: UUID = UUID(), nbmissions: Int, nbfeedbacks: Double, points: Int, feedbacks: [Feedback], notification: [NotificationProfile], info: InfoProfile) {
         self.id = id
         self.nbmissions = nbmissions
         self.nbfeedbacks = nbfeedbacks
@@ -24,6 +24,18 @@ class Profile
         self.notification = notification
         self.info = info
     }
+}
+struct NotificationProfile : Identifiable, Codable
+{
+    var id = UUID()
+    var message : String
+    var type : TypeNotif
+    
+}
+
+enum TypeNotif: Codable
+{
+    case AvisNotif, DefaultNotif, RecompNotif
 }
 
 enum Gender: Codable {

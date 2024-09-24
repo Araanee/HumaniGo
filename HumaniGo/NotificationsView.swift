@@ -47,17 +47,15 @@ struct NotificationsView: View {
                         {
                             
                             displayNotif(shared[uidProfile.idx])
-
-//                            Button(action: {
-//                                shared.first!.notification.append("Tu as reçu des points\rTu as débloqué des récompenses")
-//                                
-//                                print(shared.first!.notification)
-//                            }, label: {
-//                                /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
-//                            })
                             
-                            
-                            
+                            //                                                        Button(action: {
+                            //                                                            shared.first!.notification.append("Laisse un avis")
+                            //
+                            //                                                            print(shared.first!.notification)
+                            //                                                        }, label: {
+                            //                                                            /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
+                            //                                                        })
+                            //
                         }.padding()
                         
                     }
@@ -69,7 +67,7 @@ struct NotificationsView: View {
     }
     
     func displayNotif(_ profil: Profile) -> some View {
-        ForEach (profil.notification, id:\.self) { notif in
+        ForEach (profil.notification) { notif in
             VStack
             {
                 HStack {
@@ -77,26 +75,36 @@ struct NotificationsView: View {
                         .frame(width: 80, height: 15)
                         .foregroundStyle(Color.mypink)
                     
-                    NavigationLink(notif){
-                        FeedbackView()
+                    if(notif.type == TypeNotif.AvisNotif)
+                    {
+                        NavigationLink(notif.message) {
+                            
+                            FeedbackView()
+                        }.foregroundStyle(.black)
                     }
-                    .foregroundStyle(.black)
+                    else
+                    {
+                        Text(notif.message).foregroundStyle(.black)
+
+                    }
                     
-                    Spacer ()
                 }
                 
-                Rectangle().frame(width: 350, height: 1).foregroundColor(.gray)
+                Spacer ()
             }
             
-            
+            Rectangle().frame(width: 350, height: 1).foregroundColor(.gray)
         }
+        
+        
     }
-    
+
 }
-    #Preview {
-       NotificationsView()// .environmentObject(ShareProfilData(profil: Profil(nbmissions: 10, nbfeedbacks: 3.5, points: 530, feedbacks: [Feedback(association:"Les Restos du Coeur", hearts: 2, comment:"Emma s'est rapidement adaptée à nos besoins. Son sourire a mis du soleil à tous les bénéficiaires qu'elle a rencontré. Merci !" ),
-//                                                                                                                                        Feedback(association:"Soutien de France", hearts: 4, comment:"Les élèves sont de plus en plus nombreux, la motivation d'Emma est un précieux atout." ),Feedback(association:"Soutien de France", hearts: 4, comment:"Emma s'est rapidement adaptée à nos besoins. Son sourire a mis du soleil à tous les bénéficiaires qu'elle a rencontré. Merci !" )],info: InfoProfil(gender: Gender.female, firstname: "Emma", lastname: "TOTO", email: "emma@gmail.com", phone: "0600000001", pswd: "azerty123")
-//                                                                            )))
-    }
+
+#Preview {
+    NotificationsView()// .environmentObject(ShareProfilData(profil: Profil(nbmissions: 10, nbfeedbacks: 3.5, points: 530, feedbacks: [Feedback(association:"Les Restos du Coeur", hearts: 2, comment:"Emma s'est rapidement adaptée à nos besoins. Son sourire a mis du soleil à tous les bénéficiaires qu'elle a rencontré. Merci !" ),
+    //                                                                                                                                        Feedback(association:"Soutien de France", hearts: 4, comment:"Les élèves sont de plus en plus nombreux, la motivation d'Emma est un précieux atout." ),Feedback(association:"Soutien de France", hearts: 4, comment:"Emma s'est rapidement adaptée à nos besoins. Son sourire a mis du soleil à tous les bénéficiaires qu'elle a rencontré. Merci !" )],info: InfoProfil(gender: Gender.female, firstname: "Emma", lastname: "TOTO", email: "emma@gmail.com", phone: "0600000001", pswd: "azerty123")
+    //                                                                            )))
+}
 
 
