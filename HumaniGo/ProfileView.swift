@@ -18,26 +18,26 @@ struct ProfileView: View {
     
     @Environment(\.modelContext) var modelContext
     
-    @Query  var shared: [Profile]
-    @State  private var btn: Color = .yellow
-    @State  var tel = ""
-    @State  var email = ""
-    @State  var mdp = ""
-    @State  var cmdp = ""
+    @EnvironmentObject var uidProfil : UIDProfile
+    
+    @Query var profiles: [Profile]
+
+    @State private var btn: Color = .yellow
+    @State var tel = ""
+    @State var email = ""
+    @State var mdp = ""
+    @State var cmdp = ""
     @StateObject var loginVM = utilsPswd()
-    
-    
-//    private func loadProfils() {
-//         let fetchRequest = FetchDescriptor<Profil>()
-//         do {
-//             profils = try modelContext.fetch(fetchRequest)
-//         } catch {
-//             print("Erreur lors du chargement des profils : \(error)")
-//         }
-//     }
+
+    func logout(){
+        uidProfil.connected = false
+        uidProfil.email = ""
+        uidProfil.idx = 0
+    }
     
     var body: some View {
         
+        var profileIdx : Int = profiles.firstIndex(where: { $0.info.email == uidProfil.email }) ?? profiles.count - 1
         
         VStack {
             ScrollView {
@@ -48,20 +48,20 @@ struct ProfileView: View {
                         .fontWeight(.semibold)
                         .frame(alignment: .leading).padding()
                     
-                    Text("Hey \(shared.last!.info.firstname)")
+                    Text("Hey \(profiles[profileIdx].info.firstname)")
                         .font(.title2)
                         .fontWeight(.semibold)
                         .frame(alignment: .topLeading).padding()
                     
                     HStack{
                         
-                        rond(text:"Missions", icon:pouce, nb:Double(shared.last!.nbmissions), Color.myyellow)
+                        rond(text:"Missions", icon:pouce, nb:Double(profiles[profileIdx].nbmissions), Color.myyellow)
                         Spacer()
 
-                        rond(text:"Avis", icon:etoile, nb:shared.last!.nbfeedbacks, Color.mypink)
+                        rond(text:"Avis", icon:etoile, nb:profiles[profileIdx].nbfeedbacks, Color.mypink)
                         Spacer()
                         
-                        rond(text:"Points", icon:kdo, nb:Double(shared.last!.points), Color.myblue)
+                        rond(text:"Points", icon:kdo, nb:Double(profiles[profileIdx].points), Color.myblue)
                         
                         
                     }.padding(20)
@@ -85,7 +85,7 @@ struct ProfileView: View {
                         Rectangle().frame(height: 1).foregroundColor(Color(.systemGray4))
                     }
                     
-                    displayfeedback(shared.first?.feedbacks)
+                    displayfeedback(profiles[profileIdx].feedbacks)
                     
                     VStack {
                         
@@ -96,9 +96,9 @@ struct ProfileView: View {
                         
                         VStack ()
                         {
-                            loginVM.champs(name: "Email", def:shared.last!.info.email , value: $email)
+                            loginVM.champs(name: "Email", def:profiles[profileIdx].info.email , value: $email)
                                 .frame(height: 70)
-                            loginVM.champs(name: "Téléphone", def:shared.last!.info.phone , value: $tel)
+                            loginVM.champs(name: "Téléphone", def:profiles[profileIdx].info.phone , value: $tel)
                                 .frame(height: 70)
                             
                             loginVM.champs(name: "Mot de passe", def:"*****",value: $mdp)
@@ -118,8 +118,27 @@ struct ProfileView: View {
                         .background(Color.myyellow)
                         .clipShape(RoundedRectangle(cornerRadius: 25.0))
                         Spacer()
+                        
+                        Button(action: {
+                            logout()
+                        }, label: {
+                            HStack {
+                                Text("Se déconnecter")
+                                        .padding(5)
+                                Image(systemName: "rectangle.portrait.and.arrow.right")
+                                        .fontWeight(.medium)
+                            }
+                            .foregroundStyle(.gray)
+                            if (!uidProfil.connected) {
+                                DelayedNavigationLink(delay: .seconds(1)) {
+                                    RootNavView()
+                                }
+                            }
+                        })
+                        
+                       
                     }
-                    
+            
                 }
                 
             }

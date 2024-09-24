@@ -18,11 +18,10 @@ class ShareMissionData: ObservableObject {
     }
 }
 
-//@Model
-//final class ShareProfilData {
-//    @Attribute var profil: Profil
-//    
-//    init(profil: Profil) {
-//        self.profil = profil
-//    }
-//}
+class UIDProfile:ObservableObject
+{
+    @Published var connected = false
+    @Published var engaged = false
+    @Published var email : String = ""
+    @Published var idx : Int = 0
+}
