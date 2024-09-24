@@ -65,6 +65,11 @@ struct InscriptionTE: View {
             .background(Yellow)
             .clipShape(RoundedRectangle(cornerRadius: 25.0))
             
+            Text("Étape 3/4")
+            .font(.footnote)
+            .foregroundColor(.gray)
+            .padding()
+            
             if (Error.isEmpty)
             {
                 Text("Compte créé").foregroundStyle(.green)
@@ -83,6 +88,8 @@ struct InscriptionTE: View {
             
         }
     }
+    
+    
     
     
     

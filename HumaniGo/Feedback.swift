@@ -20,8 +20,17 @@ func displayfeedback(_ list:[Feedback]?) -> some View
         //afficher tous les avis de la liste
         ScrollView  {
             if list?.count == 0 {
-                Text("Aucun avis pour l'instant")
-                    .foregroundStyle(.gray)
+                HStack {
+                    Spacer()
+                    VStack {
+                        Spacer()
+                        Text("Aucun avis pour l'instant !")
+                            .foregroundStyle(.gray)
+                        Spacer()
+                    }
+                    .frame(height: 200)
+                    Spacer()
+                }
             } else {
                 ForEach(0..<(list?.count ?? 0), id: \.self) { i in
                     VStack (alignment: .center)
