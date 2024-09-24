@@ -20,8 +20,9 @@ extension Color {
 struct NotificationsView: View {
     
     @Environment(\.modelContext) var modelContext
-    
+    @EnvironmentObject var uidProfile : UIDProfile
     @Query  var shared: [Profile]
+    
     
     var body: some View {
         
@@ -45,15 +46,15 @@ struct NotificationsView: View {
                         VStack(alignment: .leading, spacing: 40)
                         {
                             
-                            displayNotif(shared.first!)
+                            displayNotif(shared[uidProfile.idx])
 
-                            Button(action: {
-                                shared.first!.notification.append("Tu as reçu des points\rTu as débloqué des récompenses")
-                                
-                                print(shared.first!.notification)
-                            }, label: {
-                                /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
-                            })
+//                            Button(action: {
+//                                shared.first!.notification.append("Tu as reçu des points\rTu as débloqué des récompenses")
+//                                
+//                                print(shared.first!.notification)
+//                            }, label: {
+//                                /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
+//                            })
                             
                             
                             
