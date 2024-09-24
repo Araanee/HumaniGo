@@ -62,6 +62,11 @@ struct InscrSexe: View {
                             }
                         })
                 
+                Text("Étape 1/4")
+                    .font(.footnote)
+                    .foregroundColor(.gray)
+                    .padding()
+                
                 if (!sexe.value.isEmpty && btn)
                 {
                     DelayedNavigationLink(delay: .seconds(0)) {

@@ -54,6 +54,11 @@ struct InscriptionNP: View {
                         
                     }
                 }).padding()
+            
+            Text("Étape 2/4")
+                            .font(.footnote)
+                            .foregroundColor(.gray)
+            
             if (Error.isEmpty && btn)
             {
                 DelayedNavigationLink(delay: .seconds(0)) {

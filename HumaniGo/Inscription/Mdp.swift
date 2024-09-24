@@ -83,6 +83,11 @@ struct Mdp: View {
                     
                 }
             }
+            
+            Text("Étape 4/4")
+                .font(.footnote)
+                .foregroundColor(.gray)
+                .padding()
         }
     }
     
