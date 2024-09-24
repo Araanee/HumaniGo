@@ -28,11 +28,22 @@ struct RootNavView: View {
         TabView(selection: $navControl.tabViewSelection) {
             
             // Search for missions page
-            HomeView()
-                .tabItem {
-                    Label("Recherche", systemImage: "magnifyingglass")
-                }
-                .tag(0)
+            if (!uidProfil.connected && uidProfil.engaged ){
+                ConnexionView()
+                    .tabItem {
+                        Label("Profil", systemImage: "person.crop.circle")
+                    }
+                    .tag(0)
+            }
+            else
+            {
+                HomeView()
+                    .tabItem {
+                        Label("Recherche", systemImage: "magnifyingglass")
+                    }
+                    .tag(0)
+            }
+            
             
             // My missions page if connected
             if (uidProfil.connected){

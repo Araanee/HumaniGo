@@ -24,4 +24,5 @@ class UIDProfile:ObservableObject
     @Published var engaged = false
     @Published var email : String = ""
     @Published var idx : Int = 0
+    @Published var rootnav: Bool = true
 }

@@ -35,13 +35,12 @@ struct ConfirmationEngagement: View {
                         Text("Mes Missions").font(.system(size: 20)).font(.title).bold().foregroundColor(.white)
                     }.padding(20)
                     DelayedNavigationLink(delay: .seconds(2)) {
-                        
                         HomeView()
                     }.onDisappear{
                         profiles[uidProfile.idx].notification.append("Tu as bien été inscrit a la mission")
-                        navControl.dismissModal = false
-                        navControl.tabViewSelection = 0
+                        uidProfile.connected = true
                         uidProfile.engaged = false
+                        uidProfile.rootnav = true
                     print("hello")}
                 }
             }

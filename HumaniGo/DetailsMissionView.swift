@@ -93,11 +93,16 @@ struct DetailsMissionView: View {
                                 .foregroundStyle(.gray)
                             
                             Button(action: {
+                                
+                                uidProfil.rootnav = false
                                 uidProfil.engaged = true
-                                //navControl.dismissModal = false
-                                //navControl.tabViewSelection = 3
-                                print(navControl.dismissModal)
-                            }, label: {Text("M'engager")}).bold()
+                                navControl.dismissModal = false
+                                
+                                print(String(uidProfil.engaged) + " : " + String(uidProfil.connected))
+                                
+                            }, label: {
+                                Text("M'engager")
+                            }).bold()
                                 .padding()
                                 .foregroundStyle(.white)
                                 .background(Color.pink)
@@ -105,7 +110,9 @@ struct DetailsMissionView: View {
                             
                             if (uidProfil.connected && uidProfil.engaged)
                             {
-                                
+                                Button(action:{print(String(uidProfil.engaged) + " :3 " + String(uidProfil.connected))}, label:{
+                                    })
+
                                 DelayedNavigationLink(delay: .seconds(0))
                                 {
                                     ConfirmationEngagement()
@@ -114,11 +121,16 @@ struct DetailsMissionView: View {
                             }
                             else if (uidProfil.engaged)
                             {
+                                Button(action:{print(String(uidProfil.engaged) + " 2: " + String(uidProfil.connected))}, label:{
+                                    })
+
                                 DelayedNavigationLink(delay: .seconds(0))
                                 {
                                     ConnexionView()
                                 }.ignoresSafeArea()
                             }
+                            Button(action:{print(String(uidProfil.engaged) + " 1: " + String(uidProfil.connected))}, label:{
+                                })
                         }
                         
                         

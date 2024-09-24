@@ -27,8 +27,7 @@ struct NotificationsView: View {
         
         
         NavigationStack {
-            ScrollView
-            {
+            
                 
                 VStack {
                     Text("Notifications").font(.title).bold().padding(6)
@@ -41,28 +40,30 @@ struct NotificationsView: View {
                         Rectangle().foregroundColor(.white)
                             .frame(width: 400,height: 90).padding()
                         
-                        
-                        VStack(alignment: .leading, spacing: 40)
+                        ScrollView
                         {
-                            
-                            displayNotif(shared.first!)
-
-                            Button(action: {
-                                shared.first!.notification.append("Tu as reçu des points\rTu as débloqué des récompenses")
+                            VStack(alignment: .leading, spacing: 40)
+                            {
                                 
-                                print(shared.first!.notification)
-                            }, label: {
-                                /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
-                            })
-                            
-                            
-                            
-                        }.padding()
+                                displayNotif(shared.first!)
+                                
+                                Button(action: {
+                                    shared.first!.notification.append("Tu as reçu des points\rTu as débloqué des récompenses")
+                                    
+                                    print(shared.first!.notification)
+                                }, label: {
+                                    /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
+                                })
+                                
+                                
+                                
+                            }.padding()
+                        }
                         
                     }
                     Spacer()
                     
-                }
+               
             }
         }
     }
@@ -75,13 +76,13 @@ struct NotificationsView: View {
                 HStack {
                     Circle()
                         .frame(width: 80, height: 15)
-                        .foregroundStyle(.red)
+                        .foregroundStyle(Color.mypink)
                     
                     Text(notif)
                     Spacer ()
                 }
                 
-                Rectangle().frame(width: 350, height: 1).foregroundColor(.blue)
+                Rectangle().frame(width: 350, height: 1).foregroundColor(.gray)
             }
             
             

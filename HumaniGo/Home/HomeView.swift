@@ -12,8 +12,11 @@ struct HomeView: View {
 
     @EnvironmentObject var navControl: NavigationControl
     @EnvironmentObject var missionsData: ShareMissionData
+    @EnvironmentObject var uidProfile : UIDProfile
+
     
     var body: some View {
+        
         ZStack {
             VStack {
                 Text("Trouve ta mission")
