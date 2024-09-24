@@ -21,6 +21,7 @@ class Mission: Identifiable {
     @Attribute var address: String
     @Attribute var members: Int
     @Attribute var addFavorite: Bool = false
+    @Attribute var isEngaged: Bool = false
     
     init(imageName: String, name: String, association: String, description: String, time: Int, reward: Int, date: Date, address: String, members: Int) {
             self.imageName = imageName

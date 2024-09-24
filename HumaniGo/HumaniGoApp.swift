@@ -32,8 +32,7 @@ struct HumaniGoApp: App {
                 print("Initial missions have been added to the database.")
             }
             
-            if try !container.mainContext.fetch(FetchDescriptor<Profile>()).isEmpty
-{
+            if try !container.mainContext.fetch(FetchDescriptor<Profile>()).isEmpty {
                 print("Profils already exist. Skipping initialization.")
             } else{
                 let initProfils = createInitialProfil()
