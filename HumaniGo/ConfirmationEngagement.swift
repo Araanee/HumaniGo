@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ConfirmationEngagement: View {
     
@@ -37,7 +38,7 @@ struct ConfirmationEngagement: View {
                         
                         HomeView()
                     }.onDisappear{
-                        //profiles[uidProfile]
+                        profiles[uidProfile.idx].notification.append("Tu as bien été inscrit a la mission")
                         navControl.dismissModal = false
                         navControl.tabViewSelection = 0
                         uidProfile.engaged = false

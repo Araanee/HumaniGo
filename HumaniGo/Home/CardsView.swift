@@ -12,7 +12,7 @@ struct CardsView: View {
     
     @Query var profiles: [Profile]
     
-    @EnvironmentObject var uidProfil: UID
+    @EnvironmentObject var uidProfil: UIDProfile
     @EnvironmentObject var navControl: NavigationControl
     @EnvironmentObject var missionsData: ShareMissionData
     @State var indexMission: Int = 0
