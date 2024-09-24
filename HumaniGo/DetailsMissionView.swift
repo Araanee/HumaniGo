@@ -71,17 +71,23 @@ struct DetailsMissionView: View {
                         }
                         
                         HStack {
-                            VStack(spacing: 40) {
+                            VStack() {
                                 Image(systemName: "calendar")
+                                Spacer()
                                 Image(systemName: "mappin.and.ellipse")
+                                Spacer()
                                 Image(systemName: "person.3.fill")
                             }
                             .foregroundStyle(Color.mypink)
-                            VStack(alignment: .leading, spacing: 40) {
+                            .frame(height: 150)
+                            VStack(alignment: .leading) {
                                 Text(formattedDate)
+                                Spacer()
                                 Text(mission.address)
+                                Spacer()
                                 Text("\(mission.members) places")
                             }
+                            .frame(height: 150)
                         }
                         .padding()
                         .font(.title3)
@@ -103,19 +109,14 @@ struct DetailsMissionView: View {
                                 .background(Color.pink)
                                 .clipShape(RoundedRectangle(cornerRadius: 25.0))
                             
-                            if (uidProfil.connected && uidProfil.engaged)
-                            {
-                                
-                                DelayedNavigationLink(delay: .seconds(0))
-                                {
+                            if (uidProfil.connected && uidProfil.engaged) {
+                                DelayedNavigationLink(delay: .seconds(0)) {
                                     ConfirmationEngagement()
                                 }.ignoresSafeArea()
                                 
                             }
-                            else if (uidProfil.engaged)
-                            {
-                                DelayedNavigationLink(delay: .seconds(0))
-                                {
+                            else if (uidProfil.engaged) {
+                                DelayedNavigationLink(delay: .seconds(0)) {
                                     ConnexionView()
                                 }.ignoresSafeArea()
                             }

@@ -25,7 +25,7 @@ Distribuer des repas chauds et des vêtements aux personnes sans-abri et les ori
 Offrir du soutien scolaire aux enfants du primaire et du collège afin de les aider à réussir et à reprendre confiance en eux.
 """, time: 120, reward: 60, date: Date(), address: "32 Rue des Écoles, 92100 Boulogne-Billancourt", members: 8),
         
-        Mission(imageName: "handicap", name: "Accompagnement de Personnes en Situation de Handicap", association: "Ensemble Autrement", description: """
+        Mission(imageName: "handicap", name: "Action pour le Handicap", association: "Ensemble Autrement", description: """
 Proposer des activités culturelles et sportives adaptées et accompagner les personnes en situation de handicap dans leur quotidien.
 """, time: 90, reward: 50, date: Date(), address: "22 Boulevard de l’Amitié, 94800 Villejuif", members: 4),
         

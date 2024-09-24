@@ -37,7 +37,7 @@ struct ProfileView: View {
     
     var body: some View {
         
-        var profileIdx : Int = profiles.firstIndex(where: { $0.info.email == uidProfil.email }) ?? profiles.count - 1
+        let profileIdx : Int = profiles.firstIndex(where: { $0.info.email == uidProfil.email }) ?? profiles.count - 1
         
         VStack {
             ScrollView {

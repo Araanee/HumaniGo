@@ -10,40 +10,6 @@ import SwiftUI
 struct FinishedView: View {
     var body: some View {
         VStack(spacing: 10) {
-            
-            HStack{
-                Spacer()
-                
-                NavigationLink(destination: FavoriteView()) {
-                    Text("Favoris") .padding()
-                        .frame(height: 30)
-                        .foregroundColor(.white)
-                        .background(Color.gray)
-                        .clipShape(RoundedRectangle(cornerRadius: 25))
-                }
-                
-                Spacer() // fin b1
-                
-                NavigationLink(destination: AvenirView()) {
-                    Text("À Venir ").padding()
-                        .frame(height: 30)
-                        .foregroundColor(.white)
-                        .background(.gray)
-                        .clipShape(RoundedRectangle(cornerRadius: 25))
-                }
-                
-                Spacer() // fin b2
-                
-                Text("Terminées").padding()
-                    .frame(height: 30)
-                    .foregroundColor(.white)
-                    .background(Color.myblue)
-                    .clipShape(RoundedRectangle(cornerRadius: 25))
-                
-                Spacer() //fin b3
-                
-            } // fin grand H
-            
             ScrollView{
                 VStack {
                     Spacer()

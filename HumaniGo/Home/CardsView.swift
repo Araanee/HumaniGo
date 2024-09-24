@@ -102,11 +102,16 @@ struct CardsView: View {
                 Spacer()
                 Button(action: {
                     missions[indexMission].addFavorite.toggle()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                        indexMission = (indexMission + 1) % missions.count
+                        missionsData.mission = missions[indexMission]
+                    }
                 }, label: {
                     Image(systemName: missions[indexMission].addToFavorite())
                         .foregroundStyle(Color.mypink)
                         .font(.system(size: 30))
                 })
+                
                 Spacer()
             }
             .rotationEffect(.degrees(-2))
