@@ -102,9 +102,12 @@ struct CardsView: View {
                 Spacer()
                 Button(action: {
                     missions[indexMission].addFavorite.toggle()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                        indexMission = (indexMission + 1) % missions.count
-                        missionsData.mission = missions[indexMission]
+                    
+                    if (missions[indexMission].addFavorite)
+                    {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            indexMission = (indexMission + 1) % missions.count
+                        }
                     }
                 }, label: {
                     Image(systemName: missions[indexMission].addToFavorite())
