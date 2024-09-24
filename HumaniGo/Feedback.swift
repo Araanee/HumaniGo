@@ -16,22 +16,27 @@ struct Feedback: Codable
 
 func displayfeedback(_ list:[Feedback]?) -> some View
 {
-    //afficher tous les avis de la liste
-    ScrollView  {
-        ForEach(0..<(list?.count ?? 0), id: \.self) { i in
-            VStack (alignment: .center)
-            {
-                HStack
-                {
-                    affCoeurs(count: list![i].hearts)
-                    Spacer()
-                    Text(list![i].association)
+    
+        //afficher tous les avis de la liste
+        ScrollView  {
+            if list?.count == 0 {
+                Text("Aucun avis pour l'instant")
+                    .foregroundStyle(.gray)
+            } else {
+                ForEach(0..<(list?.count ?? 0), id: \.self) { i in
+                    VStack (alignment: .center)
+                    {
+                        HStack
+                        {
+                            affCoeurs(count: list![i].hearts)
+                            Spacer()
+                            Text(list![i].association)
+                        }
+                        Rectangle().frame(height: 1).foregroundStyle(Color.mypink)
+                        Text(list![i].comment)
+                    }
+                    .padding()
                 }
-                Rectangle().frame(height: 1).foregroundStyle(Color.mypink)
-                Text(list![i].comment)
             }
-            .padding()
-        }
-        
-    }.frame(height: 200)
+        }.frame(height: 200)
 }
