@@ -14,8 +14,6 @@ var kdo = "🛍️"
 
 
 struct ProfileView: View {
-    
-    
     @Environment(\.modelContext) var modelContext
     
     @EnvironmentObject var uidProfil : UIDProfile

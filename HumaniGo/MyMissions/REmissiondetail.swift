@@ -59,6 +59,6 @@ struct REmissiondetail: View {
 }
 
 #Preview {
-    REmissiondetail(titre:"LONG TTTTTittre", couleur :.Blue,  image : "image1" , titre2: "lol")
+    REmissiondetail(titre:"LONG TTTTTittre", couleur : Color.myblue,  image : "image1" , titre2: "lol")
     
 }

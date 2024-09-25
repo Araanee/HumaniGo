@@ -36,10 +36,10 @@ struct REmissiondetail2: View {
                              
                              
                              Text(titre)
-                                 .font(.title).bold().foregroundColor(couleur == .Pink ? .white: .black).frame(maxWidth: 130)
+                                 .font(.title).bold().foregroundColor(couleur == Color.mypink ? .white: .black).frame(maxWidth: 130)
                                  
 
-                             Text(titre2).foregroundColor(couleur == .Pink ? .white: .black).frame(maxWidth: 130)
+                             Text(titre2).foregroundColor(couleur == Color.mypink ? .white: .black).frame(maxWidth: 130)
 
                          }
                          
@@ -74,7 +74,7 @@ struct REmissiondetail2: View {
 }
 
 #Preview {
-    REmissiondetail2(titre:"ittre",couleur :.Pink,image : "image1" , titre2:"lol")
+    REmissiondetail2(titre:"ittre",couleur : Color.mypink,image : "image1" , titre2:"lol")
     
 
 }

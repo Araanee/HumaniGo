@@ -17,7 +17,7 @@ struct FavoriteView: View {
                         HStack{
                             Spacer()
                             
-                            REmissiondetail(titre: " Épicerie sociale ", couleur:.Pink, image:"image1", titre2:"     Aide à \r la personne ").font(.title2) .bold()
+                            REmissiondetail(titre: " Épicerie sociale ", couleur:Color.mypink, image:"image1", titre2:"     Aide à \r la personne ").font(.title2) .bold()
                             
                             Spacer()
                             
@@ -31,7 +31,7 @@ struct FavoriteView: View {
                         HStack{
                             Spacer()
                           
-                            REmissiondetail2(titre: "Onela", couleur:.Pink, image: "aidePAgees", titre2: "  Aide  à la personne  ").font(.title2).bold()
+                            REmissiondetail2(titre: "Onela", couleur:Color.mypink, image: "aidePAgees", titre2: "  Aide  à la personne  ").font(.title2).bold()
                             
                             Spacer()
                             
@@ -45,7 +45,7 @@ struct FavoriteView: View {
                         HStack{
                             Spacer()
                             
-                            REmissiondetail(titre: "Kigarde", couleur:.Pink, image: "image5", titre2: " Activités  \r pour enfants")
+                            REmissiondetail(titre: "Kigarde", couleur:Color.mypink, image: "image5", titre2: " Activités  \r pour enfants")
                                 .font(.title2).bold()
                            
                             Spacer()
