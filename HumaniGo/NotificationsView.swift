@@ -9,6 +9,14 @@ import SwiftUI
 import SwiftData
 
 
+extension Color {
+    static var Pink : Color = Color(red: 255/255, green: 0, blue: 110/255)
+    
+    static var Blue : Color = Color(red: 51/255, green: 129/255, blue: 255/255)
+    
+    static var Yellow : Color = Color(red: 255/255, green: 195/255, blue: 31/255)
+}
+
 struct NotificationsView: View {
     
     @Environment(\.modelContext) var modelContext
@@ -24,25 +32,32 @@ struct NotificationsView: View {
             
                 
                 VStack {
-                    Text("Notifications").font(.title).bold()
+                    Text("Notifications").font(.title).bold().padding(6)
+                        .padding()
                     ZStack (alignment: Alignment(horizontal: .center, vertical: .top))
                     {
                         
-                        RoundedRectangle(cornerRadius: 25.0).strokeBorder(Color.mypink, lineWidth: 5).frame(width: 410,height: 100)
+                        RoundedRectangle(cornerRadius: 25.0).strokeBorder(Color.Pink,lineWidth: 5).frame(width: 410,height: 100)
                             .padding(-7)
-                        
                         Rectangle().foregroundColor(.white)
                             .frame(width: 400,height: 90).padding()
-
+                        
                         ScrollView
                         {
-                        VStack(alignment: .leading, spacing: 40)
+                        VStack
                         {
                             
                             displayNotif()
-
+                            
+                            //                                                        Button(action: {
+                            //                                                            shared.first!.notification.append("Laisse un avis")
+                            //
+                            //                                                            print(shared.first!.notification)
+                            //                                                        }, label: {
+                            //                                                            /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
+                            //                                                        })
+                            //
                         }.padding(.top, 20)
-
                         
                     }
                     Spacer()
@@ -83,8 +98,10 @@ struct NotificationsView: View {
                             
                     }
                     Spacer()
+                    
                 }.padding(.top, 20).padding(.bottom)
                 
+                //Spacer ()
             }
             
             Rectangle().frame(width: 350, height: 1).foregroundColor(.gray)
@@ -100,5 +117,6 @@ struct NotificationsView: View {
     //                                                                                                                                        Feedback(association:"Soutien de France", hearts: 4, comment:"Les élèves sont de plus en plus nombreux, la motivation d'Emma est un précieux atout." ),Feedback(association:"Soutien de France", hearts: 4, comment:"Emma s'est rapidement adaptée à nos besoins. Son sourire a mis du soleil à tous les bénéficiaires qu'elle a rencontré. Merci !" )],info: InfoProfil(gender: Gender.female, firstname: "Emma", lastname: "TOTO", email: "emma@gmail.com", phone: "0600000001", pswd: "azerty123")
     //                                                                            )))
 }
+
 
 

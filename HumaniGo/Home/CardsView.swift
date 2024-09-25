@@ -94,9 +94,13 @@ struct CardsView: View {
                 Button(action: {
                     navControl.dismissModal = true
                 }, label: {
-                    Image(systemName: "info.circle")
-                        .foregroundStyle(.white)
-                        .font(.system(size: 30))
+                    VStack
+                    {
+                        Image(systemName: "info.circle")
+                            .foregroundStyle(.white)
+                            .font(.system(size: 30))
+                        Text("Détails").foregroundColor(.white).bold()
+                    }
                 })
 
                 Spacer()
