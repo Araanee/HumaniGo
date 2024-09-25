@@ -25,7 +25,6 @@ struct NotificationsView: View {
                 
                 VStack {
                     Text("Notifications").font(.title).bold()
-                        .padding()
                     ZStack (alignment: Alignment(horizontal: .center, vertical: .top))
                     {
                         
