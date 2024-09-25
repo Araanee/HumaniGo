@@ -43,7 +43,8 @@ struct SearchBarView: View {
                     .foregroundStyle(Color(.systemGray))
             }
         }
-        .padding()
+        .padding(.bottom)
+        .padding(.trailing)
     }
 }
 
