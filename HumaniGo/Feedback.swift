@@ -18,7 +18,7 @@ func displayfeedback(_ list:[Feedback]?) -> some View
 {
     
         //afficher tous les avis de la liste
-        ScrollView  {
+        ScrollView {
             if list?.count == 0 {
                 HStack {
                     Spacer()

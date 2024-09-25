@@ -12,12 +12,14 @@ struct HomeView: View {
 
     @EnvironmentObject var navControl: NavigationControl
     @EnvironmentObject var missionsData: ShareMissionData
+    @EnvironmentObject var uidProfil: UIDProfile
+    
     
     var body: some View {
         ZStack {
             VStack {
                 Text("Trouve ta mission")
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).bold()
+                    .font(.title).bold().frame(maxWidth: .infinity, alignment: .leading)
                 SearchBarView()
                 SegmentedControlView()
                 CardsView()
@@ -30,6 +32,10 @@ struct HomeView: View {
         }
         .sheet(isPresented: $navControl.dismissFilters) {
             FiltresView()
+        }
+        .onAppear{
+            
+        uidProfil.connected = true
         }
     }
 }

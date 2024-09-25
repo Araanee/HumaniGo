@@ -7,7 +7,10 @@
 
 import SwiftUI
 
-struct FeedbackView: View {
+struct FeedbackView: View
+{
+    @Binding var notif: NotificationProfile
+    @Binding var profile: Profile
     
     @State private var btn: Color = Color.myyellow
     
@@ -27,83 +30,79 @@ struct FeedbackView: View {
     var body: some View {
         NavigationStack {
             VStack{
-                VStack(alignment:.leading) {
+                VStack (alignment: .leading){
                     
-                    Text("Partage ton avis")
-                        .font(.largeTitle)
-                        .fontWeight(.semibold)
-                        .frame(alignment: .topLeading)
-                       
+                    Text("Partage ton expérience")
+                        .font(.title).bold().padding(.bottom, 10)
+                        .frame(alignment: .leading)
+                    
+                    
                     
                     HStack(spacing: 10) {
-                        HStack(spacing: 10) {
-                            ForEach(1..<6, id: \.self) { index in
-                                Button(action: {
-                                    rating = index
-                                }) {
-                                    Image(systemName: "heart.fill")
-                                        .foregroundColor(index <= rating ? Color.mypink : couleur1) // Change la couleur en fonction de l'index et du rating
-                                        .font(.title)
-                                       
-                                }
+                        ForEach(1..<6, id: \.self) { index in
+                            Button(action: {
+                                rating = index
+                            }) {
+                                Image(systemName: "heart.fill")
+                                    .foregroundColor(index <= rating ? Color.mypink : couleur1) // Change la couleur en fonction de l'index et du rating
+                                    .font(.title)
+                                
                             }
-                        } .padding(7)
+                        }.padding(.bottom, 7)
+                        
                     }
-                    //
                     
-                    ZStack  {
+                    ZStack(alignment: .top) {
                         
                         RoundedRectangle(cornerRadius: 15)
-                            .foregroundStyle(.white)
-                            .frame(width: 350, height:450)
-                            .border(Color.gray, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
-                            .shadow(color: Color.myyellow, radius: 0.4, x: 4, y: 5)
-                            .padding(1)
-                        TextField("Partage ton expérience",text: $feedback)
-                            .padding()
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .frame(width: 350, height: 400)
-                            .font(.title)
-                            .foregroundStyle(.gray)
+                            .foregroundStyle(Color(.systemGray6)).opacity(0.5)
+                        
+                            .shadow(color: Color.myblue, radius: 0.4, x: 4, y: 5)
+                            
+                           
+                        TextField("Partage ton expérience",text: $feedback, axis : .vertical)
+                        
+                            .padding(.top,20).padding(.leading,20).font(.title3)
+                        
+                            .cornerRadius(17)
+        
                     }
+                    .frame(width: 350, height:350)
                     
                     // Limiter le nombre de caractères à 400
                     if feedback.count > 400 {
                         Text("Le texte ne peut pas dépasser 400 caractères.")
                             .foregroundColor(.red)
-                            .padding(.top, 5)
+                       
                     }
                     // Afficher la longueur actuelle du texte en cours de frappe
                     Text("\(feedback.count) / 400 caractères")
-                        .padding()
+
+                        .padding(10)
                         .foregroundColor(.gray)
-                        .frame(maxWidth: 370, alignment: .trailing)
+                    
                     
                     
                     // Afficher le bouton "je partage"
                 }
-                ZStack {
-                    
-                    RoundedRectangle(cornerRadius: 25)
-                        .foregroundStyle(Color.myyellow)
-                        .frame(width: 150, height: 50, alignment: .center)
-                    
-                    
-                    NavigationLink(destination: NotificationsView()) {
-                        Text("Publier")
-                            .font(.title2)
-                            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                            .padding(2)
-                            .foregroundColor(.black)
-                    }
-                }
+                
+                NavigationLink("Partager")
+                {
+                    SharedFeedback()
+                }.foregroundColor(.black)
+                    .font(.headline)
+                    .frame(width: 150, height: 50)
+                    .background(Color.myyellow)
+                    .clipShape(RoundedRectangle(cornerRadius: 25.0))
+//                )
             }
         }
     }
 }
 
 
-#Preview {
-    FeedbackView()
-}
+
+//#Preview {
+//    FeedbackView()
+//}
 

@@ -14,14 +14,14 @@ struct NotificationsView: View {
     @Environment(\.modelContext) var modelContext
     @EnvironmentObject var uidProfile : UIDProfile
     @Query  var shared: [Profile]
+    @State var profil : Profile = Profile(nbmissions: 10, nbfeedbacks: 4.5, points: 530, feedbacks: [],notification: [],info: InfoProfile(gender: Gender.female, firstname: "Emma", lastname: "TOTO", email: "emma@gmail.com", phone: "0600000001", pswd: "azerty123"))
     
     
     var body: some View {
-        
+       
         
         NavigationStack {
-            ScrollView
-            {
+            
                 
                 VStack {
                     Text("Notifications").font(.title).bold()
@@ -33,22 +33,30 @@ struct NotificationsView: View {
                         
                         Rectangle().foregroundColor(.white)
                             .frame(width: 400,height: 90).padding()
-                        
+
+                        ScrollView
+                        {
                         VStack(alignment: .leading, spacing: 40)
                         {
-                            displayNotif(shared[uidProfile.idx])
-                        }.padding()
+                            
+                            displayNotif()
+
+                        }.padding(.top, 20)
+
                         
                     }
                     Spacer()
                     
                 }
             }
-        }
+            .onAppear {
+                profil = shared[uidProfile.idx]
+            }
+        }.navigationBarBackButtonHidden()
     }
     
-    func displayNotif(_ profil: Profile) -> some View {
-        ForEach (profil.notification) { notif in
+    func displayNotif() -> some View {
+        ForEach ($profil.notification) { $notif in
             VStack
             {
                 HStack {
@@ -58,19 +66,25 @@ struct NotificationsView: View {
                     
                     if(notif.type == TypeNotif.AvisNotif)
                     {
-                        NavigationLink(notif.message) {
-                            
-                            FeedbackView()
+                        NavigationLink(destination: FeedbackView(notif: $notif, profile: $profil)) {
+                            HStack {
+                                Text(notif.message)
+                                    .foregroundStyle(.black)
+                                // Ce Spacer pousse le texte vers la gauche
+                            }
                         }
-                        .foregroundStyle(.black)
                     }
+                    
                     else
                     {
                         Text(notif.message)
                             .foregroundStyle(.black)
+                            
+                            
                     }
-                    
-                }
+                    Spacer()
+                }.padding(.top, 20).padding(.bottom)
+                
             }
             
             Rectangle().frame(width: 350, height: 1).foregroundColor(.gray)
