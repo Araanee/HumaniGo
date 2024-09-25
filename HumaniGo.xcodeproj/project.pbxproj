@@ -39,6 +39,13 @@
 		71F497322CA19D1C004EC892 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F497312CA19D1C004EC892 /* FavoriteView.swift */; };
 		71F497342CA19D20004EC892 /* AvenirView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F497332CA19D20004EC892 /* AvenirView.swift */; };
 		71F4973D2CA30A59004EC892 /* FiltersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4973C2CA30A59004EC892 /* FiltersView.swift */; };
+		71F497402CA40EFE004EC892 /* REmissiondetail2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4973E2CA40EFE004EC892 /* REmissiondetail2.swift */; };
+		71F497412CA40EFE004EC892 /* REmissiondetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4973F2CA40EFE004EC892 /* REmissiondetail.swift */; };
+		71F497492CA41304004EC892 /* DetailPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F497422CA41304004EC892 /* DetailPoints.swift */; };
+		71F4974A2CA41304004EC892 /* RectSize1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F497432CA41304004EC892 /* RectSize1.swift */; };
+		71F4974B2CA41304004EC892 /* RectSize2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F497442CA41304004EC892 /* RectSize2.swift */; };
+		71F4974C2CA41304004EC892 /* RectSizeLarge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F497452CA41304004EC892 /* RectSizeLarge.swift */; };
+		71F4974D2CA41304004EC892 /* Rewards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F497462CA41304004EC892 /* Rewards.swift */; };
 		ED0B42E42C9D64F50098BB37 /* PhoneMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0B42E32C9D64F50098BB37 /* PhoneMail.swift */; };
 		ED14EE082C98340900D58FAA /* DelayNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED14EE072C98340900D58FAA /* DelayNav.swift */; };
 		EDE1980B2C9D96FA007624DD /* CreateInitialProfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE1980A2C9D96FA007624DD /* CreateInitialProfil.swift */; };
@@ -80,6 +87,13 @@
 		71F497312CA19D1C004EC892 /* FavoriteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		71F497332CA19D20004EC892 /* AvenirView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvenirView.swift; sourceTree = "<group>"; };
 		71F4973C2CA30A59004EC892 /* FiltersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FiltersView.swift; path = ../../../Downloads/FiltersView.swift; sourceTree = "<group>"; };
+		71F4973E2CA40EFE004EC892 /* REmissiondetail2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = REmissiondetail2.swift; sourceTree = "<group>"; };
+		71F4973F2CA40EFE004EC892 /* REmissiondetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = REmissiondetail.swift; sourceTree = "<group>"; };
+		71F497422CA41304004EC892 /* DetailPoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPoints.swift; sourceTree = "<group>"; };
+		71F497432CA41304004EC892 /* RectSize1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectSize1.swift; sourceTree = "<group>"; };
+		71F497442CA41304004EC892 /* RectSize2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectSize2.swift; sourceTree = "<group>"; };
+		71F497452CA41304004EC892 /* RectSizeLarge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectSizeLarge.swift; sourceTree = "<group>"; };
+		71F497462CA41304004EC892 /* Rewards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rewards.swift; sourceTree = "<group>"; };
 		ED0B42E32C9D64F50098BB37 /* PhoneMail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneMail.swift; sourceTree = "<group>"; };
 		ED14EE072C98340900D58FAA /* DelayNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayNav.swift; sourceTree = "<group>"; };
 		EDE1980A2C9D96FA007624DD /* CreateInitialProfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateInitialProfil.swift; sourceTree = "<group>"; };
@@ -167,6 +181,7 @@
 				71F4973C2CA30A59004EC892 /* FiltersView.swift */,
 				7155A9172C98180300A563B2 /* Inscription */,
 				7155A91C2C981E6D00A563B2 /* MiniComposants.swift */,
+				71F497482CA41304004EC892 /* MyRewards */,
 				71D971922C998C0E0098771D /* ProfileView.swift */,
 				EDF8A2FD2C998D560041E657 /* Feedback.swift */,
 				711D497F2C9DB46D002FBE94 /* Model */,
@@ -191,11 +206,25 @@
 			isa = PBXGroup;
 			children = (
 				71F497332CA19D20004EC892 /* AvenirView.swift */,
+				71F4973F2CA40EFE004EC892 /* REmissiondetail.swift */,
+				71F4973E2CA40EFE004EC892 /* REmissiondetail2.swift */,
 				71F4972D2CA19D0E004EC892 /* MyMissions.swift */,
 				71F497312CA19D1C004EC892 /* FavoriteView.swift */,
 				71F4972F2CA19D17004EC892 /* FinishedView.swift */,
 			);
 			path = MyMissions;
+			sourceTree = "<group>";
+		};
+		71F497482CA41304004EC892 /* MyRewards */ = {
+			isa = PBXGroup;
+			children = (
+				71F497422CA41304004EC892 /* DetailPoints.swift */,
+				71F497432CA41304004EC892 /* RectSize1.swift */,
+				71F497442CA41304004EC892 /* RectSize2.swift */,
+				71F497452CA41304004EC892 /* RectSizeLarge.swift */,
+				71F497462CA41304004EC892 /* Rewards.swift */,
+			);
+			path = MyRewards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +299,7 @@
 			files = (
 				716DB0C92C9860BB00AEF827 /* NotificationsView.swift in Sources */,
 				71D971932C998C0E0098771D /* ProfileView.swift in Sources */,
+				71F497412CA40EFE004EC892 /* REmissiondetail.swift in Sources */,
 				71F497302CA19D17004EC892 /* FinishedView.swift in Sources */,
 				7155A90E2C9487B800A563B2 /* Pswd.swift in Sources */,
 				710852162C9AE12F00525E53 /* ShareData.swift in Sources */,
@@ -279,24 +309,30 @@
 				710852142C9ACA6700525E53 /* NavigationControl.swift in Sources */,
 				7155A9252C984D4300A563B2 /* MyColors.swift in Sources */,
 				71A703592C9433FF0012CEFE /* SearchBarView.swift in Sources */,
+				71F497402CA40EFE004EC892 /* REmissiondetail2.swift in Sources */,
 				7155A9152C9487C700A563B2 /* ConnexionView.swift in Sources */,
 				71A7035B2C94355A0012CEFE /* SegmentedControlView.swift in Sources */,
 				7155A90C2C9487B800A563B2 /* Gender.swift in Sources */,
 				7181876A2C91A185003F6855 /* HomeView.swift in Sources */,
+				71F4974D2CA41304004EC892 /* Rewards.swift in Sources */,
 				7155A9272C984FE800A563B2 /* Mission.swift in Sources */,
 				EDF8A2FE2C998D560041E657 /* Feedback.swift in Sources */,
 				71F497322CA19D1C004EC892 /* FavoriteView.swift in Sources */,
 				7155A91D2C981E6D00A563B2 /* MiniComposants.swift in Sources */,
+				71F4974A2CA41304004EC892 /* RectSize1.swift in Sources */,
 				ED14EE082C98340900D58FAA /* DelayNav.swift in Sources */,
 				EDE1980B2C9D96FA007624DD /* CreateInitialProfil.swift in Sources */,
 				71D971952C998C900098771D /* ConfirmationEngagement.swift in Sources */,
 				718187782C91DBDD003F6855 /* RootNavView.swift in Sources */,
 				EDE1980F2CA17455007624DD /* RefreshScrollModel.swift in Sources */,
 				71F4973D2CA30A59004EC892 /* FiltersView.swift in Sources */,
+				71F497492CA41304004EC892 /* DetailPoints.swift in Sources */,
 				7155A9082C943F0300A563B2 /* challenge.swift in Sources */,
 				7108523A2C9D5F7D00525E53 /* CreateInitialMissions.swift in Sources */,
+				71F4974C2CA41304004EC892 /* RectSizeLarge.swift in Sources */,
 				7155A9112C9487C100A563B2 /* utils_connection.swift in Sources */,
 				7155A91B2C981E6200A563B2 /* FeedbackView.swift in Sources */,
+				71F4974B2CA41304004EC892 /* RectSize2.swift in Sources */,
 				ED0B42E42C9D64F50098BB37 /* PhoneMail.swift in Sources */,
 				71F497342CA19D20004EC892 /* AvenirView.swift in Sources */,
 				71F4972C2CA1991F004EC892 /* Launch.swift in Sources */,
