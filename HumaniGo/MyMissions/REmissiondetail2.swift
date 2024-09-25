@@ -57,12 +57,12 @@ struct REmissiondetail2: View {
                                  .foregroundColor(Color.white)
                              
                                  .font(.title)
-                                 .padding (.bottom, 200).offset(x: 50)
+                                 .padding (.bottom, 200)
                              
                              
                              
                          })
-                         
+                         .offset(x: 50)
                          
                      }
                  }

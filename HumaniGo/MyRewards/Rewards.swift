@@ -13,6 +13,7 @@ struct Rewards: View {
             Spacer()
             VStack{ Spacer(minLength: 15)
                 Text(" Mes Récompenses").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).bold()
+                    .padding(.trailing, 130)
                 
                 
                 ScrollView{

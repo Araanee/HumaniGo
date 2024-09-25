@@ -20,6 +20,7 @@ struct MyMissions: View {
     var body: some View {
         VStack(spacing: 10){
             Text("Mes Missions")
+                .padding(.trailing, 130)
                 .font(.title)
                 .bold()
             
