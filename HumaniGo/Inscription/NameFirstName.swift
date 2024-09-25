@@ -56,8 +56,8 @@ struct InscriptionNP: View {
                 }).padding()
             
             Text("Étape 2/4")
-                            .font(.footnote)
-                            .foregroundColor(.gray)
+                .font(.footnote)
+                .foregroundColor(.gray)
             
             if (Error.isEmpty && btn)
             {
@@ -110,7 +110,7 @@ struct InscriptionNP: View {
                     
                 }.offset(CGSize(width: 1.0, height: 10.0))
                 
-                inscription().padding(100)
+                inscription().padding(50)
                 
                 
                 //---------------inscription avec ----------------------
