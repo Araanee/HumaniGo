@@ -24,9 +24,14 @@ struct NotificationsView: View {
             
                 
                 VStack {
+                    Spacer()
+                    
                     Text("Notifications")
                         .font(.title).bold()
-                        .padding(.trailing, 130)
+                        .padding(.leading, -180)
+                        .padding(.vertical)
+                    
+                    Spacer()
                     
                     ZStack (alignment: Alignment(horizontal: .center, vertical: .top))
                     {
