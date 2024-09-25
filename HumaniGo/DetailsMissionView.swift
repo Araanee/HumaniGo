@@ -123,12 +123,9 @@ struct DetailsMissionView: View {
                                     }.onAppear
                                     {
                                         let selectedProfile = profile[uidProfile.idx]
-                                        selectedProfile.notification.append(NotificationProfile(message: "Tu as bien été inscrit\(profile[uidProfile.idx].info.gender == Gender.female ? "e" : "") pour la mission \(mission.name)", type: TypeNotif.DefaultNotif))
-                                        profile[uidProfile.idx].notification.append(NotificationProfile(message: "Ta mission s'est bien passée ? Laisse un avis !", type: TypeNotif.AvisNotif))
-                                       // DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                                        //   )
-                                            
-                                        //}
+                                        selectedProfile.notification.insert(NotificationProfile(message: "Tu as bien été inscrit\(profile[uidProfile.idx].info.gender == Gender.female ? "e" : "") pour la mission\r \(mission.name)", type: TypeNotif.DefaultNotif),at: 0)
+                                        profile[uidProfile.idx].notification.insert(NotificationProfile(message: "Alors ta mission ? Laisse un avis !", type: TypeNotif.AvisNotif), at: 0)
+                                       
                                     }
                                 }
                                 else

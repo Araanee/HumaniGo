@@ -21,5 +21,5 @@ var avis5: Feedback = Feedback(association:"Kleenit", hearts: 4, comment:"C'éta
 
 func createInitialProfil() -> [Profile]
 {
-    return [Profile(nbmissions: 10, nbfeedbacks: 4.5, points: 530, feedbacks: [],notification: [],info: InfoProfile(gender: Gender.female, firstname: "Emma", lastname: "TOTO", email: "emma@gmail.com", phone: "0600000001", pswd: "azerty123"))]
+    return [Profile(nbmissions: 10, nbfeedbacks: 4.5, points: 530, feedbacks: [avis1,avis2,avis3,avis4],notification: [],info: InfoProfile(gender: Gender.female, firstname: "Emma", lastname: "TOTO", email: "emma@gmail.com", phone: "0600000001", pswd: "azerty123"))]
 }

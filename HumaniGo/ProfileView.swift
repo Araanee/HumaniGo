@@ -42,7 +42,6 @@ struct ProfileView: View {
         VStack {
             ScrollView {
                 VStack(alignment: .leading) {
-                    
                     Text("Mon profil")
                         .font(.largeTitle)
                         .fontWeight(.semibold)
