@@ -126,7 +126,7 @@ struct Mdp: View {
                     }.frame(maxWidth: 300) // Aligne tout à gauche
                     
                 }.offset(CGSize(width: 1.0, height: 10.0))
-                inscription().padding(100)
+                inscription().padding(50)
                 
                 
                 //---------------inscription avec ----------------------

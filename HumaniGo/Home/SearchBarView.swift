@@ -19,13 +19,19 @@ struct SearchBarView: View {
     
     func searchBar() -> some View {
         return HStack {
-            Image(systemName: "magnifyingglass")
-                .foregroundStyle(Color(.systemGray))
-            
-            TextField("Rechercher...", text: $searchText)
-                .padding(8)
-                .background(Color(.systemGray6))
-                .cornerRadius(8)
+            HStack {
+                Image(systemName: "magnifyingglass")
+                    .foregroundStyle(Color(.systemGray))
+                    .padding(.leading, 10)
+                
+                TextField("Rechercher...", text: $searchText)
+                    .padding(.vertical, 10)
+                    .padding(.leading, 10)
+                    .background(Color(.systemGray6))
+            }
+            .background(Color(.systemGray6))
+            .cornerRadius(8)
+            .padding(.horizontal)
             
             // Filtres
             Button(action: {
