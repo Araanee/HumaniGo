@@ -16,11 +16,15 @@ struct HomeView: View {
     var body: some View {
         ZStack {
             VStack {
+                Spacer()
                 Text("Trouve ta mission")
-                    .font(.title).bold()//.frame(maxWidth: .infinity, alignment: .leading)
+                    .font(.title).bold()
+                    .padding(.trailing, 130)
+                
                 SearchBarView()
                 SegmentedControlView()
                 CardsView()
+                Spacer()
                 Spacer()
             }
             

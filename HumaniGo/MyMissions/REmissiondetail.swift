@@ -47,8 +47,6 @@ struct REmissiondetail: View {
                     .foregroundColor(Color.mypink)
                         .font(.title)
                         .padding (.bottom, 200)
-                       
-                 
               
             })
             .offset(x: 50)
