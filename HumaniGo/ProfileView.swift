@@ -23,6 +23,7 @@ struct ProfileView: View {
     @State private var btn: Color = .yellow
     @State var tel = ""
     @State var email = ""
+    @State var prenom = ""
     @State var mdp = ""
     @State var cmdp = ""
     @StateObject var loginVM = utilsPswd()
@@ -96,6 +97,8 @@ struct ProfileView: View {
                             
                             VStack ()
                             {
+                                loginVM.champs(name: "Prénom", def:profiles[profileIdx].info.firstname , value: $prenom)
+                                    .frame(height: 70)
                                 loginVM.champs(name: "Email", def:profiles[profileIdx].info.email , value: $email)
                                     .frame(height: 70)
                                 loginVM.champs(name: "Téléphone", def:profiles[profileIdx].info.phone , value: $tel)
@@ -108,21 +111,38 @@ struct ProfileView: View {
                                     .frame(height: 70)
                                 
                             }.frame(maxWidth: 300)
-                            NavigationLink("Modifier")
-                            {
-                                Text("modif here")
-                            }
-                            .foregroundColor(.black).padding(20)
-                            .font(.headline)
-                            .frame(width: 180, height: 50)
-                            .background(Color.myyellow)
-                            .clipShape(RoundedRectangle(cornerRadius: 25.0))
+                            Button(action:{
+                                if (!email.isEmpty)
+                                {
+                                    profiles[profileIdx].info.email = email
+                                }
+                                if (!prenom.isEmpty)
+                                {
+                                    profiles[profileIdx].info.firstname = prenom
+                                }
+                                if(!tel.isEmpty)
+                                {
+                                    profiles[profileIdx].info.phone = tel
+                                }
+                                if(!mdp.isEmpty && !cmdp.isEmpty && mdp == cmdp)
+                                {
+                                    profiles[profileIdx].info.pswd = mdp
+                                }
+                                
+                            }, label: {Text("Modifier")})
+                                .foregroundColor(.black)
+                                .font(.headline)
+                                .frame(width: 150, height: 50)
+                                .background(Color.myyellow)
+                                .clipShape(RoundedRectangle(cornerRadius: 25.0))
+                            
                             Spacer()
                             
                             Button(action: {
                                 logout()
                             }, label: {
                                 HStack {
+                                    
                                     Text("Se déconnecter")
                                         .padding(5)
                                     Image(systemName: "rectangle.portrait.and.arrow.right")
