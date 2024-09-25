@@ -1,6 +1,5 @@
 //
-//  Filtres.swift
-//  Filtres
+//  Filters.swift
 //
 //  Created by Apprenant151 on 19/09/2024.
 //
@@ -10,17 +9,8 @@ import SwiftUI
 var days = ["L", "Ma", "Me", "J", "V", "S", "D"]
 var periods = ["Matin", "Après-midi", "Soir"]
 var causes = ["Animale", "Soutien scolaire ou linguistique", "Alimentaire", "Écologie"]
-var causeIcons = ["pawprint.fill", "book.fill", "fork.knife.fill", "leaf.fill"]
 
-struct Cause: Identifiable {
-    var id = UUID()
-    var name: String
-    var img: String
-    var selected: Bool = false
-    var color = Color.black
-}
-
-struct FiltresView: View {
+struct FiltersView: View {
     
     @EnvironmentObject var navControl: NavigationControl
     @State var searchText: String = ""
@@ -28,75 +18,50 @@ struct FiltresView: View {
     @State private var selectedDay: String = "" // Pour le jour sélectionné
     @State private var selectedPeriod: String = "" // Pour la période sélectionnée
     @State private var selectedCause: String = "" // Pour la cause sélectionnée
-    @State private var selectedCauseIcon : String = ""
-    
-    @State private var causes = [
-        Cause(name: "Animale", img: "pawprint.fill"),
-        Cause(name: "Soutien scolaire ou linguistique", img: "book.fill"),
-        Cause(name: "Alimentaire", img: "fork.knife"),
-        Cause(name: "Écologie", img: "leaf.fill"),
-        ]
-    
-   
+
     var body: some View {
         
-        ZStack (alignment: Alignment(horizontal: .center, vertical: .top))
-        {
-            RoundedRectangle(cornerRadius: 15.0)
-                .strokeBorder(Color.mypink, lineWidth: 5)
-                .frame(width: 410,height: 100)
-                .padding(-18)
-            Rectangle()
-                .foregroundColor(.white)
-                .frame(width: 400,height: 90)
-                .padding(10)
-                        
-            VStack(alignment: .leading, spacing: 30) {
-                
-                
-                // Ma localisation
+    ZStack (alignment: Alignment(horizontal: .center, vertical: .top))
+            {
+                RoundedRectangle(cornerRadius: 15.0).strokeBorder(Color.pink,lineWidth: 5).frame(width: 410,height: 100)
+                    .padding(-7)
+                Rectangle().foregroundColor(.white)
+                    .frame(width: 400,height: 90).padding()
+        
+        VStack(alignment: .leading, spacing: 30) {
+
+    // Ma localisation
                 HStack {
                     Image(systemName: "magnifyingglass")
                         .foregroundColor(.gray)
-                        .padding(.leading, 10)
-                    
+                        
                     TextField("Ma localisation", text: $searchText)
                         .padding(.vertical, 10)
-                        .padding(.leading, 10)
+                        .padding(.leading, 5)
                 }
-                .background(Color(.systemGray6))
+                .padding(.horizontal)
+                .background(Color.gray.opacity(0.1))
                 .cornerRadius(8)
                 .padding(.horizontal)
-                
-//                HStack {
-//                    Image(systemName: "magnifyingglass")
-//                        .foregroundStyle(Color(.systemGray))
-//                    
-//                    TextField("Rechercher...", text: $searchText)
-//                        .padding(8)
-//                        .background(Color(.systemGray6))
-//                        .cornerRadius(8)
-//                }
-//                .padding()
-                
-                //       // Slider avec cadre arrondi
+
+//       // Slider avec cadre arrondi
                 VStack {
                     Text("\(Int(distance)) km autour de moi")
-                        .font(.title3)
-                        .padding(.bottom, 1)
-                        .foregroundStyle(Color(.systemGray))
+                                    .font(.title3)
+                                    .bold()
+                                    .padding(.bottom, 1)
                     HStack {
                         Image(systemName: "location.circle")
                             .foregroundColor(.blue)
                             .padding(.leading, 30)
-                        
+                       
                         Slider(value: $distance, in: 1...30, step: 1)
                             .accentColor(.blue)
                             .padding(.horizontal, 10)
                             .frame(height: 3)
                     }
                     .frame(height: 20)
-                    
+                       
                     HStack {
                         Text("1 km")
                             .padding(.leading, 60)
@@ -104,134 +69,187 @@ struct FiltresView: View {
                         Text("30 km")
                             .padding(.trailing, 20)
                     }
+                    
+                        
                 }
                 .padding(.top, 30)
-                
-                // Mes disponibilités
+
+    // Mes disponibilités
                 Text("Mes disponibilités")
                     .font(.title2).bold()
-                    .padding(.leading, 10)
-                    .foregroundStyle(Color(.systemGray))
-                
-                // Ronds des jours de la semaine
+                    .padding(.leading, 20)
+                    
+    // Ronds des jours de la semaine
                 HStack {
-                    Spacer()
                     ForEach(days, id: \.self) { day in
                         ZStack {
                             Circle()
-                                .fill(selectedDay == day ? .pink : .white)
                                 .stroke(selectedDay == day ? Color.pink : Color.black, lineWidth: 1)
                                 .frame(width: 40, height: 40)
                                 .padding(3)
-                            
+                                
                             Text(day)
-                                .fontWeight(selectedDay == day ? .bold : .regular)
-                                .foregroundColor(selectedDay == day ? .white : .black)
+                                .foregroundColor(selectedDay == day ? .pink : .black)
                                 .onTapGesture {
                                     selectedDay = day
-                            }
+                                }
                         }
                     }
-                    Spacer()
                 }
-                //.padding(.horizontal)
-                
-                // Matin, Après-midi, Soir
-                
-                HStack(alignment: .center) {
-                    Spacer()
+                .padding(.horizontal)
+                    
+    // Matin, Après-midi, Soir
+            HStack(alignment: .center) {
                     ForEach(periods, id: \.self) { period in
                         ZStack {
                             RoundedRectangle(cornerRadius: 15)
-                                .fill(selectedPeriod == period ? .pink : .white)
                                 .stroke(selectedPeriod == period ? Color.pink : Color.black, lineWidth: 1)
-                                .frame(width: 110, height: 40)
-                            
+                                .frame(width: 100, height: 40)
+                                
                             Text(period)
-                                .fontWeight(selectedPeriod == period ? .bold : .regular)
-                                .foregroundColor(selectedPeriod == period ? .white : .black)
-                                .frame(width: 90, height: 30)
-                            
+                                .foregroundColor(selectedPeriod == period ? .pink : .black)
                                 .onTapGesture {
                                     selectedPeriod = period
                                 }
                         }
                         .padding(5)
-                        
                     }
-                    Spacer()
                 }
-                //        .padding(.horizontal)
-                
-                // Cause
-                Text("Cause")
-                    .font(.title2).bold()
-                    .padding(.leading, 10)
-                    .foregroundStyle(Color(.systemGray))
-                
-                HStack {
-                    Spacer()
+                .padding(.horizontal)
                     
-                    ForEach(causes) { cause in
+        // Cause
+            Text("Cause")
+                .font(.title2).bold()
+                .padding(.leading, 20)
+                    
+            HStack {
+                Spacer()
+                    VStack {
+                        ZStack {
+                            Circle()
+                                .stroke(selectedCause == "Animale" ? Color.pink : Color.black, lineWidth: 1)
+                                .frame(width: 50, height: 50)
+                            
+                            Image(systemName: "pawprint")
+                                .foregroundColor(selectedCause == "Animale" ? .pink : .black)
+                               
+                        }
+                        .padding(.bottom, 5)
+                        .onTapGesture {
+                            selectedCause = "Animale"
+                        }
+                            Text("Animale")
+                                .font(.caption)
+                                .foregroundColor(.black)
+                                .onTapGesture {
+                                    selectedCause = "Animale"
+                                }
+                                .frame(width: 75, height: 80, alignment: .top)
+                                
+                                
+                    }
                         VStack {
                             ZStack {
                                 Circle()
-                                    .fill(selectedCause == cause.name ? .pink : .white)
-                                    .stroke(selectedCause == cause.name ? .pink : .black, lineWidth: 1)
+                                    .stroke(selectedCause == "Soutien scolaire ou linguistique" ? Color.pink : Color.black, lineWidth: 1)
                                     .frame(width: 50, height: 50)
-                                    .overlay {
-                                Image(systemName: cause.img)
-                                    .foregroundStyle(selectedCause == cause.name ? .white : .black)
-                                        }
-                                }
-                            Text(cause.name)
+                            
+                                Image(systemName: "book.fill")
+                                    .foregroundColor(selectedCause == "Soutien scolaire ou linguistique" ? .pink : .black)
+                                
+                            }
+                            .padding(.bottom, 5)
+                            .onTapGesture {
+                                selectedCause = "Soutien scolaire ou linguistique"
+                            }
+                                Text("Soutien \r scolaire ou  \rlinguistique")
                                 .font(.caption)
                                 .foregroundColor(.black)
-                                .frame(width: 75, height: 80, alignment: .top)
                                 .multilineTextAlignment(.center)
+                                .onTapGesture {
+                                    selectedCause = "Soutien scolaire ou linguistique"
+                                    }
+                                .frame(width: 75, height: 80, alignment: .top)
+                              
+                            }
+                        VStack {
+                            ZStack {
+                                Circle()
+                                    .stroke(selectedCause == "Alimentaire" ? Color.pink : Color.black, lineWidth: 1)
+                                    .frame(width: 50, height: 50)
+                                Image(systemName: "fork.knife")
+                                    .foregroundColor(selectedCause == "Alimentaire" ? .pink : .black)
+                                }
+                                .padding(.bottom, 5)
+                                .onTapGesture {
+                                    selectedCause = "Alimentaire"
+                                        }
+                                Text("Aide alimentaire")
+                                    .font(.caption)
+                                    .foregroundColor(.black)
+                                    .multilineTextAlignment(.center)
+                                    .onTapGesture {
+                                        selectedCause = "Alimentaire"
+                                        }
+                                    .frame(width: 75, height: 80, alignment: .top)
                         }
-                        .onTapGesture {
-                            selectedCause = cause.name
-                        }
-                    }
-                    .padding(.bottom, 5)
-                    
-                    Spacer()
-                }
-                
-                
-// Bouton Valider
-                HStack(alignment: .center) {
-                    Spacer()
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 25)
-                            .   foregroundStyle(.yellow)
-                            .frame(width: 150, height: 50, alignment: .center)
-                        Button(action: {
-                            navControl.dismissFilters = false
-                        }, label: {
-                            Text("Valider")
-                                .font(.title2)
-                                .fontWeight(.bold)
-                                .padding(2)
+                        VStack {
+                            ZStack {
+                                Circle()
+                                    .stroke(selectedCause == "Écologie" ? Color.pink : Color.black, lineWidth: 1)
+                                    .frame(width: 50, height: 50)
+                                Image(systemName: "leaf.fill")
+                                    .foregroundColor(selectedCause == "Écologie" ? .pink : .black)
+                               }
+                            .padding(.bottom, 5)
+                            .onTapGesture {
+                                selectedCause = "Écologie"
+                            }
+                            Text("Écologie")
+                                .font(.caption)
                                 .foregroundColor(.black)
-                        })
-                    }
-                    Spacer()
+                                .onTapGesture {
+                                    selectedCause = "Écologie"
+                                }
+                                .frame(width: 75, height: 80, alignment: .top)
+                            }
+                Spacer()
+                        }
+            
+                        .padding(.horizontal)
+            
+
+// Bouton Valider
+            HStack(alignment: .center) {
+                Spacer()
+                ZStack {
+                    RoundedRectangle(cornerRadius: 15)
+                        .   foregroundStyle(.yellow)
+                        .frame(width: 150, height: 50, alignment: .center)
+                    Button(action: {
+                        navControl.dismissFilters = false
+                    }, label: {
+                        Text("Valider")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .padding(2)
+                            .foregroundColor(.black)
+                    })
                 }
+                Spacer()
+            }
                 
             }
-            .padding(20)
-            Spacer() // Pour garder les éléments en haut de la vue
-            
-        }
-        .padding(.top, 30)
-        
-        
-    //    .padding(.horizontal)
-    }
-}
+    //        .Alignment(horizontal: .center)
+                        .padding(.top, 30)
+                        .padding(.horizontal)
+
+               Spacer() // Pour garder les éléments en haut de la vue
+              }
+          }
+     }
 
 #Preview {
-    FiltresView()
+    FiltersView()
 }
+

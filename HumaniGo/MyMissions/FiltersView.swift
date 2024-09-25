@@ -1,6 +1,5 @@
 //
-//  Filtres.swift
-//  Filtres
+//  Filters.swift
 //
 //  Created by Apprenant151 on 19/09/2024.
 //
@@ -11,7 +10,7 @@ var days = ["L", "Ma", "Me", "J", "V", "S", "D"]
 var periods = ["Matin", "Après-midi", "Soir"]
 var causes = ["Animale", "Soutien scolaire ou linguistique", "Alimentaire", "Écologie"]
 
-struct FiltresView: View {
+struct FiltersView: View {
     
     @EnvironmentObject var navControl: NavigationControl
     @State var searchText: String = ""
@@ -251,6 +250,6 @@ struct FiltresView: View {
      }
 
 #Preview {
-     FiltresView()
+    FiltersView()
 }
 
