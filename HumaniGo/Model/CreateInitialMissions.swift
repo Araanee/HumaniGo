@@ -17,10 +17,6 @@ Rejoignez-nous pour une mission de ramassage de déchets organisée par notre as
 Visiter des personnes âgées en maison de retraite pour discuter, lire ou partager un moment convivial afin de lutter contre l'isolement.
 """, time: 180, reward: 100, date: Date(), address: "15 Rue des Lilas, 75020 Paris", members: 7),
         
-        Mission(imageName: "AideSsAbri", name: "Aide aux Sans-Abri", association: "Solidarité de Rue", description: """
-Distribuer des repas chauds et des vêtements aux personnes sans-abri et les orienter vers des services d’aide sociale.
-""", time: 90, reward: 30, date: Date(), address: "45 Avenue de la Fraternité, 93100 Montreuil", members: 5),
-        
         Mission(imageName: "soutien-scolaire", name: "Soutien Scolaire", association: "Ensemble pour l’Éducation", description: """
 Offrir du soutien scolaire aux enfants du primaire et du collège afin de les aider à réussir et à reprendre confiance en eux.
 """, time: 120, reward: 60, date: Date(), address: "32 Rue des Écoles, 92100 Boulogne-Billancourt", members: 8),
@@ -32,6 +28,10 @@ Proposer des activités culturelles et sportives adaptées et accompagner les pe
         Mission(imageName: "SoutienMigrants", name: "Soutien aux Réfugiés et Migrants", association: "Accueil Sans Frontières", description: """
 Proposer des cours de langue française et accompagner les réfugiés dans leurs démarches administratives pour favoriser leur intégration.
 """, time: 120, reward: 50, date: Date(), address: "27 Rue de l’Accueil, 94000 Créteil", members: 10),
+        
+        Mission(imageName: "AideSsAbri", name: "Aide aux Sans-Abri", association: "Solidarité de Rue", description: """
+Distribuer des repas chauds et des vêtements aux personnes sans-abri et les orienter vers des services d’aide sociale.
+""", time: 90, reward: 30, date: Date(), address: "45 Avenue de la Fraternité, 93100 Montreuil", members: 5),
     
         Mission(imageName: "Soutien_linguistique", name: "Soutien linguistique", association: "Accueil Sans Frontières", description: """
 Proposer des cours de soutien à l'apprentissage de la langue française.
