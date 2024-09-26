@@ -22,6 +22,7 @@ struct ConnexionView: View {
     @State var Error = "Merci de remplir les champs"
     
     @State var btn : Bool = false
+    @State var toto = true
     
     func checkin(_ email: String, _ pswd : String) -> Bool
     {
@@ -95,7 +96,8 @@ struct ConnexionView: View {
     }
     
     var body: some View {
-            NavigationStack {
+        NavigationStack {
+            if toto {
                 ZStack(alignment: Alignment(horizontal: .center, vertical: .top))
                 {
                     
@@ -125,7 +127,7 @@ struct ConnexionView: View {
                 VStack
                 {
                     connexion().padding(6)
-//                    Text(Error).foregroundStyle(.red)
+                    //                    Text(Error).foregroundStyle(.red)
                 }
                 
                 //---------------inscription avec ----------------------
@@ -152,18 +154,21 @@ struct ConnexionView: View {
                 HStack
                 {
                     Text("Pas encore de compte ? ")
-                    NavigationLink("Inscris-toi")
+                    Button("Inscris-toi")
                     {
-                        InscrSexe()
+                        //                        InscrSexe()
+                        toto.toggle()
                     }
                     
                     
                 }.padding()
+            } else {
+                InscrSexe(toto: $toto)
+                }
             }
-        
     }
 }
 
-#Preview {
-    ConnexionView()
-}
+//#Preview {
+//    ConnexionView()
+//}

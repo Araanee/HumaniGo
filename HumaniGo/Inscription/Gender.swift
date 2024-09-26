@@ -16,7 +16,7 @@ struct InscrSexe: View {
    
     @StateObject var loginVM = utilsPswd()
     @State var sexe: Gender = Gender.nul
-        
+    @Binding var toto: Bool
         
         func Sexe()-> some View
         {
@@ -131,9 +131,10 @@ struct InscrSexe: View {
                 HStack
                 {
                     Text("Tu as déjà un compte ? ")
-                    NavigationLink("Connecte-toi")
+                    Button("Connecte-toi")
                     {
-                        ConnexionView()
+                        toto.toggle()
+//                        ConnexionView()
                     }
                 }.padding()
             }
@@ -142,7 +143,7 @@ struct InscrSexe: View {
 }
 
 #Preview {
-    InscrSexe()
+    InscrSexe(toto: .constant(false))
 }
 
 
