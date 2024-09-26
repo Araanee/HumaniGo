@@ -42,7 +42,7 @@ struct FiltersView: View {
         ZStack (alignment: Alignment(horizontal: .center, vertical: .top))
         {
             RoundedRectangle(cornerRadius: 15.0).strokeBorder(Color.pink,lineWidth: 5).frame(width: 410,height: 100)
-                .padding(-7)
+                .padding(-19)
             Rectangle().foregroundColor(.white)
                 .frame(width: 400,height: 90).padding()
             
@@ -77,6 +77,7 @@ struct FiltersView: View {
                             .accentColor(.blue)
                             .padding(.horizontal, 10)
                             .frame(height: 3)
+                            .padding(.trailing, 30)
                     }
                     .frame(height: 20)
                     
@@ -85,7 +86,7 @@ struct FiltersView: View {
                             .padding(.leading, 60)
                         Spacer()
                         Text("30 km")
-                            .padding(.trailing, 20)
+                            .padding(.trailing, 30)
                     }
                 }
                 .padding(.top, 30)

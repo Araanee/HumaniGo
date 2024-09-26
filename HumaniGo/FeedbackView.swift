@@ -27,6 +27,8 @@ struct FeedbackView: View
     
     @State private var rating = 0
     
+    @FocusState private var dismissKeyboard: Bool
+    
     var body: some View {
         NavigationStack {
             VStack{
@@ -61,13 +63,18 @@ struct FeedbackView: View
                             
                            
                         TextField("Partage ton expérience",text: $feedback, axis : .vertical)
-                        
+                            .focused($dismissKeyboard)
+                            
                             .padding(.top,20).padding(.leading,20).font(.title3)
                         
                             .cornerRadius(17)
+                            
         
                     }
                     .frame(width: 350, height:350)
+                    .onTapGesture {
+                        dismissKeyboard = false
+                    }
                     
                     // Limiter le nombre de caractères à 400
                     if feedback.count > 400 {
