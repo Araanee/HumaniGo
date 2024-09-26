@@ -34,7 +34,7 @@ struct REmissiondetail: View {
                 
                 Text(titre).foregroundColor(.black)
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).bold().frame(maxWidth: 130)
-                Text(titre2).frame(maxWidth: 130)
+                Text(titre2).bold().frame(maxWidth: 130)
             }
             Button(action: { 
                 if bouto == "heart.fill" {

@@ -24,7 +24,7 @@ struct Mdp: View {
     @State  var mdp = ""
     @State  var cmdp = ""
     
-    @State private var Error = "Tous les champs doivent être remplis"
+    @State private var Error = ""
     
     @State var btn : Bool = false
     func inscription() -> some View
@@ -35,12 +35,12 @@ struct Mdp: View {
             Button(
                 action: {
                     btn = true
-                    if mdp.isEmpty || cmdp.isEmpty
-                    {
-                        
-                        Error = "Tous les champs doivent être remplis"
-                    }
-                    else if (mdp != cmdp)
+//                    if mdp.isEmpty || cmdp.isEmpty
+//                    {
+//                        
+//                        Error = "Tous les champs doivent être remplis"
+//                    }
+                    if (mdp != cmdp)
                     {
                         
                         Error = "Le mot de passe n'est pas identique"

@@ -19,7 +19,7 @@ struct InscriptionNP: View {
     @State  var lastname = ""
     @State  var firstname = ""
     
-    @State private var Error = "Tous les champs doivent être remplis"
+    @State private var Error = ""
     
     
     @State var btn : Bool = false
@@ -32,16 +32,16 @@ struct InscriptionNP: View {
                 action: {
                     print(lastname + firstname + " error: " + Error)
                     btn = true
-                    if lastname.isEmpty || firstname.isEmpty
-                    {
-                        
-                        Error = "Tous les champs doivent être remplis"
-                        
-                    }
-                    else
-                    {
-                        Error = ""
-                    }
+//                    if lastname.isEmpty || firstname.isEmpty
+//                    {
+//                        
+//                        Error = "Tous les champs doivent être remplis"
+//                        
+//                    }
+//                    else
+//                    {
+//                        Error = ""
+//                    }
                 },label: { ZStack (alignment: .center)
                     {
                         Text("Suivant")

@@ -18,7 +18,7 @@ struct FinishedView: View {
 
                     Spacer()
 
-                    REmissiondetail2(titre: "fapil", couleur:.mypink, image:"soutien-scolaire", titre2: "Soutin scolaire  ").font(.title2)
+                    REmissiondetail2(titre: "Fapil", couleur:.mypink, image:"soutien-scolaire", titre2: "Soutien scolaire").font(.title2)
 
                     Spacer()
                 }

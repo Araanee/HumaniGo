@@ -50,7 +50,7 @@ struct RectSizeLarge: View {
             .bold()
         
           
-        DetailPoints(point: 300)
+        DetailPoints(point: 600)
             .frame(width: 50, height:50)
             .foregroundStyle(.white)
             .offset(y:127)

@@ -36,10 +36,14 @@ struct REmissiondetail2: View {
                              
                              
                              Text(titre)
-                                 .font(.title).bold().foregroundColor(couleur == Color.mypink ? .white: .black).frame(maxWidth: 130)
+                                 .font(.title).bold().foregroundColor(couleur == Color.mypink ? .white: .black)
+                                 .bold()
+                                 .frame(maxWidth: 130)
                                  
 
-                             Text(titre2).foregroundColor(couleur == Color.mypink ? .white: .black).frame(maxWidth: 130)
+                             Text(titre2).foregroundColor(couleur == Color.mypink ? .white: .black)
+                                 .bold()
+                                 .frame(maxWidth: 130)
 
                          }
                          

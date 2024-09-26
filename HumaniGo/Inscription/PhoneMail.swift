@@ -24,7 +24,7 @@ struct InscriptionTE: View {
     @State  var tel = ""
     @State  var email = ""
     
-    @State private var Error = "Tous les champs doivent être remplis"
+    @State private var Error = ""
     
     
     @State var btn : Bool = false
@@ -36,26 +36,26 @@ struct InscriptionTE: View {
                 action: {
                     btn = true
                     
-                    if(!ErrorMail(_email:email))
-                    {
-                        Error = "Email pas valide"
-                    }
-                    
-                    else if
-                        tel.isEmpty || email.isEmpty
-                    {
-                        
-                        Error = "Tous les champs doivent être remplis"
-                    }
-                    else if (shared.contains{profile in email == profile.info.email})
-                    {
-                        Error = "Ce mail existe déjà, connecte-toi directement."
-                    }
-                    else
-                    {
-                        
-                        Error = ""
-                    }
+//                    if(!ErrorMail(_email:email))
+//                    {
+//                        Error = "Email pas valide"
+//                    }
+//
+//                    else if
+//                        tel.isEmpty || email.isEmpty
+//                    {
+//
+//                        Error = "Tous les champs doivent être remplis"
+//                    }
+//                    else if (shared.contains{profile in email == profile.info.email})
+//                    {
+//                        Error = "Ce mail existe déjà, connecte-toi directement."
+//                    }
+//                    else
+//                    {
+//                        
+//                        Error = ""
+//                    }
                     
                     
                 },
