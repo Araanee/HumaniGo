@@ -57,7 +57,7 @@ struct DetailsMissionView: View {
                                 .background(Color.myblue)
                                 .clipShape(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/))
                                 .padding()
-                            Text("💰 \(mission.reward)")
+                            Text("\(mission.reward) pts")
                                 .font(.largeTitle)
                                 .bold()
                                 .foregroundStyle(.white)

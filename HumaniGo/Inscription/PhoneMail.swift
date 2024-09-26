@@ -70,7 +70,7 @@ struct InscriptionTE: View {
             .foregroundColor(.gray)
             .padding()
             
-            if (Error.isEmpty)
+            if (btn)
             {
                 Text("Compte créé").foregroundStyle(.green)
                 DelayedNavigationLink(delay: .seconds(0)) {
