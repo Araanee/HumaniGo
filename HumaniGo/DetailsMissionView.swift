@@ -130,6 +130,7 @@ struct DetailsMissionView: View {
                                 }
                                 else
                                 {
+                                    
                                     DelayedNavigationLink(delay: .seconds(0)) {
                                         
                                         ConnexionView()
@@ -148,7 +149,7 @@ struct DetailsMissionView: View {
 }
 
 
-#Preview {
-    DetailsMissionView()
-}
+//#Preview {
+//    DetailsMissionView()
+//}
 
