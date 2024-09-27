@@ -28,7 +28,7 @@ struct Launch: View {
                     
                     Button(action: {}, label: {
                         
-                        Text("Associations")
+                        Text("Association")
                             .font(.title)
                             .padding()
                         
@@ -43,7 +43,7 @@ struct Launch: View {
                     Button(action: {
                         test.toggle()
                     }, label: {
-                        Text("Bénévoles")
+                        Text("Bénévole")
                             .font(.title)
                             .padding()
                             .foregroundStyle(.black)

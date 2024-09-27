@@ -25,6 +25,7 @@ struct RectSize1: View {
                 .scaledToFill()
                 .foregroundColor(.blue)
                 .clipShape(RoundedRectangle(cornerRadius: 20.0))
+                .clipped()
                 .overlay(
                     ZStack{
                         RoundedRectangle(cornerRadius: 15.0)
@@ -40,11 +41,9 @@ struct RectSize1: View {
                         .foregroundStyle(.white)
                     
                 )
-                .clipped()
                 .foregroundStyle(.white)
-            
-            
                 .bold()
+            
             DetailPoints(point: 150)
             
          

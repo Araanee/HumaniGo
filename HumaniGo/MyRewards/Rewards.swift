@@ -23,7 +23,7 @@ struct Rewards: View {
                                 
                             })
                         }
-                        Button(action: {}, label: {RectSize1(name: "Réduction de 30% au parc              Asterix", color:.blue, image: "p5")
+                        Button(action: {}, label: {RectSize1(name: "Correction de CV avec un professionel", color:.blue, image: "rdv")
                             
                             
                         })
